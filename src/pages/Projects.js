@@ -68,7 +68,7 @@ const Projects = () => {
               </ul>
               
               <ProjectLinks>
-                <Button href="https://github.com/Ege-Cakar" target="_blank">View on GitHub</Button>
+                <Button href="https://github.com/Ege-Cakar/Eco-Civilization-MDP" target="_blank">View on GitHub</Button>
               </ProjectLinks>
             </ProjectDescription>
           </ProjectContent>
@@ -103,7 +103,7 @@ const Projects = () => {
               </ul>
               
               <ProjectLinks>
-                <Button href="https://github.com/Ege-Cakar" target="_blank">View on GitHub</Button>
+                <Button href="https://github.com/Ege-Cakar/FocusCaption" target="_blank">View on GitHub</Button>
               </ProjectLinks>
             </ProjectDescription>
           </ProjectContent>
@@ -138,7 +138,79 @@ const Projects = () => {
               </ul>
               
               <ProjectLinks>
-                <Button href="https://github.com/Ege-Cakar" target="_blank">View on GitHub</Button>
+                <Button href="https://github.com/Ege-Cakar/HCS-AI-RL-Project" target="_blank">View on GitHub</Button>
+              </ProjectLinks>
+            </ProjectDescription>
+          </ProjectContent>
+        </Card>
+      </ProjectSection>
+      
+      <ProjectSection id="talk-to-me">
+        <Card>
+          <ProjectHeader>
+            <CardTitle>Talk To Me</CardTitle>
+            <TagContainer>
+              <Tag>Audio Processing</Tag>
+              <Tag>Speech-to-Text</Tag>
+              <Tag>LaTeX</Tag>
+              <Tag>AI Integration</Tag>
+            </TagContainer>
+          </ProjectHeader>
+          <ProjectContent>
+            <ProjectDescription>
+              <h3>Overview</h3>
+              <p>A desktop application that combines audio recording, transcription, and LaTeX conversion for academic and scientific content. Users can speak mathematical equations and technical content, which are then transcribed and converted to proper LaTeX notation.</p>
+              
+              <h3>Details</h3>
+              <p>The application supports both offline processing using a local Whisper model and cloud-based processing via the OpenAI API. It offers multiple formatting options for output and integrates with various AI providers (Ollama for fully local operation, OpenAI, Google, etc.).</p>
+              
+              <h3>Technologies Used</h3>
+              <ul>
+                <li>Audio recording and file format conversion</li>
+                <li>Whisper model for local speech-to-text</li>
+                <li>OpenAI API integration</li>
+                <li>Customizable system prompts and model settings</li>
+                <li>Persistent settings storage</li>
+              </ul>
+              
+              <ProjectLinks>
+                <Button href="https://github.com/Ege-Cakar/talkToMe" target="_blank">View on GitHub</Button>
+              </ProjectLinks>
+            </ProjectDescription>
+          </ProjectContent>
+        </Card>
+      </ProjectSection>
+      
+      <ProjectSection id="mistral-ocr">
+        <Card>
+          <ProjectHeader>
+            <CardTitle>Mistral OCR</CardTitle>
+            <TagContainer>
+              <Tag>OCR</Tag>
+              <Tag>PDF Processing</Tag>
+              <Tag>Markdown</Tag>
+              <Tag>API Wrapper</Tag>
+            </TagContainer>
+          </ProjectHeader>
+          <ProjectContent>
+            <ProjectDescription>
+              <h3>Overview</h3>
+              <p>A simple Mistral OCR Wrapper for converting PDF files to Markdown, with ways of viewing the content in-app. This quick project was scrapped together because I needed it and made open source so others can use it as well.</p>
+              
+              <h3>Details</h3>
+              <p>This tool utilizes the Mistral OCR API to convert PDFs to markdown files, making it easier to use on a day-to-day basis. After uploading a PDF and getting back the response, content is displayed first as plain text, with additional options to view it as Markdown or in a browser for LaTeX rendering.</p>
+              
+              <h3>Technologies Used</h3>
+              <ul>
+                <li>Mistral OCR API integration</li>
+                <li>PDF to Markdown conversion</li>
+                <li>Multiple viewing options (plain text, Markdown, browser)</li>
+                <li>Standalone application with PyInstaller</li>
+                <li>Persistent API key storage</li>
+              </ul>
+              
+              <ProjectLinks>
+                <Button href="https://github.com/Ege-Cakar/MistralOCR" target="_blank">View on GitHub</Button>
               </ProjectLinks>
             </ProjectDescription>
           </ProjectContent>

@@ -59,17 +59,13 @@ const Research = () => {
       <ResearchPosition>
         <Card>
           <CardTitle>Cambridge University Center for Human Inspired Artificial Intelligence - Kristensson Lab</CardTitle>
-          <PositionSubtitle>Student Researcher | March 2025 - Current | Cambridge, UK</PositionSubtitle>
+          <PositionSubtitle>Student Researcher | June 2025 - Current | Cambridge, UK</PositionSubtitle>
           
           <ResearchContent>
-            <h3>Research Focus</h3>
-            <p>Selected as Harvard-Cambridge Summer Fellowship Scholar to work on human-inspired artificial intelligence research.</p>
+            <p>Selected as Harvard-Cambridge Summer Fellowship Scholar.</p>
             
             <h3>Research Interests</h3>
-            <p>At the Kristensson Lab, I'm exploring the intersection of human cognition and artificial intelligence, with a focus on developing AI systems that can better understand and interact with humans.</p>
-            
-            <h3>Upcoming Work</h3>
-            <p>This fellowship will allow me to collaborate with leading researchers in the field of human-inspired AI, contributing to the development of more intuitive and effective AI systems.</p>
+            <p>At the Kristensson Lab, I will be working on creating automated risk-analysis systems with agentic large language models, with a focus on creating an intuituve yet powerful package that is ready to be deployed by institutions.</p>
           </ResearchContent>
         </Card>
       </ResearchPosition>
@@ -90,7 +86,7 @@ const Research = () => {
           
           <Card>
             <CardTitle>Physics & Applied Mathematics</CardTitle>
-            <p>Interested in the intersection of physics, applied mathematics, and artificial intelligence, exploring questions about mathematical modeling, dynamical systems, and the nature of intelligence. This interdisciplinary approach informs my technical research and provides a broader context for understanding AI's implications.</p>
+            <p>Interested in the intersection of physics, applied mathematics, and artificial intelligence, exploring questions about mathematical modeling, dynamical systems, and the nature of intelligence.</p>
           </Card>
         </Grid>
       </Section>

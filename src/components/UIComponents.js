@@ -6,16 +6,16 @@ export const Section = styled.section`
 `;
 
 export const PageTitle = styled.h1`
-  color: ${props => props.theme.colors.flame};
+  color: ${props => props.theme.colors.text};
   margin-bottom: 2rem;
   font-size: 2.5rem;
   font-weight: 700;
-  border-bottom: 2px solid ${props => props.theme.colors.flame};
+  border-bottom: 1px solid ${props => props.theme.colors.border};
   padding-bottom: 0.5rem;
 `;
 
 export const SectionTitle = styled.h2`
-  color: ${props => props.theme.colors.flame};
+  color: ${props => props.theme.colors.text};
   font-size: 2rem;
   margin-bottom: 1.5rem;
 `;
@@ -26,17 +26,16 @@ export const Card = styled.div`
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid ${props => props.theme.colors.border};
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    transform: ${props => props.noHover ? 'none' : 'translateY(-5px)'};
-    box-shadow: ${props => props.noHover ? '0 4px 6px rgba(0, 0, 0, 0.1)' : '0 10px 15px rgba(0, 0, 0, 0.2)'};
+    background-color: ${props => props.noHover ? props.theme.colors.cardBg : props.theme.colors.gray100};
   }
 `;
 
 export const CardTitle = styled.h3`
-  color: ${props => props.theme.colors.flame};
+  color: ${props => props.theme.colors.text};
   margin-top: 0;
   font-size: 1.5rem;
 `;
@@ -51,27 +50,27 @@ export const Grid = styled.div`
 // Button Components
 export const Button = styled.a`
   display: inline-block;
-  background-color: ${props => props.outline ? 'transparent' : props.theme.colors.flame};
-  color: ${props => props.outline ? props.theme.colors.flame : props.theme.colors.textDark};
+  background-color: ${props => props.outline ? 'transparent' : props.theme.colors.gray100};
+  color: ${props => props.theme.colors.text};
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border: ${props => props.outline ? `2px solid ${props.theme.colors.flame}` : 'none'};
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: ${props => props.outline ? `1px solid ${props.theme.colors.border}` : `1px solid ${props.theme.colors.border}`};
   cursor: pointer;
   margin-right: ${props => props.marginRight ? '1rem' : '0'};
 
   &:hover {
-    background-color: ${props => props.outline ? props.theme.colors.flame : props.theme.colors.battleshipGray};
-    color: ${props => props.outline ? props.theme.colors.textDark : props.theme.colors.textLight};
+    background-color: ${props => props.theme.colors.gray200};
+    color: ${props => props.theme.colors.text};
   }
 `;
 
 // Tag Component
 export const Tag = styled.span`
-  background-color: rgba(222, 84, 30, 0.2);
-  color: ${props => props.theme.colors.flame};
+  background-color: ${props => props.theme.colors.gray100};
+  color: ${props => props.theme.colors.text};
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
   font-size: 0.8rem;
@@ -79,6 +78,7 @@ export const Tag = styled.span`
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   display: inline-block;
+  border: 1px solid ${props => props.theme.colors.border};
 `;
 
 export const TagContainer = styled.div`
@@ -103,14 +103,15 @@ export const FormInput = styled.input`
   width: 100%;
   padding: 0.75rem;
   border-radius: 4px;
-  border: 1px solid rgba(214, 214, 177, 0.2);
-  background-color: rgba(214, 214, 177, 0.05);
-  color: ${props => props.theme.colors.textLight};
+  border: 1px solid ${props => props.theme.colors.border};
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
   font-family: ${props => props.theme.fonts.primary};
 
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.flame};
+    border-color: ${props => props.theme.colors.text};
+    box-shadow: 0 0 0 3px ${props => props.theme.colors.gray100};
   }
 `;
 
@@ -118,34 +119,35 @@ export const FormTextarea = styled.textarea`
   width: 100%;
   padding: 0.75rem;
   border-radius: 4px;
-  border: 1px solid rgba(214, 214, 177, 0.2);
-  background-color: rgba(214, 214, 177, 0.05);
-  color: ${props => props.theme.colors.textLight};
+  border: 1px solid ${props => props.theme.colors.border};
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
   font-family: ${props => props.theme.fonts.primary};
   resize: vertical;
   min-height: 150px;
 
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.flame};
+    border-color: ${props => props.theme.colors.text};
+    box-shadow: 0 0 0 3px ${props => props.theme.colors.gray100};
   }
 `;
 
 export const SubmitButton = styled.button`
   display: inline-block;
-  background-color: ${props => props.theme.colors.flame};
-  color: ${props => props.theme.colors.textDark};
+  background-color: ${props => props.theme.colors.gray100};
+  color: ${props => props.theme.colors.text};
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease;
-  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid ${props => props.theme.colors.border};
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.theme.colors.battleshipGray};
-    color: ${props => props.theme.colors.textLight};
+    background-color: ${props => props.theme.colors.gray200};
+    color: ${props => props.theme.colors.text};
   }
 `;
 
@@ -156,7 +158,7 @@ export const FormSuccess = styled.div`
 
   i {
     font-size: 3rem;
-    color: ${props => props.theme.colors.flame};
+    color: ${props => props.theme.colors.text};
     margin-bottom: 1rem;
   }
 `;
@@ -183,7 +185,7 @@ export const HeroImage = styled.div`
 
   img {
     border-radius: 50%;
-    border: 4px solid ${props => props.theme.colors.flame};
+    border: 4px solid ${props => props.theme.colors.border};
     max-width: 200px;
   }
 `;
@@ -199,7 +201,7 @@ export const HeroButtons = styled.div`
 `;
 
 export const Subtitle = styled.p`
-  color: ${props => props.theme.colors.flame};
+  color: ${props => props.theme.colors.gray600};
   font-size: 1.2rem;
   margin-bottom: 1rem;
 `;
@@ -229,14 +231,7 @@ export const SkillCategory = styled.div`
   background-color: ${props => props.theme.colors.cardBg};
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: ${props => props.noShadow ? 'none' : '0 4px 6px rgba(0, 0, 0, 0.1)'};
-  transform: ${props => props.noTransform ? 'none' : 'translateY(0)'};
-  transition: ${props => props.noTransform ? 'none' : 'transform 0.3s ease, box-shadow 0.3s ease'};
-
-  &:hover {
-    transform: ${props => props.noTransform ? 'none' : 'translateY(-5px)'};
-    box-shadow: ${props => props.noShadow ? 'none' : '0 10px 15px rgba(0, 0, 0, 0.2)'};
-  }
+  border: 1px solid ${props => props.theme.colors.border};
 `;
 
 export const SkillItem = styled.div`
@@ -261,7 +256,7 @@ export const ContactItem = styled.div`
 
 export const ContactIcon = styled.div`
   font-size: 1.5rem;
-  color: ${props => props.theme.colors.flame};
+  color: ${props => props.theme.colors.text};
   margin-right: 1rem;
   width: 30px;
   text-align: center;
@@ -293,14 +288,15 @@ export const SocialButton = styled.a`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background-color: rgba(222, 84, 30, 0.1);
-  border-radius: 8px;
-  color: ${props => props.theme.colors.textLight};
+  background-color: ${props => props.theme.colors.gray100};
+  border-radius: 12px;
+  color: ${props => props.theme.colors.text};
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid ${props => props.theme.colors.border};
 
   &:hover {
-    background-color: rgba(222, 84, 30, 0.2);
+    background-color: ${props => props.theme.colors.gray200};
   }
 
   i {

@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavContainer = styled.nav`
-  background-color: ${props => props.theme.colors.drabDarkBrown};
+  background-color: ${props => props.theme.colors.background};
   padding: 0.5rem 0;
-  border-bottom: 3px solid ${props => props.theme.colors.flame};
+  border-bottom: 1px solid ${props => props.theme.colors.border};
 `;
 
 const NavContent = styled.div`
@@ -22,11 +22,13 @@ const NavContent = styled.div`
 
 const MobileMenuButton = styled.button`
   display: none;
-  background: none;
-  border: none;
-  color: ${props => props.theme.colors.textLight};
+  background: ${props => props.theme.colors.gray100};
+  border: 1px solid ${props => props.theme.colors.border};
+  color: ${props => props.theme.colors.text};
   font-size: 1.5rem;
   cursor: pointer;
+  border-radius: 12px;
+  padding: 0.25rem 0.5rem;
   
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     display: block;
@@ -59,21 +61,24 @@ const NavItem = styled.li`
 `;
 
 const StyledNavLink = styled(NavLink)`
-  color: ${props => props.theme.colors.textLight};
+  color: ${props => props.theme.colors.text};
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border-radius: 12px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
 
   &:hover {
-    background-color: ${props => props.theme.colors.flame};
-    color: ${props => props.theme.colors.textDark};
+    background-color: ${props => props.theme.colors.gray100};
+    color: ${props => props.theme.colors.text};
+    border-color: ${props => props.theme.colors.border};
   }
   
   &.active {
-    background-color: ${props => props.theme.colors.flame};
-    color: ${props => props.theme.colors.textDark};
+    background-color: ${props => props.theme.colors.gray100};
+    color: ${props => props.theme.colors.text};
+    border-color: ${props => props.theme.colors.border};
   }
 `;
 

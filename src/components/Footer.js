@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background-color: ${props => props.theme.colors.darkerBlue};
+  background-color: ${props => props.theme.colors.background};
   padding: 2rem 0;
   text-align: center;
   margin-top: 3rem;
+  border-top: 1px solid ${props => props.theme.colors.border};
 `;
 
 const FooterContent = styled.div`

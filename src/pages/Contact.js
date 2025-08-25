@@ -73,10 +73,6 @@ const Contact = () => {
                   <i className="fab fa-linkedin"></i>
                   <span>LinkedIn</span>
                 </SocialButton>
-                <SocialButton href="https://linktr.ee/egecakar" target="_blank">
-                  <i className="fas fa-link"></i>
-                  <span>LinkTree</span>
-                </SocialButton>
               </SocialGrid>
             </SocialConnections>
           </Card>

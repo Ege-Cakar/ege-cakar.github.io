@@ -9,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${props => props.theme.fonts.primary};
-    background-color: ${props => props.theme.colors.blackOlive};
-    color: ${props => props.theme.colors.textLight};
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
     line-height: 1.6;
   }
 
@@ -31,12 +31,12 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.flame};
-    transition: color 0.3s ease;
+    color: ${props => props.theme.colors.text};
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
 
   a:hover {
-    color: ${props => props.theme.colors.dutchWhite};
+    color: ${props => props.theme.colors.gray600};
   }
 
   ul, ol {

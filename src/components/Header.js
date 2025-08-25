@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
-  background-color: ${props => props.theme.colors.darkerBlue};
+  background-color: ${props => props.theme.colors.background};
   padding: 1.5rem 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid ${props => props.theme.colors.border};
 `;
 
 const HeaderContent = styled.div`
@@ -25,7 +25,7 @@ const HeaderContent = styled.div`
 const Logo = styled(Link)`
   font-size: 1.8rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.textLight};
+  color: ${props => props.theme.colors.text};
   text-decoration: none;
 `;
 
@@ -35,12 +35,14 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled.a`
-  color: ${props => props.theme.colors.textLight};
+  color: ${props => props.theme.colors.text};
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0.25rem;
+  border-radius: 10px;
 
   &:hover {
-    color: ${props => props.theme.colors.accentTeal};
+    background-color: ${props => props.theme.colors.gray100};
   }
 `;
 

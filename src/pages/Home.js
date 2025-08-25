@@ -32,11 +32,11 @@ const Home = () => {
           <HeroContent>
             <HeroText>
               <h2>Ege Cakar</h2>
-              <Subtitle>Machine Learning | Physics | Applied Mathematics</Subtitle>
+              <Subtitle>Machine Learning | Physics </Subtitle>
               <p>
-                I'm a second year undergraduate at Harvard College double concentrating in Statistics and Physics, 
-                with an Integrated Masters in Applied Mathematics. I'm interested in machine learning broadly — 
-                my current area of interest is mathematical and semantic reasoning.
+                I'm a third-year undergraduate (junior) at Harvard College, joint concentrating in Statistics and Physics, with (hopefully) an Integrated Masters in Computer Science. My academic journey is driven by curiosity about how we can use computational methods to understand complex systems such as intelligence.
+                I'm particularly fascinated by how neural networks learn to represent and process structured information, solving reasoning tasks humans excel at, and breaking down reasoning steps. 
+                Outside of academics, I love reading, music, taking walks, biking, spending time with friends and family, cooking, and games. I'm always open to collaborations and discussions about interesting projects or research opportunities.
               </p>
               <HeroButtons>
                 <Button href="/projects" as={Link} to="/projects" marginRight>
@@ -77,7 +77,6 @@ const Home = () => {
               </Button>
             </ProjectContent>
           </ProjectCard>
-
           <ProjectCard>
             <ProjectContent>
               <CardTitle>FocusCaption</CardTitle>

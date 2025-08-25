@@ -38,11 +38,11 @@ const ResumeTitle = styled.h3`
 const ResumeSubtitle = styled.h4`
   margin: 0;
   font-weight: 500;
-  color: ${props => props.theme.colors.battleshipGray};
+  color: ${props => props.theme.colors.text};
 `;
 
 const ResumeDates = styled.span`
-  color: ${props => props.theme.colors.battleshipGray};
+  color: ${props => props.theme.colors.text};
   font-weight: 500;
   
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {

@@ -36,30 +36,27 @@ const Research = () => {
           <PositionSubtitle>Student Researcher | June 2024 - Present | Cambridge, MA</PositionSubtitle>
           
           <ResearchContent>
-            <h3>Research Focus</h3>
-            <p>Investigating compositional Boolean calculation tasks across different neural network architectures including MLPs, LSTMs, and Transformers.</p>
+          <h3>Research Focus</h3>
+            <p>Investigated compositional Boolean calculation tasks across diverse network architectures such as MLPs, LSTMs and Transformers, also looking at out-of-distribution performance and in-context learning.</p>
+            <p>Currently working on analyzing abstract equality reasoning with MLP Mixer models, in different settings such as image, and different "equality" definitions.</p>
             
             <h3>Key Achievements</h3>
             <ul>
-              <li>Achieved consistent performance across widths with µp normalization in MLPs (KRANIUM fellow over Summer 2024)</li>
-              <li>Explored self-supervised learning (SimCLR) for assessing representation quality (KURE fellow over Fall 2024)</li>
-              <li>Investigating methods for transforming in-context knowledge in LLMs into persistent memory</li>
-              <li>Ran large-scale experiments on the Kempner High Performance Cluster</li>
+              <li>Achieved consistent performance in such tasks across widths by applying µp normalization in MLPs. Selected as KRANIUM research fellow over Summer 2024.</li>
+              <li>Leveraged self-supervised learning approaches (e.g., SimCLR) to assess how representations that are learned through SSL impact classification accuracy. Selected as KURE research fellow over Fall 2024.</li>
+              <li>Investigated methods to transform in-context knowledge in LLMs into persistent memory, enabling on-the-fly model parameter updates for continuous learning. </li>
+              <li>Currently working on analyzing equality reasoning with MLP Mixer models, and formulating a formal understanding of the equality reasoning problem.</li>
+              <li>Ran large-scale experiments on the Kempner High Performance Cluster.</li>
+              <li>Presented in lab meetings and a poster session over the summer.</li>
             </ul>
-            
-            <h3>Research Methodology</h3>
-            <p>My research involves designing controlled experiments to understand how different neural network architectures learn and represent compositional tasks. I use a combination of theoretical analysis and empirical evaluation to identify the strengths and limitations of each architecture.</p>
-            
-            <h3>Impact</h3>
-            <p>This research contributes to our understanding of how neural networks process and represent structured information, with implications for improving the mathematical reasoning capabilities of AI systems.</p>
           </ResearchContent>
         </Card>
       </ResearchPosition>
       
       <ResearchPosition>
         <Card>
-          <CardTitle>Cambridge University Center for Human Inspired Artificial Intelligence - Kristensson Lab</CardTitle>
-          <PositionSubtitle>Student Researcher | June 2025 - Current | Cambridge, UK</PositionSubtitle>
+          <CardTitle>Cambridge University Department of Engineering - Kristensson Lab</CardTitle>
+          <PositionSubtitle>Student Researcher | June 2025 - August 2025 | Cambridge, UK</PositionSubtitle>
           
           <ResearchContent>
             <p>Selected as Harvard-Cambridge Summer Fellowship Scholar.</p>

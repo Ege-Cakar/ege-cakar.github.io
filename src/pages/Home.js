@@ -62,9 +62,9 @@ const Home = () => {
         <Grid>
         <ProjectCard>
         <ProjectContent>
-          <CardTitle>Structured Argumentation for Trust in AI (IAAI-26 Submission)</CardTitle>
+          <CardTitle>Cambridge Summer Fellowship</CardTitle>
           <p>
-            First-author paper submitted to IAAI-26 achieving SOTA results on argument mining. Developed novel "agnostic explainability" framework treating AI systems like humans through verifiable reasoning chains.
+            First-author paper submitted to IAAI-26 achieving SOTA results on argument mining. Developed "agnostic explainability", treating AI systems like humans through verifiable reasoning chains.
           </p>
           <TagContainer>
             <Tag>Explainability</Tag>

@@ -64,7 +64,7 @@ const Home = () => {
         <ProjectContent>
           <CardTitle>Cambridge Summer Fellowship</CardTitle>
           <p>
-            First-author paper submitted to IAAI-26 achieving SOTA results on argument mining. Developed "agnostic explainability", treating AI systems like humans through verifiable reasoning chains.
+            First-author paper submitted to IAAI-26 achieving SOTA results on argument mining. Developed novel framework treating AI systems like humans for verifiable reasoning and trust.
           </p>
           <TagContainer>
             <Tag>Explainability</Tag>

@@ -5,7 +5,8 @@ import {
   PageTitle,
   Card,
   CardTitle,
-  Grid
+  Grid,
+  Button
 } from '../components/UIComponents';
 
 const ResearchPosition = styled.section`
@@ -68,8 +69,8 @@ const Research = () => {
             <p>Selected as Harvard-Cambridge Summer Fellowship Scholar.</p>
             
             <h3>Research Interests</h3>
-            <p>At the Kristensson Lab, I worked on creating automated risk-analysis systems with agentic large language models, with a focus on creating an intuitive yet powerful package that is ready to be deployed by institutions, as well as automatic verification of intenral consistency in documents.</p>
-
+            <p>At the Kristensson Lab, I worked on creating automated risk-analysis systems with agentic large language models, with a focus on creating an intuitive yet powerful package that is ready to be deployed by institutions, as well as automatic verification of internal consistency in documents.</p>
+            <p>The main contribution of this work is the creation of a novel "source-agnostic explanatory verification" framework, treating AI systems like humans through verifiable reasoning chains.</p>
             <h3>Key Achievements</h3>
               <ul>
                 <li>First-author paper submitted to IAAI-26(Under AAAI): "The Argument is the Explanation: Structured Argumentation for Trust in Agents" (under review)</li>
@@ -79,6 +80,9 @@ const Research = () => {
                 <li>Built production-ready Docker containers for deployment, published as docker.io/egecakar/edu-classifier</li>
                 <li>Demonstrated computational efficiency: ModernBERT matches GPT-4.1 performance at a fraction of the size (GPT-4.1's exact size is undisclosed, but ModernBERT is ~500M parameters)</li>
               </ul>
+              <Button href="https://github.com/Ege-Cakar/Structured-Argumentation-For-Trust" target="_blank" rel="noopener noreferrer">
+                View Repo & Paper
+              </Button>
           </ResearchContent>
         </Card>
       </ResearchPosition>

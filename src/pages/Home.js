@@ -64,13 +64,12 @@ const Home = () => {
         <ProjectContent>
           <CardTitle>Structured Argumentation for Trust in AI (IAAI-26 Submission)</CardTitle>
           <p>
-            First-author paper submitted to IAAI-26 (under review), achieving state-of-the-art results: 94.44 F1 on AAEC literal extraction, 0.81 F1 on AMT relation classification. Introduces "agnostic explainability" framework. More info on Research tab.
+            First-author paper submitted to IAAI-26 achieving SOTA results on argument mining. Developed novel "agnostic explainability" framework treating AI systems like humans through verifiable reasoning chains.
           </p>
           <TagContainer>
-            <Tag>Explainable AI</Tag>
-            <Tag>Large Language Models</Tag>
-            <Tag>Multi-Agent Systems</Tag>
-            <Tag>Argumentation</Tag>
+            <Tag>Explainability</Tag>
+            <Tag>LLMs</Tag>
+            <Tag>Agents</Tag>
           </TagContainer>
           <Button href="/research" as={Link} to="/research">
             Learn More

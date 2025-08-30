@@ -36,12 +36,18 @@ const Research = () => {
           <PositionSubtitle>Student Researcher | June 2024 - Present | Cambridge, MA</PositionSubtitle>
           
           <ResearchContent>
-          <h3>Research Focus</h3>
-            <p>Investigated compositional Boolean calculation tasks across diverse network architectures such as MLPs, LSTMs and Transformers, also looking at out-of-distribution performance and in-context learning.</p>
-            <p>Currently working on analyzing abstract equality reasoning with MLP Mixer models, in different settings such as image, and different "equality" definitions.</p>
-            
+          <h3>Current Research Focus</h3>
+          <p>Currently developing MLP HyperMixer architectures with enforced causality during training for NLP tasks, comparing their performance and efficiency against transformers. This work explores whether we can achieve transformer-level performance with simpler architectures by incorporating the right inductive biases during training.</p>
+
+          <h3>Summer 2024 Research (KRANIUM Fellow)</h3>
+          <p>Investigated compositional Boolean calculation tasks across diverse network architectures including MLPs, LSTMs, and Transformers. Analyzed out-of-distribution performance and in-context learning capabilities. Achieved consistent performance across network widths by applying µP normalization in MLPs, demonstrating the importance of proper initialization schemes for scalable architectures.</p>
+
+          <h3>Fall 2024 Research (KURE Fellow)</h3>
+          <p>Leveraged self-supervised learning approaches, particularly SimCLR, to assess how representations learned through SSL impact classification accuracy. Explored the relationship between unsupervised pre-training objectives and downstream task performance.</p>
+
             <h3>Key Achievements</h3>
             <ul>
+              <li>Developed novel architectural variations like the causal hypermixer model.</li>
               <li>Achieved consistent performance in such tasks across widths by applying µp normalization in MLPs. Selected as KRANIUM research fellow over Summer 2024.</li>
               <li>Leveraged self-supervised learning approaches (e.g., SimCLR) to assess how representations that are learned through SSL impact classification accuracy. Selected as KURE research fellow over Fall 2024.</li>
               <li>Investigated methods to transform in-context knowledge in LLMs into persistent memory, enabling on-the-fly model parameter updates for continuous learning. </li>
@@ -62,7 +68,17 @@ const Research = () => {
             <p>Selected as Harvard-Cambridge Summer Fellowship Scholar.</p>
             
             <h3>Research Interests</h3>
-            <p>At the Kristensson Lab, I will be working on creating automated risk-analysis systems with agentic large language models, with a focus on creating an intuituve yet powerful package that is ready to be deployed by institutions.</p>
+            <p>At the Kristensson Lab, I worked on creating automated risk-analysis systems with agentic large language models, with a focus on creating an intuitive yet powerful package that is ready to be deployed by institutions, as well as automatic verification of intenral consistency in documents.</p>
+
+            <h3>Key Achievements</h3>
+              <ul>
+                <li>First-author paper submitted to IAAI-26(Under AAAI): "The Argument is the Explanation: Structured Argumentation for Trust in Agents" (under review)</li>
+                <li>Achieved state-of-the-art performance in experiments: 94.44 F1 on AAEC literal extraction, 0.81 F1 on AMT relation classification</li>
+                <li>Developed complete multi-agent SWIFT risk assessment system with hub-spoke architecture</li>
+                <li>Created open-source Bipolar ABA (Assumption-Based Argumentation) Python package with SAT-based solver</li>
+                <li>Built production-ready Docker containers for deployment, published as docker.io/egecakar/edu-classifier</li>
+                <li>Demonstrated computational efficiency: ModernBERT matches GPT-4.1 performance at a fraction of the size (GPT-4.1's exact size is undisclosed, but ModernBERT is ~500M parameters)</li>
+              </ul>
           </ResearchContent>
         </Card>
       </ResearchPosition>

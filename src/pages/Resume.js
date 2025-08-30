@@ -83,7 +83,7 @@ const Resume = () => {
             </ResumeHeader>
             <ResumeContent>
               <p><strong>Relevant Coursework:</strong> Machine Learning, Reinforcement Learning, Biological and Artificial Intelligence, Probability, Statistical Inference, Algorithms and Their Limitations, Statistical Mechanics and Thermodynamics, Linear Algebra, Multivariable Calculus, Quantum Mechanics</p>
-              <p><strong>Honors:</strong> John Harvard Scholar, given to the top 10% of class.</p>
+              <p><strong>Honors:</strong> John Harvard Scholar (2023-2024), given to the top 10% of class.</p>
             </ResumeContent>
           </ResumeItem>
           
@@ -104,11 +104,12 @@ const Resume = () => {
         <Card>
           <ResumeItem>
             <ResumeContent>
-              <p><strong>Machine learning frameworks:</strong> PyTorch, numpy, TensorFlow, Gymnasium, PettingZoo, Wandb, TensorBoard</p>
-              <p><strong>Programming and Design:</strong> Python, C++, Mathematica, MATLAB, SLURM, Github, Adobe Photoshop, Adobe Illustrator, Matplotlib and Seaborn</p>
+            <p><strong>Machine learning frameworks:</strong> PyTorch, Jax, numpy, TensorFlow, Gymnasium, PettingZoo, Wandb, TensorBoard, Hugging Face Transformers</p>
+            <p><strong>Programming and Design:</strong> Python, C++, React, Mathematica, MATLAB, SLURM, Docker, Github, Adobe Photoshop, Adobe Illustrator, Matplotlib and Seaborn</p>
+            <p><strong>AI/ML Tools:</strong> OpenAI API, Anthropic API, Google Vertex AI, RunPod, LangGraph+:LangChain, SAT Solvers (Glucose, Or-Tools)</p>
             </ResumeContent>
           </ResumeItem>
-          
+
           <ResumeItem>
             <ResumeHeader>
               <div>
@@ -167,11 +168,12 @@ const Resume = () => {
             </ResumeHeader>
             <ResumeContent>
               <ul>
-                <li>Investigated compositional Boolean calculation tasks across diverse network architectures such as MLPs, LSTMs and Transformers, also looking at out-of-distribution performance and in-context learning. Achieved consistent performance in such tasks across widths by applying µp normalization in MLPs. Selected as KRANIUM research fellow over Summer 2024.</li>
-                <li>Leveraged self-supervised learning approaches (e.g., SimCLR) to assess how representations that are learned through SSL impact classification accuracy. Selected as KURE research fellow over Fall 2024.</li>
-                <li>Investigating methods to transform in-context knowledge in LLMs into persistent memory, enabling on-the-fly model parameter updates for continuous learning.</li>
-                <li>Ran large-scale experiments on the Kempner High Performance Cluster.</li>
-                <li>Presented in lab meetings and a poster session over the summer.</li>
+              <li>Investigated compositional Boolean calculation tasks across diverse network architectures (MLPs, LSTMs, Transformers), achieving consistent performance with µP normalization. Selected as KRANIUM fellow (Summer 2024).</li>
+              <li>Leveraged self-supervised learning approaches (e.g., SimCLR) to assess how SSL representations impact classification accuracy. Selected as KURE fellow (Fall 2024).</li>
+              <li>Currently developing MLP HyperMixer architectures with enforced causality for NLP tasks, comparing performance against transformers.</li>
+              <li>Developed novel architectural variations such as causal hypermixer models.</li>
+              <li>Ran large-scale experiments on the Kempner High Performance Cluster using SLURM and PyTorch.</li>
+              <li>Presented research findings in lab meetings and poster sessions.</li>
               </ul>
             </ResumeContent>
           </ResumeItem>
@@ -186,8 +188,10 @@ const Resume = () => {
             </ResumeHeader>
             <ResumeContent>
               <ul>
-                <li>Selected as Harvard-Cambridge Summer Fellowship Scholar.</li>
-                <li>Working on Automated Risk-Analysis systems, utilizing agentic large language models with first-order logic techniques to create reliable, provably correct, and interpretable analysis reports.</li>
+              <li>Selected as Harvard-Cambridge Summer Fellowship Scholar.</li>
+              <li>Developed automated risk-analysis systems using agentic large language models with structured argumentation frameworks.</li>
+              <li>First-author paper submitted to IAAI-26 (under review), achieving state-of-the-art results in argument mining benchmarks.</li>
+              <li>Created open-source Bipolar ABA implementation and production-ready Docker containers for deployment.</li>
               </ul>
             </ResumeContent>
           </ResumeItem>

@@ -58,8 +58,26 @@ const Home = () => {
       </Section>
 
       <Section className="featured-projects">
-        <SectionTitle>Featured Projects</SectionTitle>
+        <SectionTitle>Featured Projects & Research</SectionTitle>
         <Grid>
+        <ProjectCard>
+        <ProjectContent>
+          <CardTitle>Structured Argumentation for Trust in AI (IAAI-26 Submission)</CardTitle>
+          <p>
+            First-author paper submitted to IAAI-26 (under review), achieving state-of-the-art results: 94.44 F1 on AAEC literal extraction, 0.81 F1 on AMT relation classification. Introduces "agnostic explainability" framework. More info on Research tab.
+          </p>
+          <TagContainer>
+            <Tag>Explainable AI</Tag>
+            <Tag>Large Language Models</Tag>
+            <Tag>Multi-Agent Systems</Tag>
+            <Tag>Argumentation</Tag>
+          </TagContainer>
+          <Button href="/research" as={Link} to="/research">
+            Learn More
+          </Button>
+        </ProjectContent>
+      </ProjectCard>
+
           <ProjectCard>
             <ProjectContent>
               <CardTitle>Eco-Civilization MDP</CardTitle>
@@ -124,20 +142,20 @@ const Home = () => {
         <SectionTitle>Skills Overview</SectionTitle>
         <Card>
           <SkillsContainer>
-            <SkillCategory noShadow noTransform>
-              <CardTitle>Machine Learning</CardTitle>
-              <p>PyTorch, NumPy, TensorFlow, Gymnasium, Reinforcement Learning, Computer Vision, Natural Language Processing</p>
-            </SkillCategory>
+          <SkillCategory noShadow noTransform>
+            <CardTitle>Machine Learning & AI</CardTitle>
+            <p>PyTorch, Jax, Hugging Face Transformers, Reinforcement Learning (PPO, Multi-Agent), Computer Vision (CNNs, Saliency), NLP & LLMs (BERT-based models, Llama, GPT, Claude, Gemini), Self-Supervised Learning (SimCLR), Argument Mining</p>
+          </SkillCategory>
 
-            <SkillCategory noShadow noTransform>
-              <CardTitle>Programming</CardTitle>
-              <p>Python, C++, Mathematica, MATLAB, JavaScript, HTML/CSS</p>
-            </SkillCategory>
+          <SkillCategory noShadow noTransform>
+            <CardTitle>Programming & Infrastructure</CardTitle>
+            <p>Python, C++, JavaScript/React, MATLAB, Mathematica, Docker, SLURM/HPC, Cloud Platforms (RunPod, GCP), Git/GitHub, SAT Solvers</p>
+          </SkillCategory>
 
-            <SkillCategory noShadow noTransform>
-              <CardTitle>Design & Visualization</CardTitle>
-              <p>Adobe Photoshop, Adobe Illustrator, Matplotlib, Seaborn</p>
-            </SkillCategory>
+          <SkillCategory noShadow noTransform>
+            <CardTitle>Research & Analysis</CardTitle>
+            <p>Experimental Design, Statistical Analysis, Paper Writing, Poster Presentations, Open Source Development, Reproducible Research, High-Performance Computing</p>
+          </SkillCategory>
           </SkillsContainer>
         </Card>
       </Section>

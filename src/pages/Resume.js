@@ -76,7 +76,7 @@ const Resume = () => {
             <ResumeHeader>
               <div>
                 <ResumeTitle>Harvard University</ResumeTitle>
-                <ResumeSubtitle>AB Double Concentration in Statistics and Physics, Secondary in General Philosophy</ResumeSubtitle>
+                <ResumeSubtitle>AB Joint Concentration in Statistics and Physics, Intended SM in Computer Science</ResumeSubtitle>
                 <p>GPA: 3.91/4.0</p>
               </div>
               <ResumeDates>May 2027</ResumeDates>

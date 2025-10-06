@@ -1,5 +1,11 @@
 # Project Plan: Make Theming More Generic
 
+## Addendum: Deployment (GitHub Pages / SPA)
+- [x] Configure SPA fallback by copying build/index.html to build/404.html in postbuild
+- [x] Deploy to standard gh-pages branch and point GitHub Pages to it
+- [ ] Optional: Switch homepage back to custom domain (egecakar.com) after DNS/CNAME verified
+- [ ] Optional: Add CI workflow to run deploy on push to main
+
 ## Addendum: Page Transitions & Depth Effects
 - [x] Page-to-page transition animation:
   - [x] Implement a route transition wrapper keyed by `location` to animate on navigation

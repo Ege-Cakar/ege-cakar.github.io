@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -8,9 +8,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${props => props.theme.fonts.primary};
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    font-family: ${(props) => props.theme.fonts.primary};
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
     line-height: 1.6;
   }
 
@@ -31,12 +31,12 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.text};
-    transition: color 0.2s ease, background-color 0.2s ease;
+    color: ${(props) => props.theme.colors.text};
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
   }
 
   a:hover {
-    color: ${props => props.theme.colors.gray600};
+    color: ${(props) => props.theme.colors.gray600};
   }
 
   ul, ol {
@@ -50,6 +50,15 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 `;
 

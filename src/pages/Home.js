@@ -39,13 +39,12 @@ const Home = () => {
           }}
         >
           <a
-            href="https://www.lesswrong.com/posts/xZA9cXkiRhnATpifZ/cs-2881r-week-3-adversarial-robustness-jailbreaks-prompt"
+            href="https://arxiv.org/abs/2510.03442"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#111827", textDecoration: "none" }}
           >
-            New: Blog post on Adversarial Robustness & Jailbreaks based on my AI
-            Safety Class
+            🎉 My first paper is on arXiv, and I'm first author! 🎉
           </a>
         </div>
         <Card>

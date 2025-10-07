@@ -349,7 +349,7 @@ const Resume = () => {
                   Scholar (1 of 4 annually)
                 </ResumeSubtitle>
               </div>
-              <ResumeDates>March 2025 – September 2025</ResumeDates>
+              <ResumeDates>June 2025 – August 2025</ResumeDates>
             </ResumeHeader>
             <ResumeContent>
               <ul>
@@ -422,7 +422,7 @@ const Resume = () => {
                   financial aid.
                 </li>
                 <li>
-                  Lead annual AI treks to SF and NYC, visiting 5+ companies with
+                  Lead annual AI trek to SF or NYC, visiting 5+ companies with
                   10+ students; coordinate industry partnerships and manage
                   student projects.
                 </li>

@@ -162,13 +162,31 @@ const Research = () => {
                 GPT-4.1 performance at a fraction of the size (GPT-4.1's exact
                 size is undisclosed, but ModernBERT is ~500M parameters)
               </li>
+              <li>
+                First-author paper now on arXiv:{" "}
+                <a
+                  href="https://arxiv.org/abs/2510.03442"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  arXiv:2510.03442
+                </a>
+              </li>
             </ul>
             <Button
               href="https://github.com/Ege-Cakar/Structured-Argumentation-For-Trust"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Repo & Paper
+              View Repo
+            </Button>
+            <Button
+              href="https://arxiv.org/abs/2510.03442"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginLeft: "0.5rem" }}
+            >
+              View Paper
             </Button>
           </ResearchContent>
         </Card>

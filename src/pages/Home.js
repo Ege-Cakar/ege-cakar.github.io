@@ -216,13 +216,11 @@ const Home = () => {
             <SkillCategory noShadow noTransform>
               <CardTitle>Machine Learning & AI</CardTitle>
               <p>
-                PyTorch, Jax, Hugging Face Transformers, Reinforcement Learning
-                (PPO, Multi-Agent), Computer Vision (CNNs, Saliency), NLP & LLMs
-                (BERT-based models, Llama, OpenAI/Anthropic/Google APIs), LLM
-                Safety & Alignment (adversarial prompting, refusal
-                representations), Optimal Transport, Automated Theorem Proving
-                (Lean), Efficient Training (low-rank activation compression),
-                Self-Supervised Learning (SimCLR), Argument Mining
+                PyTorch/Jax, Hugging Face Transformers, RL (PPO, multi-agent),
+                Computer Vision, NLP/LLMs (BERT, Llama; OpenAI/Anthropic/Google
+                APIs), AI safety (adversarial prompting, refusal reps), Optimal
+                Transport, Lean theorem proving, activation compression, SimCLR,
+                argument mining
               </p>
             </SkillCategory>
 

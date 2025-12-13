@@ -4,11 +4,6 @@ import {
   PageTitle,
   SectionTitle,
   Card,
-  CardTitle,
-  SkillsContainer,
-  SkillCategory,
-  SkillItem,
-  SkillName,
 } from "../components/UIComponents";
 
 const ResumeSection = styled.section`
@@ -157,13 +152,118 @@ const Resume = () => {
               </p>
               <p>
                 <strong>Programming and Design:</strong> Python, C++, React,
-                Mathematica, MATLAB, SLURM, Docker, GitHub, Matplotlib & Seaborn
+                Lean, Mathematica, MATLAB, SLURM, Docker, GitHub, Matplotlib &
+                Seaborn
               </p>
               <p>
                 <strong>AI/ML Tools:</strong> LangGraph, AutoGen,
-                OpenAI/Anthropic API, Docker, RunPod/Cloud services, Fine-Tuning
-                (LoRA)
+                OpenAI/Anthropic/Google APIs, Docker, RunPod/Cloud services,
+                Fine-Tuning (LoRA)
               </p>
+            </ResumeContent>
+          </ResumeItem>
+
+          <ResumeItem>
+            <ResumeHeader>
+              <div>
+                <ResumeTitle>
+                  LASER: Memory-Optimized TRMs (CS2420 Final Project)
+                </ResumeTitle>
+              </div>
+            </ResumeHeader>
+            <ResumeContent>
+              <ul>
+                <li>
+                  Built LASER, a dynamic activation-compression framework for
+                  training Tiny Recursive Models (TRMs), using fast-subspace
+                  tracking for approximating SVD and resetting through a
+                  cheap-to-calculate fidelity metric.
+                </li>
+                <li>
+                  Achieved ~60% activation memory reduction with negligible
+                  accuracy and speed impact in experiments.
+                </li>
+                <li>
+                  GitHub:{" "}
+                  <a
+                    href="https://github.com/Ege-Cakar/Memory-Optimized-TRMs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/Ege-Cakar/Memory-Optimized-TRMs
+                  </a>
+                </li>
+              </ul>
+            </ResumeContent>
+          </ResumeItem>
+
+          <ResumeItem>
+            <ResumeHeader>
+              <div>
+                <ResumeTitle>
+                  ProofGOAT: OT-Based Proof Generation (CS2840 Final Project)
+                </ResumeTitle>
+              </div>
+            </ResumeHeader>
+            <ResumeContent>
+              <ul>
+                <li>
+                  Developed a Neural Optimal Transport framework to align
+                  natural-language proofs with formal Lean proofs at the token
+                  level, supporting variable-length sequences via a void-token
+                  balanced OT setup.
+                </li>
+                <li>
+                  Achieved ~80% cosine alignment between NL→Lean transported
+                  tokens and the corresponding Lean tokens; aiming to keep fast
+                  verification signals accurate during RL for mathematics for
+                  larger language models.
+                </li>
+                <li>
+                  GitHub:{" "}
+                  <a
+                    href="https://github.com/Ege-Cakar/ProofGOAT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/Ege-Cakar/ProofGOAT
+                  </a>
+                </li>
+              </ul>
+            </ResumeContent>
+          </ResumeItem>
+
+          <ResumeItem>
+            <ResumeHeader>
+              <div>
+                <ResumeTitle>
+                  Improving GCG: Soft-GCG + Activation Objectives (CS2881R Final
+                  Project)
+                </ResumeTitle>
+              </div>
+            </ResumeHeader>
+            <ResumeContent>
+              <ul>
+                <li>
+                  Implemented Soft-GCG, a continuous relaxation of Greedy
+                  Coordinate Gradient (GCG), achieving ~43x speedup over
+                  standard GCG with negligible loss in attack success.
+                </li>
+                <li>
+                  Explored activation-guided objectives that directly minimize
+                  projections onto refusal directions in the residual stream.
+                </li>
+                <li>
+                  GitHub:{" "}
+                  <a
+                    href="https://github.com/Ege-Cakar/ImprovingGCG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/Ege-Cakar/ImprovingGCG
+                  </a>
+                </li>
+              </ul>
             </ResumeContent>
           </ResumeItem>
 
@@ -432,65 +532,10 @@ const Resume = () => {
         </Card>
       </ResumeSection>
 
-      <ResumeSection>
-        <SectionTitle>Skills</SectionTitle>
-        <Card>
-          <SkillsContainer>
-            <SkillCategory>
-              <CardTitle>Programming</CardTitle>
-              <SkillItem>
-                <SkillName>Python</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>C++</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>MATLAB</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>Mathematica</SkillName>
-              </SkillItem>
-            </SkillCategory>
-
-            <SkillCategory>
-              <CardTitle>Machine Learning</CardTitle>
-              <SkillItem>
-                <SkillName>PyTorch</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>TensorFlow</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>Reinforcement Learning</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>Computer Vision</SkillName>
-              </SkillItem>
-            </SkillCategory>
-
-            <SkillCategory>
-              <CardTitle>Tools</CardTitle>
-              <SkillItem>
-                <SkillName>Git/GitHub</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>SLURM</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>Adobe Photoshop</SkillName>
-              </SkillItem>
-              <SkillItem>
-                <SkillName>Adobe Illustrator</SkillName>
-              </SkillItem>
-            </SkillCategory>
-          </SkillsContainer>
-        </Card>
-      </ResumeSection>
-
-      <ResumeSection>
-        <SectionTitle>PDF CV</SectionTitle>
-        <Card>
-          <iframe
+	      <ResumeSection>
+	        <SectionTitle>PDF CV</SectionTitle>
+	        <Card>
+	          <iframe
             title="Ege Cakar - Embedded Resume"
             src="https://docs.google.com/document/d/1jzbjXIH8LOpnRMIYW4cbgsuk_og59mL2VI3CmVdl3Bo/preview"
             width="100%"

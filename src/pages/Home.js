@@ -23,30 +23,34 @@ import {
 } from "../components/UIComponents";
 import profilePic from "../images/pfp.jpg";
 
+const SHOW_ARXIV_BANNER = false;
+
 const Home = () => {
   return (
     <>
       <Section className="hero">
         <PageTitle>Welcome!</PageTitle>
-        <div
-          style={{
-            margin: "0.75rem 0 1rem",
-            backgroundColor: "#f5f5f5",
-            border: "1px solid #d1d5db",
-            borderRadius: "8px",
-            padding: "0.5rem 0.75rem",
-            textAlign: "center",
-          }}
-        >
-          <a
-            href="https://arxiv.org/abs/2510.03442"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#111827", textDecoration: "none" }}
+        {SHOW_ARXIV_BANNER && (
+          <div
+            style={{
+              margin: "0.75rem 0 1rem",
+              backgroundColor: "#f5f5f5",
+              border: "1px solid #d1d5db",
+              borderRadius: "8px",
+              padding: "0.5rem 0.75rem",
+              textAlign: "center",
+            }}
           >
-            🎉 My first paper is on arXiv, and I'm first author! 🎉
-          </a>
-        </div>
+            <a
+              href="https://arxiv.org/abs/2510.03442"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#111827", textDecoration: "none" }}
+            >
+              🎉 My first paper is on arXiv, and I'm first author! 🎉
+            </a>
+          </div>
+        )}
         <Card>
           <HeroContent>
             <HeroText>
@@ -85,6 +89,77 @@ const Home = () => {
       <Section className="featured-projects">
         <SectionTitle>Featured Projects & Research</SectionTitle>
         <Grid>
+          <ProjectCard>
+            <ProjectContent>
+              <CardTitle>LASER: Memory-Optimized TRMs</CardTitle>
+              <p>
+                Dynamic activation compression for Tiny Recursive Models (TRMs),
+                using fast-subspace tracking for approximating SVD and resetting
+                through a cheap-to-calculate metric. Results: ~60% activation
+                memory reduction with negligible accuracy and speed impact.
+              </p>
+              <TagContainer>
+                <Tag>Efficient Training</Tag>
+                <Tag>Activation Compression</Tag>
+                <Tag>Memory</Tag>
+                <Tag>PyTorch</Tag>
+              </TagContainer>
+              <Button
+                href="/projects#memory-optimized-trms"
+                as={Link}
+                to="/projects"
+              >
+                Learn More
+              </Button>
+            </ProjectContent>
+          </ProjectCard>
+
+          <ProjectCard>
+            <ProjectContent>
+              <CardTitle>ProofGOAT</CardTitle>
+              <p>
+                Optimal Transport alignment between natural‑language proofs and
+                formal Lean proofs at the token level. Results: ~80% cosine
+                alignment between NL→Lean transported tokens and the
+                corresponding Lean tokens; aiming to keep fast verification
+                signals accurate during RL for math.
+              </p>
+              <TagContainer>
+                <Tag>Optimal Transport</Tag>
+                <Tag>Lean</Tag>
+                <Tag>Theorem Proving</Tag>
+                <Tag>NLP</Tag>
+              </TagContainer>
+              <Button href="/projects#proofgoat" as={Link} to="/projects">
+                Learn More
+              </Button>
+            </ProjectContent>
+          </ProjectCard>
+
+          <ProjectCard>
+            <ProjectContent>
+              <CardTitle>Improving GCG</CardTitle>
+              <p>
+                Faster jailbreak attacks: Soft‑GCG achieves ~43x speedup over
+                standard GCG with negligible performance loss. Also explores
+                activation‑guided objectives targeting refusal representations.
+              </p>
+              <TagContainer>
+                <Tag>AI Safety</Tag>
+                <Tag>Adversarial Attacks</Tag>
+                <Tag>Interpretability</Tag>
+                <Tag>Efficiency</Tag>
+              </TagContainer>
+              <Button
+                href="/projects#improving-gcg"
+                as={Link}
+                to="/projects"
+              >
+                Learn More
+              </Button>
+            </ProjectContent>
+          </ProjectCard>
+
           <ProjectCard>
             <ProjectContent>
               <CardTitle>Cambridge Summer Fellowship</CardTitle>
@@ -126,67 +201,6 @@ const Home = () => {
               </Button>
             </ProjectContent>
           </ProjectCard>
-          <ProjectCard>
-            <ProjectContent>
-              <CardTitle>FocusCaption</CardTitle>
-              <p>
-                An image captioning method that utilizes 2 CNNs in parallel with
-                a saliency prediction model to extract extra information from
-                where 'should be focused' in an image.
-              </p>
-              <TagContainer>
-                <Tag>Computer Vision</Tag>
-                <Tag>Image Captioning</Tag>
-                <Tag>CNN</Tag>
-              </TagContainer>
-              <Button href="/projects#focus-caption" as={Link} to="/projects">
-                Learn More
-              </Button>
-            </ProjectContent>
-          </ProjectCard>
-
-          <ProjectCard>
-            <ProjectContent>
-              <CardTitle>BUTLER + MacOS-Computer-Use</CardTitle>
-              <p>
-                Two connected projects: BUTLER, an AI helper that automates
-                tasks on your computer, and MacOS‑Computer‑Use, a VM control
-                tool enabling robust agentic actions on macOS.
-              </p>
-              <TagContainer>
-                <Tag>Automation</Tag>
-                <Tag>RAG</Tag>
-                <Tag>Voice</Tag>
-                <Tag>VNC</Tag>
-              </TagContainer>
-              <Button href="/projects#butler" as={Link} to="/projects#butler">
-                Learn More
-              </Button>
-            </ProjectContent>
-          </ProjectCard>
-
-          <ProjectCard>
-            <ProjectContent>
-              <CardTitle>Policivilization MDP</CardTitle>
-              <p>
-                Extending Eco Civilization MDP with more realistic terrain,
-                resources, population dynamics, and government types. Uses LLMs
-                for interpretable agent decision-making.
-              </p>
-              <TagContainer>
-                <Tag>Reinforcement Learning</Tag>
-                <Tag>LLMs</Tag>
-                <Tag>Interpretability</Tag>
-              </TagContainer>
-              <Button
-                href="/projects#policivilization"
-                as={Link}
-                to="/projects"
-              >
-                Learn More
-              </Button>
-            </ProjectContent>
-          </ProjectCard>
         </Grid>
         <ViewAll>
           <Button href="/projects" as={Link} to="/projects" outline>
@@ -204,8 +218,11 @@ const Home = () => {
               <p>
                 PyTorch, Jax, Hugging Face Transformers, Reinforcement Learning
                 (PPO, Multi-Agent), Computer Vision (CNNs, Saliency), NLP & LLMs
-                (BERT-based models, Llama, GPT, Claude, Gemini), Self-Supervised
-                Learning (SimCLR), Argument Mining
+                (BERT-based models, Llama, OpenAI/Anthropic/Google APIs), LLM
+                Safety & Alignment (adversarial prompting, refusal
+                representations), Optimal Transport, Automated Theorem Proving
+                (Lean), Efficient Training (low-rank activation compression),
+                Self-Supervised Learning (SimCLR), Argument Mining
               </p>
             </SkillCategory>
 

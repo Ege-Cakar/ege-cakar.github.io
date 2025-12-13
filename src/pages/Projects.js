@@ -40,6 +40,173 @@ const Projects = () => {
     <>
       <PageTitle>Projects</PageTitle>
 
+      <ProjectSection id="memory-optimized-trms">
+        <Card>
+          <ProjectHeader>
+            <CardTitle>LASER: Memory-Optimized TRMs</CardTitle>
+            <TagContainer>
+              <Tag>CS2420</Tag>
+              <Tag>Efficient Training</Tag>
+              <Tag>Activation Compression</Tag>
+              <Tag>Memory</Tag>
+              <Tag>PyTorch</Tag>
+            </TagContainer>
+          </ProjectHeader>
+          <ProjectContent>
+            <ProjectDescription>
+              <h3>Overview</h3>
+              <p>
+                A final project for CS2420 introducing LASER (Low‑Rank Activation
+                SVD for Efficient Recursion), a dynamic activation‑compression
+                framework for training Tiny Recursive Models (TRMs) with
+                substantially lower memory usage.
+              </p>
+
+              <h3>Details</h3>
+              <p>
+                TRMs require storing activations across many recursive steps for
+                Backpropagation Through Time (BPTT). LASER tracks an evolving
+                low‑rank activation subspace using matrix‑free updates, monitors
+                reconstruction fidelity without extra matrix calculations, and
+                uses a fidelity‑triggered “safetynet” reset that recomputes an
+                exact SVD when error accumulates. In experiments, LASER achieves
+                roughly 60% activation memory savings with negligible accuracy
+                and speed impact, and can be combined with quantization and
+                checkpointing.
+              </p>
+
+              <h3>Technologies Used</h3>
+              <ul>
+                <li>PyTorch</li>
+                <li>Online subspace tracking (matrix‑free updates)</li>
+                <li>Activation compression and quantization</li>
+                <li>Reconstruction‑error monitoring and safetynet resets</li>
+              </ul>
+
+              <ProjectLinks>
+                <Button
+                  href="https://github.com/Ege-Cakar/Memory-Optimized-TRMs"
+                  target="_blank"
+                >
+                  View on GitHub
+                </Button>
+              </ProjectLinks>
+            </ProjectDescription>
+          </ProjectContent>
+        </Card>
+      </ProjectSection>
+
+      <ProjectSection id="proofgoat">
+        <Card>
+          <ProjectHeader>
+            <CardTitle>ProofGOAT: OT‑Based Proof Generation</CardTitle>
+            <TagContainer>
+              <Tag>Optimal Transport</Tag>
+              <Tag>Lean</Tag>
+              <Tag>Automated Theorem Proving</Tag>
+              <Tag>NLP</Tag>
+            </TagContainer>
+          </ProjectHeader>
+          <ProjectContent>
+            <ProjectDescription>
+              <h3>Overview</h3>
+              <p>
+                A final project for CS2840 (Optimal Transport & Machine
+                Learning), developing an Optimal Transport framework that aligns
+                natural‑language proofs with formal Lean proofs at the token
+                level.
+              </p>
+
+              <h3>Details</h3>
+              <p>
+                The approach learns a Neural Optimal Transport map between
+                token‑level embedding distributions from a Lean‑specialized
+                language model. To handle variable‑length sequences while
+                preserving positional structure, it introduces a void‑token
+                mechanism that converts the problem into balanced OT. The
+                learned couplings are used to build soft token prompts that
+                guide a downstream Lean‑generating decoder. In results, the
+                NL→Lean transport reaches ~80% cosine alignment with the
+                corresponding Lean tokens, with stable bidirectional mappings
+                and meaningful cross‑modal correspondences. We hope this
+                alignment can help keep faster verification signals accurate
+                during RL for mathematics when training larger language models.
+              </p>
+
+              <h3>Technologies Used</h3>
+              <ul>
+                <li>Optimal Transport (Neural OT)</li>
+                <li>Lean theorem prover</li>
+                <li>Token‑level embedding alignment</li>
+                <li>Sequence decoding and prompt construction</li>
+              </ul>
+
+              <ProjectLinks>
+                <Button
+                  href="https://github.com/Ege-Cakar/ProofGOAT"
+                  target="_blank"
+                >
+                  View on GitHub
+                </Button>
+              </ProjectLinks>
+            </ProjectDescription>
+          </ProjectContent>
+        </Card>
+      </ProjectSection>
+
+      <ProjectSection id="improving-gcg">
+        <Card>
+          <ProjectHeader>
+            <CardTitle>Improving GCG: Soft‑GCG + Activation Objectives</CardTitle>
+            <TagContainer>
+              <Tag>CS2881R</Tag>
+              <Tag>AI Safety</Tag>
+              <Tag>Adversarial Attacks</Tag>
+              <Tag>Efficiency</Tag>
+            </TagContainer>
+          </ProjectHeader>
+          <ProjectContent>
+            <ProjectDescription>
+              <h3>Overview</h3>
+              <p>
+                A final project for CS2881R (AI Alignment & Safety) exploring
+                faster and more mechanistically‑grounded variants of the Greedy
+                Coordinate Gradient (GCG) jailbreak attack.
+              </p>
+
+              <h3>Details</h3>
+              <p>
+                The project investigates (1) Activation‑Guided GCG, replacing
+                log‑likelihood objectives with losses that directly minimize
+                projections onto refusal directions in the model’s residual
+                stream, and (2) Soft‑GCG, a continuous relaxation via
+                Gumbel‑Softmax that achieves ~43x speedup over standard GCG with
+                negligible loss in attack success. Evaluations on the Gemma 3
+                family suggest smaller models remain more vulnerable while
+                larger models exhibit greater robustness.
+              </p>
+
+              <h3>Technologies Used</h3>
+              <ul>
+                <li>LLM safety and adversarial prompt optimization</li>
+                <li>Mechanistic objectives using refusal directions</li>
+                <li>Gumbel‑Softmax continuous relaxation</li>
+                <li>Benchmarking across model scales (Gemma 3)</li>
+              </ul>
+
+              <ProjectLinks>
+                <Button
+                  href="https://github.com/Ege-Cakar/ImprovingGCG"
+                  target="_blank"
+                >
+                  View on GitHub
+                </Button>
+              </ProjectLinks>
+            </ProjectDescription>
+          </ProjectContent>
+        </Card>
+      </ProjectSection>
+
       <ProjectSection id="eco-civilization">
         <Card>
           <ProjectHeader>

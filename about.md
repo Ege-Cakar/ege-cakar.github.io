@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <div class="profile" style="margin-bottom: 2rem;">
-  <img src="/assets/img/pfp.jpg" alt="Ege Cakar" class="profile-photo">
+  <img src="/assets/img/pfp.jpg" alt="Ege Çakar" class="profile-photo">
   <div class="profile-info">
     <h2 style="margin-top:0;">Hello, I'm Ege!</h2>
     <p>

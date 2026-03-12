@@ -56,13 +56,13 @@ permalink: /research/
 <ul class="pub-list">
   <li>
     <strong>Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives</strong><br>
-    <span class="pub-authors"><b>Ege Çakar</b>, Hannah Guan, Kayden Kehe</span><br>
+    <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
     <span class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience. Seoul, South Korea, June 2026.</span><br>
     <span class="pub-note">To appear in proceedings</span>
   </li>
   <li>
     <strong>Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives</strong><br>
-    <span class="pub-authors"><b>Ege Çakar</b>, Hannah Guan, Kayden Kehe</span><br>
+    <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
     <span class="pub-venue">Accepted to the ICLR 2026 Workshop on Representational Alignment (Re-Align). Rio de Janeiro, Brazil, April 2026.</span><br>
     <span class="pub-note">Paper forthcoming</span>
   </li>

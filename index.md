@@ -4,9 +4,9 @@ title: Home
 ---
 
 <div class="profile">
-  <img src="/assets/img/pfp.jpg" alt="Ege Cakar" class="profile-photo">
+  <img src="/assets/img/pfp.jpg" alt="Ege Çakar" class="profile-photo">
   <div class="profile-info">
-    <h1>Ege Cakar</h1>
+    <h1>Ege Çakar</h1>
     <p class="subtitle">Machine Learning · Computer Science · Statistics</p>
     <p>
       I'm a third-year student at Harvard, pursuing a joint AB in Statistics and Physics alongside a concurrent SM in Computer Science. I'm interested in understanding the nature of intelligence and reasoning through different methods and lenses, with downstream applications of more intelligent systems to assist scientists and research.
@@ -21,7 +21,6 @@ title: Home
 </div>
 
 <div class="pub-tabs">
-  <h2>Selected Works</h2>
   <div class="tab-buttons">
     <button class="tab-btn active" data-tab="publications">Peer-Reviewed Papers</button>
     <button class="tab-btn" data-tab="preprints">Preprints & Technical Reports</button>
@@ -32,13 +31,13 @@ title: Home
     <ul class="pub-list">
       <li>
         <strong>Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b>, Hannah Guan, Kayden Kehe</span><br>
+        <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
         <span class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience. Seoul, South Korea, June 2026.</span><br>
         <span class="pub-note">To appear in proceedings</span>
       </li>
       <li>
         <strong>Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b>, Hannah Guan, Kayden Kehe</span><br>
+        <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
         <span class="pub-venue">Accepted to the ICLR 2026 Workshop on Representational Alignment (Re-Align). Rio de Janeiro, Brazil, April 2026.</span><br>
         <span class="pub-note">Paper forthcoming</span>
       </li>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers | Ege Cakar</title>
+<meta name="description" content="Machine Learning & Physics | Harvard University">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://egecakar.com/feed.xml" title="Ege Cakar" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers | Ege Cakar</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters." />
+<meta property="og:description" content="During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters." />
+<link rel="canonical" href="https://egecakar.com/blog/2024/11/15/mlp-mixer-icl/" />
+<meta property="og:url" content="https://egecakar.com/blog/2024/11/15/mlp-mixer-icl/" />
+<meta property="og:site_name" content="Ege Cakar" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-15T00:00:00+00:00","datePublished":"2024-11-15T00:00:00+00:00","description":"During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters.","headline":"In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers","mainEntityOfPage":{"@type":"WebPage","@id":"https://egecakar.com/blog/2024/11/15/mlp-mixer-icl/"},"url":"https://egecakar.com/blog/2024/11/15/mlp-mixer-icl/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+  <div class="site-wrapper">
+    <nav class="site-nav">
+  <a href="/" class="site-title">Ege Cakar</a>
+  <ul class="nav-links">
+    
+      <li>
+        <a href="/"
+           >
+          Home
+        </a>
+      </li>
+    
+      <li>
+        <a href="/research/"
+           >
+          Research
+        </a>
+      </li>
+    
+      <li>
+        <a href="/projects/"
+           >
+          Projects
+        </a>
+      </li>
+    
+      <li>
+        <a href="/cv/"
+           >
+          CV
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/"
+           >
+          Blog
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about/"
+           >
+          About
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+    <main class="site-content">
+      <article>
+  <div class="post-header">
+    <h1>In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers</h1>
+    <p class="post-meta">November 15, 2024</p>
+  </div>
+
+  <p>During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters.</p>
+
+<p>The prevailing wisdom says yes: attention seems essential for comparing information across positions. But recent work from Tong and Pehlevan showed even vanilla MLPs could learn in-context under certain conditions. This made me wonder about MLP Mixers, which achieve global information transfer through token-mixing operations rather than attention.</p>
+
+<h3 id="the-experiment">The Experiment</h3>
+
+<p>I used synthetic classification tasks based on Gaussian mixture models. Models had to infer cluster-to-label mappings from context examples and apply them to a query point. By varying the number of clusters (k) from 32 to 2048, I forced a transition from memorization to true in-context learning—with enough clusters, memorization becomes impossible.</p>
+
+<h3 id="key-results">Key Results</h3>
+
+<ul>
+  <li>MLP Mixers matched Transformer performance while using 3x fewer parameters. My best Mixer had only 3,389 parameters compared to the Transformer’s 9,508.</li>
+  <li>The Mixer showed a sharp transition from memorization to ICL around 2^9 clusters.</li>
+</ul>
+
+<p>However, the Transformer results were unexpected and somewhat concerning—it showed minimal improvement in ICL performance even at high cluster counts. This likely indicates the Transformer needed more parameters or different training dynamics, but it deserves deeper investigation before drawing strong conclusions.</p>
+
+<h3 id="whats-next">What’s Next</h3>
+
+<p>I’m currently working on several follow-up directions:</p>
+
+<ul>
+  <li>Retraining with decoder-only Transformers to see if the architecture makes a difference</li>
+  <li>Comparing Mixer behavior to what Transformers actually do and what Gautam Reddy’s work predicts they should do</li>
+  <li>Borrowing methods from Reddy’s papers for more rigorous mechanistic analysis</li>
+  <li>Testing whether one layer and one head is sufficient for these tasks</li>
+</ul>
+
+<p>The mechanistic interpretability remains elusive. Activation analysis suggests the Mixer focuses on context rather than query tokens, and attribution flows through limited channels, but the full picture of how information routes through the model needs more work.</p>
+
+<h3 id="why-this-matters">Why This Matters</h3>
+
+<p>If Mixers can achieve comparable ICL with fewer parameters, that opens new architectural possibilities—especially important as training costs and energy consumption bottleneck large language models. The results suggest in-context learning might be more general than we thought, not intrinsically tied to attention mechanisms.</p>
+
+<p>But the Transformer underperformance is a puzzle that needs solving before making strong claims.</p>
+
+<hr />
+
+<h2 id="full-report">Full Report</h2>
+
+<p><a href="/assets/files/MLPMixer_ICL_Report.pdf" target="_blank">Download PDF</a></p>
+
+<iframe title="MLP Mixer ICL Report" src="/assets/files/MLPMixer_ICL_Report.pdf" width="100%" height="900" style="border: 1px solid var(--border); border-radius: 6px;"></iframe>
+
+</article>
+
+    </main>
+    <footer class="site-footer">
+  <div class="footer-links">
+    <a href="mailto:ecakar@college.harvard.edu">Email</a>
+    <a href="https://github.com/Ege-Cakar" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/egecakar" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <p>&copy; 2026 Ege Cakar. Built with Jekyll.</p>
+</footer>
+
+  </div>
+</body>
+</html>

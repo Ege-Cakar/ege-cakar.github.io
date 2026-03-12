@@ -1,0 +1,42 @@
+title: Ege Cakar
+description: Machine Learning & Physics | Harvard University
+url: "https://egecakar.com"
+baseurl: ""
+
+email: ecakar@college.harvard.edu
+github: https://github.com/Ege-Cakar
+linkedin: https://linkedin.com/in/egecakar
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - old
+  - node_modules
+  - vendor
+
+navigation:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research/
+  - title: Projects
+    url: /projects/
+  - title: CV
+    url: /cv/
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /about/

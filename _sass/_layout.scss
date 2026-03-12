@@ -1,0 +1,108 @@
+@use "variables" as v;
+
+// Site wrapper
+.site-wrapper {
+  max-width: v.$max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// Navigation
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: v.$nav-height;
+  border-bottom: 1px solid var(--border);
+
+  .site-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    &:hover { color: var(--accent); text-decoration: none; }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1.5px;
+        background: var(--accent);
+        transition: width 0.25s ease;
+      }
+      &:hover {
+        color: var(--accent);
+        text-decoration: none;
+        &::after { width: 100%; }
+      }
+      &.active {
+        color: var(--accent);
+        &::after { width: 100%; }
+      }
+    }
+  }
+}
+
+// Main content
+.site-content {
+  padding: 2.5rem 0;
+  min-height: calc(100vh - #{v.$nav-height} - 80px);
+  animation: fadeInUp 0.4s ease both;
+}
+
+// Footer
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+
+  a {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    &:hover { color: var(--accent); text-decoration: none; }
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Responsive
+@media (max-width: 600px) {
+  .site-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  h1 { font-size: 1.5rem; }
+}

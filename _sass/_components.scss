@@ -1,0 +1,345 @@
+// Home page profile
+.profile {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .profile-info {
+    h1 { margin-top: 0; }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 0 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile .profile-info .contact-links {
+    justify-content: center;
+  }
+}
+
+// News / recent updates
+.news-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+
+    &:last-child { border-bottom: none; }
+
+    .news-date {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      min-width: 90px;
+    }
+  }
+}
+
+// Publication list
+.pub-list {
+  list-style: none;
+  padding: 0;
+
+  .pub-authors {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .pub-venue {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  .pub-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .pub-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+
+    &:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .pub-authors {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin: 0.2rem 0;
+    }
+
+    .pub-venue {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .pub-note {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .pub-links {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 0.75rem;
+
+      a {
+        padding: 0.15rem 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        transition: background 0.2s ease, border-color 0.2s ease;
+        &:hover {
+          background: var(--bg-secondary);
+          border-color: var(--accent);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// Tabbed sections
+.pub-tabs {
+  margin-bottom: 2rem;
+
+  h2 { margin-bottom: 0.75rem; }
+
+  .tab-buttons {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .tab-indicator {
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    background: var(--accent);
+    transition: left 0.15s ease, width 0.15s ease;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--text-primary);
+    }
+
+    &.active {
+      color: var(--accent);
+    }
+  }
+
+  .tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(6px);
+
+    &.active {
+      display: block;
+      animation: tabFadeIn 0.3s ease forwards;
+    }
+  }
+
+  @keyframes tabFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Blog post list
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+
+    .post-title {
+      font-weight: 500;
+    }
+
+    .post-date {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .post-meta-tag {
+      font-size: 0.75rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+// Single post
+.post-header {
+  margin-bottom: 2rem;
+
+  h1 { margin-bottom: 0.25rem; }
+
+  .post-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+}
+
+// Teaching
+.course-list {
+  .course-item {
+    margin-bottom: 1.5rem;
+
+    .course-title {
+      font-weight: 600;
+    }
+
+    .course-term {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Page title
+.page-header {
+  margin-bottom: 2rem;
+  h1 { margin-top: 0; }
+}
+
+// CV embed
+.cv-embed {
+  margin: 1.5rem 0;
+
+  iframe {
+    width: 100%;
+    height: 850px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .cv-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+// CV sections
+.cv-section {
+  margin-bottom: 2rem;
+
+  .cv-item {
+    margin-bottom: 1.5rem;
+
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+    }
+
+    .cv-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .cv-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .cv-date {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Research positions
+.research-position {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+
+  &:last-of-type { border-bottom: none; }
+
+  .position-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 1.25rem 0 0.4rem;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/egecakar/Documents/Projects/ege-website branch -a)",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__read_text_file",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4000/papers/sgcg-contact/)",
+      "Bash(curl -sf -o /tmp/sgcg.html http://localhost:4000/papers/sgcg-contact/)",
+      "Read(//tmp/**)",
+      "Bash(bundle exec *)",
+      "Bash(ruby -v)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+// ─── Background Effects ─────────────────────────────────────────
+// Remove this file + @use "effects" from main.scss to revert
+
+// Nav and footer need relative positioning for the metaballs
+.site-nav,
+.site-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+// Metaball containers sit inside nav (top) and footer (bottom)
+// To re-enable, remove `display: none`
+.metaball-container {
+  display: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.metaball-svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.12;
+}
+
+// Keep nav/footer text above the blobs
+.site-title,
+.nav-links,
+.footer-links,
+.site-footer > p {
+  position: relative;
+  z-index: 1;
+}
+
+// Dot graph canvases (left & right sides)
+.dot-graph {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dot-graph-left {
+  left: 32px;
+  top: 100px;
+}
+
+.dot-graph-right {
+  right: 32px;
+  top: 100px;
+}
+
+// Ensure content sits above effects
+.site-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+// Hide side effects on narrow screens where they'd overlap content
+@media (max-width: 1200px) {
+  .dot-graph {
+    display: none;
+  }
+}

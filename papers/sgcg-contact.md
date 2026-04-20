@@ -10,8 +10,8 @@ robots: noindex, nofollow
 
 ## Contact
 
-**Ege Çakar** — [egecakar.com](https://egecakar.com) · [ecakar@college.harvard.edu](mailto:ecakar@college.harvard.edu)
+**Ege Çakar** — [ecakar@college.harvard.edu](mailto:ecakar@college.harvard.edu) · [egecakar.com](https://egecakar.com) · [LinkedIn](https://www.linkedin.com/in/egecakar/)
 
-**Kayden Kehe** — [kaydenkehe@college.harvard.edu](mailto:kaydenkehe@college.harvard.edu)
+**Kayden Kehe** — [kaydenkehe@college.harvard.edu](mailto:kaydenkehe@college.harvard.edu) · [LinkedIn](https://www.linkedin.com/in/kayden-kehe/)
 
-**Hannah Guan** — [hguan@college.harvard.edu](mailto:hguan@college.harvard.edu)
+**Hannah Guan** — [hguan@college.harvard.edu](mailto:hguan@college.harvard.edu) · [LinkedIn](https://www.linkedin.com/in/hannah-guan-763550197/)

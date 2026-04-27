@@ -13,3 +13,7 @@ robots: noindex, nofollow
 **Ketan Ali Raghu** — [karaghu@college.harvard.edu](mailto:karaghu@college.harvard.edu)
 
 **Lia Zheng** — [liazheng@college.harvard.edu](mailto:liazheng@college.harvard.edu)
+
+## Git Repository
+
+[Memory-Optimized-TRMs](https://github.com/Ege-Cakar/Memory-Optimized-TRMs)

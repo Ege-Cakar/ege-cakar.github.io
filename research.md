@@ -11,7 +11,8 @@ permalink: /research/
 
   <h3>Current Focus</h3>
   <ul>
-    <li>Analyzing the dependency graph of mathematics — studying how mathematical concepts and theorems relate to and build upon each other</li>
+    <li>Looking into efficient attention implementations and how well we can do under constant memory</li>
+    <li>Interested in how automated jailbreak attacks come to be and whether we can analyze them theoretically and empirically</li>
     <li>Investigating recursive latent space reasoning, its advantages and scaling, in mathematical reasoning tasks</li>
   </ul>
 
@@ -55,22 +56,22 @@ permalink: /research/
 
 <ul class="pub-list">
   <li>
-    <strong>Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives</strong><br>
+    <strong>Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal</strong><br>
     <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
-    <span class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience. Seoul, South Korea, June 2026.</span><br>
-    <span class="pub-note">To appear in proceedings</span>
-  </li>
-  <li>
-    <strong>Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives</strong><br>
-    <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
-    <span class="pub-venue">Accepted to the ICLR 2026 Workshop on Representational Alignment (Re-Align). Rio de Janeiro, Brazil, April 2026.</span><br>
-    <span class="pub-note">Paper forthcoming</span>
+    <span class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience (Seoul, South Korea, June 2026; to appear in proceedings) and the ICLR 2026 Workshop on Representational Alignment (Re-Align) (Rio de Janeiro, Brazil, April 2026).</span><br>
+    <a href="https://arxiv.org/abs/2607.08883" target="_blank">Paper</a>
   </li>
   <li>
     <strong>LASER: Low-Rank Activation SVD for Efficient Recursion</strong><br>
     <span class="pub-authors"><b>Ege Çakar</b>, Ketan Ali Raghu, Lia Zheng</span><br>
     <span class="pub-venue">Accepted to the ICLR 2026 Workshop on Latent &amp; Implicit Thinking (LIT). Rio de Janeiro, Brazil, April 2026.</span><br>
-    <span class="pub-note">Paper forthcoming</span>
+    <a href="https://arxiv.org/abs/2604.17224" target="_blank">Paper</a>
+  </li>
+  <li>
+    <strong>Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs</strong><br>
+    <span class="pub-authors"><b>Ege Çakar</b></span><br>
+    <span class="pub-venue">Technical Report, 2026</span><br>
+    <span class="pub-note">Blog post and manuscript forthcoming</span>
   </li>
   <li>
     <strong>Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces</strong><br>

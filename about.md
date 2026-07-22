@@ -9,7 +9,7 @@ permalink: /about/
   <div class="profile-info">
     <h2 style="margin-top:0;">Hello, I'm Ege!</h2>
     <p>
-      I'm a third-year undergraduate at Harvard College, pursuing a joint concentration in Statistics and Physics with a concurrent SM in Computer Science. My academic journey is driven by curiosity about how we can use computational methods to understand complex systems such as intelligence.
+      I'm a fourth-year undergraduate (Senior) at Harvard College, pursuing a joint concentration in Statistics and Physics with a concurrent SM in Computer Science. My academic journey is driven by curiosity about how we can use computational methods to understand complex systems such as intelligence.
     </p>
     <p>
       I'm particularly fascinated by how neural networks learn to represent and process structured information, solving reasoning tasks humans excel at, and breaking down reasoning steps.

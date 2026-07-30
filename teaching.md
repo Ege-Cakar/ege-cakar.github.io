@@ -12,14 +12,14 @@ permalink: /teaching/
   </div>
 
   <div class="course-item">
-    <div class="course-title">Physics 19: Introduction to Theoretical Physics</div>
-    <div class="course-term">Teaching Assistant · Fall 2024 · Jacob Barandes</div>
+    <div class="course-title">Physics 143a: Quantum Mechanics 1</div>
+    <div class="course-term">Teaching Assistant · Spring 2025 · Louis Deslauriers</div>
     <p>Graded homework and helped students during office hours.</p>
   </div>
 
   <div class="course-item">
-    <div class="course-title">Physics 143a: Quantum Mechanics 1</div>
-    <div class="course-term">Teaching Assistant · Spring 2025 · Louis Deslauriers</div>
+    <div class="course-title">Physics 19: Introduction to Theoretical Physics</div>
+    <div class="course-term">Teaching Assistant · Fall 2024 · Jacob Barandes</div>
     <p>Graded homework and helped students during office hours.</p>
   </div>
 </div>

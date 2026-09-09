@@ -103,6 +103,10 @@ title: Home
 
 <ul class="news-list">
   <li>
+    <span class="news-date">Fall 2026</span>
+    <span>Became a Teaching Fellow for COMPSCI 2881R.</span>
+  </li>
+  <li>
     <span class="news-date">Feb 2026</span>
     <span>Accepted into the SM in Computer Science program at Harvard GSAS.</span>
   </li>

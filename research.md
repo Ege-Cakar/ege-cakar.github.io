@@ -56,6 +56,12 @@ permalink: /research/
 
 <ul class="pub-list">
   <li>
+    <strong>Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces</strong><br>
+    <span class="pub-authors">William L. Tong, <b>Ege Çakar</b>, Cengiz Pehlevan</span><br>
+    <span class="pub-venue">To appear in NeurIPS 2026 Main Track.</span><br>
+    <a href="https://arxiv.org/abs/2602.14404" target="_blank">Paper</a>
+  </li>
+  <li>
     <strong>Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal</strong><br>
     <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
     <span class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience (Seoul, South Korea, June 2026; to appear in proceedings) and the ICLR 2026 Workshop on Representational Alignment (Re-Align) (Rio de Janeiro, Brazil, April 2026).</span><br>
@@ -72,12 +78,6 @@ permalink: /research/
     <span class="pub-authors"><b>Ege Çakar</b></span><br>
     <span class="pub-venue">Technical Report, 2026</span><br>
     <span class="pub-note">Blog post and manuscript forthcoming</span>
-  </li>
-  <li>
-    <strong>Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces</strong><br>
-    <span class="pub-authors">William L. Tong, <b>Ege Çakar</b>, Cengiz Pehlevan</span><br>
-    <span class="pub-venue">arXiv preprint arXiv:2602.14404, 2026. [Under review]</span><br>
-    <a href="https://arxiv.org/abs/2602.14404" target="_blank">Paper</a>
   </li>
   <li>
     <strong>The Argument is the Explanation: Structured Argumentation for Trust in Agents</strong><br>

@@ -103,7 +103,7 @@ title: Home
 
 <ul class="news-list">
   <li>
-    <span class="news-date">2026</span>
+    <span class="news-date">September 2026</span>
     <span><a href="https://arxiv.org/abs/2602.14404" target="_blank">Boule or Baguette?</a> was accepted to the NeurIPS 2026 Main Track!</span>
   </li>
   <li>

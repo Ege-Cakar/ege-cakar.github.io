@@ -8,15 +8,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 <script>
-  // Runs before first paint so a saved theme doesn't flash the system one.
-  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  // The theme follows the OS. The lamp overrides it for this tab session (sessionStorage,
+  // applied before first paint), and the override is dropped when the OS theme changes.
+  try { var t = sessionStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  var osDark = matchMedia('(prefers-color-scheme: dark)');
+  osDark.addEventListener('change', function () {
+    delete document.documentElement.dataset.theme;
+    try { sessionStorage.removeItem('theme'); } catch (e) {}
+  });
   function toggleTheme() {
     var r = document.documentElement;
-    var dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var dark = r.dataset.theme ? r.dataset.theme === 'dark' : osDark.matches;
     r.classList.add('theme-fade');
     r.dataset.theme = dark ? 'light' : 'dark';
     setTimeout(function () { r.classList.remove('theme-fade'); }, 450);
-    try { localStorage.setItem('theme', r.dataset.theme); } catch (e) {}
+    try { sessionStorage.setItem('theme', r.dataset.theme); } catch (e) {}
   }
 </script>
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

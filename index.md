@@ -7,7 +7,7 @@ title: Home
   <img src="/assets/img/pfp.jpg" alt="Ege Çakar" class="profile-photo">
   <div class="profile-info">
     <h1>Ege Çakar</h1>
-    <p class="subtitle">Machine Learning · Computer Science · Statistics</p>
+    <p class="subtitle">Machine Learning · Physics · Statistics</p>
     <p>
       I'm a fourth-year (Senior) student at Harvard, pursuing a joint AB in Statistics and Physics alongside a concurrent SM in Computer Science. I'm interested in understanding the nature of intelligence and reasoning through different methods and lenses, with downstream applications of more intelligent systems to assist scientists and research.
     </p>

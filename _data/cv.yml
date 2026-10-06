@@ -76,8 +76,12 @@ sections:
             date: January 2026 - May 2026
             bullets:
               - Updated course content, wrote section notes and homework, hosted section and office hours weekly, participated in organizational meetings and proctored exams for the ~160 students in the class.
-          - title: Course Assistant, Theoretical Physics, Quantum Mechanics 1
-            date: September 2024 - May 2025
+          - title: "Course Assistant, Physics 143a: Quantum Mechanics 1"
+            date: January 2025 - May 2025
+            bullets:
+              - Provided supplementary education for students with upper level physics concepts. Evaluated assignments and provided feedback for 80+ students.
+          - title: "Course Assistant, Physics 19: Introduction to Theoretical Physics"
+            date: September 2024 - December 2024
             bullets:
               - Provided supplementary education for students with upper level physics concepts. Evaluated assignments and provided feedback for 80+ students.
 

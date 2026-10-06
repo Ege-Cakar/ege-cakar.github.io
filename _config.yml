@@ -26,19 +26,27 @@ exclude:
   - old
   - node_modules
   - vendor
+  - scripts
 
 navigation:
   - title: Home
     url: /
+    icon: house
   - title: Research
     url: /research/
+    icon: brain
   - title: Teaching
     url: /teaching/
+    icon: chalkboard
   - title: Projects
     url: /projects/
+    icon: toolbox
   - title: CV
     url: /cv/
+    icon: scroll
   - title: Blog
     url: /blog/
+    icon: quill
   - title: About
     url: /about/
+    icon: mug

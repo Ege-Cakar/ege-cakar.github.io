@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers"
-date: 2024-11-15
+date: 2025-05-07
 ---
 
 During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters.

@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <div class="footer-links">
-    <a href="mailto:{{ site.email }}">Email</a>
-    <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
-    <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:{{ site.email }}">{% include icon.html name="envelope" %}Email</a>
+    <a href="{{ site.github }}" target="_blank" rel="noopener">{% include icon.html name="cat" %}GitHub</a>
+    <a href="{{ site.linkedin }}" target="_blank" rel="noopener">{% include icon.html name="id-card" %}LinkedIn</a>
   </div>
   <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Built with Jekyll.</p>
 </footer>

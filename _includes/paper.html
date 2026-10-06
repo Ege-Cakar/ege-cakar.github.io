@@ -1,0 +1,11 @@
+{%- assign p = include.p -%}
+{% if p.url %}<a class="pub-title" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}
+{%- for b in p.badges %} <span class="badge">{{ b }}</span>{% endfor %}
+{%- if include.fn %}<sup><a href="#fn-{{ include.fn }}" id="fnref-{{ include.fn }}">{{ include.fn }}</a></sup>{% endif %}
+<div class="pub-authors">{{ p.authors | replace: 'Ege Çakar', '<b>Ege Çakar</b>' }}</div>
+<div class="pub-venue">{{ p.venue }}</div>
+{% if p.note %}<div class="pub-note">{{ p.note }}</div>{% endif %}
+{% if p.url or p.code %}<div class="pub-links">
+  {%- if p.url %}<a class="btn" href="{{ p.url }}" target="_blank" rel="noopener">{% include icon.html name="paper-stack" %}Paper</a>{% endif %}
+  {%- if p.code %}<a class="btn" href="{{ p.code }}" target="_blank" rel="noopener">{% include icon.html name="cat" %}Code</a>{% endif -%}
+</div>{% endif %}

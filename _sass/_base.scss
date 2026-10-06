@@ -29,6 +29,8 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
+h1, h2 { text-align: center; }
+
 h1 { font-size: 1.8rem; }
 h2 { font-size: 1.4rem; }
 h3 { font-size: 1.15rem; }
@@ -110,6 +112,17 @@ table {
   th {
     font-weight: 600;
   }
+}
+
+// Line icons (_includes/icon.html); .fill marks the soft accent areas
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+
+  .fill { fill: currentColor; fill-opacity: 0.18; }
+  .lamp-shade, .lamp-glow { fill: var(--lamp-light); transition: fill 0.4s ease; }
+  .lamp-glow { opacity: 0.35; }
 }
 
 // Subtle entrance animation

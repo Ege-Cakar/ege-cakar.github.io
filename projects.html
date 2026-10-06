@@ -1,0 +1,19 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+<div class="card-grid">
+  {% for p in site.data.projects %}
+  <article class="card project-card" id="{{ p.id }}">
+    <h3>{{ p.title }}</h3>
+    <ul class="chips">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+    <p>{{ p.description }}</p>
+    <div class="project-footer">
+      <a class="btn" href="{{ p.github }}" target="_blank" rel="noopener">{% include icon.html name="cat" %}GitHub</a>
+      {% if p.paper %}<a class="btn" href="{{ p.paper }}" target="_blank" rel="noopener">{% include icon.html name="sealed-paper" %}Expanded into a paper</a>{% endif %}
+      {% if p.note %}<span class="project-note">{{ p.note }}</span>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,71 @@
+- id: spectral-profiling-gnns
+  title: "Spectral Label Profiles for GNN Architecture Selection"
+  tags: ["Graph Neural Networks", "Spectral Graph Theory", "Node Classification"]
+  description: "Introduces the spectral label profile (SLP) — the cumulative distribution of label energy across the normalized-Laplacian spectrum — as a diagnostic for choosing a GNN architecture for node classification. Computes and efficiently estimates the SLP on synthetic and production graphs, then compares its predictive power against homophily baselines for selecting between spatial and spectral GNNs and their architectural parameters. Finds SLP most useful for deciding whether graph structure helps at all and whether a high- or low-pass spectral filter is beneficial."
+  github: https://github.com/kaydenkehe/spectral-profiling-gnns
+
+- id: memory-optimized-trms
+  title: "LASER: Memory-Optimized TRMs"
+  note: "CS2420 Final Project"
+  tags: ["Efficient Training", "Activation Compression", "PyTorch"]
+  description: "A dynamic activation-compression framework for training Tiny Recursive Models (TRMs) with substantially lower memory usage. Uses fast-subspace tracking for approximating SVD and a fidelity-triggered \"safetynet\" reset. Achieves ~60% activation memory reduction with negligible accuracy and speed impact."
+  github: https://github.com/Ege-Cakar/Memory-Optimized-TRMs
+  paper: https://arxiv.org/abs/2604.17224
+
+- id: proofgoat
+  title: "ProofGOAT: OT-Based Proof Generation"
+  note: "CS2840 Final Project"
+  tags: ["Optimal Transport", "Lean", "NLP"]
+  description: "Neural Optimal Transport framework aligning natural-language proofs with formal Lean proofs at the token level. Introduces a void-token mechanism for variable-length sequences in balanced OT. ~80% cosine alignment between NL→Lean transported tokens."
+  github: https://github.com/Ege-Cakar/ProofGOAT
+
+- id: improving-gcg
+  title: "Improving GCG: Soft-GCG + Activation Objectives"
+  note: "CS2881R Final Project"
+  tags: ["AI Safety", "Adversarial Attacks", "Efficiency"]
+  description: "Continuous relaxation of Greedy Coordinate Gradient via Gumbel-Softmax achieving a ~33x speedup over standard GCG with comparable or better attack success. Also explores activation-guided objectives targeting refusal directions in the residual stream."
+  github: https://github.com/Ege-Cakar/ImprovingGCG
+  paper: https://arxiv.org/abs/2607.08883
+
+- id: eco-civilization
+  title: "Eco-Civilization MDP"
+  tags: ["Reinforcement Learning", "Multi-Agent", "PettingZoo", "PyTorch"]
+  description: "Adapts the Civilization game to explore sustainable development strategies using Multi-Agent Proximal Policy Optimization (MAPPO). Introduces environmental penalties, challenging agents to balance growth with sustainability. 3000+ line codebase by a 3-person team."
+  github: https://github.com/Ege-Cakar/Eco-Civilization-MDP
+
+- id: focus-caption
+  title: "FocusCaption"
+  tags: ["Computer Vision", "Image Captioning", "CNN", "TranSalNet"]
+  description: "Image captioning method using 2 CNNs in parallel with a saliency prediction model to extract extra information from where the image \"should be focused.\" Shows improvements in counting subjects and detailing finer features."
+  github: https://github.com/Ege-Cakar/FocusCaption
+
+- id: butler
+  title: "BUTLER"
+  note: "Anthropic Harvard Hackathon Finalist (1 of 4)"
+  tags: ["RAG", "Automation", "Voice"]
+  description: "AI personal assistant combining retrieval-augmented chat with automation — file organization, calendar, email, and voice control via Whisper and Eleven Labs. Built with React, TypeScript, Vite, and Tailwind CSS."
+  github: https://github.com/Ege-Cakar/BUTLER
+
+- id: macos-computer-use
+  title: "MacOS-Computer-Use"
+  tags: ["VNC", "Automation", "Virtualization", "Claude"]
+  description: "Remote control and automation tool for macOS VMs via VNC. An MCP server exposes VNC capabilities while a client uses Claude AI to interpret natural-language requests — clicking, typing, screenshots, SSH commands."
+  github: https://github.com/Ege-Cakar/MacOS-VM-Computer-Use
+
+- id: policivilization
+  title: "Policivilization MDP"
+  tags: ["RL", "LLMs", "Interpretability", "Simulation"]
+  description: "Extension of Eco Civilization MDP with greater realism — realistic terrain/resources, population, dissent/riots, government types. Swaps RNN agents with LLM agents for interpretability. Will be utilized at Harvard Kennedy School for teaching."
+  github: https://github.com/Ege-Cakar/HCS-AI-RL-Project
+
+- id: talk-to-me
+  title: "Talk To Me"
+  tags: ["Audio", "Speech-to-Text", "LaTeX", "AI"]
+  description: "Desktop app combining audio recording, transcription, and LaTeX conversion for academic content. Speak mathematical equations and get proper LaTeX. Supports offline Whisper and cloud APIs."
+  github: https://github.com/Ege-Cakar/talkToMe
+
+- id: mistral-ocr
+  title: "Mistral OCR"
+  tags: ["OCR", "PDF", "Markdown", "Open Source"]
+  description: "Wrapper for the Mistral OCR API converting PDF files to Markdown with in-app viewing (plain text, Markdown, browser for LaTeX). Standalone application built with PyInstaller."
+  github: https://github.com/Ege-Cakar/MistralOCR

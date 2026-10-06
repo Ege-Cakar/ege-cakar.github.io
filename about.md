@@ -24,10 +24,25 @@ permalink: /about/
 
 ## Interests
 
-**Reading** — My favorite book of all time is probably Pachinko by Min Jin Lee, which I recommend everyone read.
-
-**Music** — I listen to Jazz, Rock, Spanish/Latin Folk, Metal, Blues, Funk, and many more. I'm also Turkish — if you want to give Turkish music a try, I recommend Cem Karaca.
-
-**Cooking** — I enjoy cooking and experimenting with different cuisines and flavors. It's a creative outlet that allows me to share my culture and experiences. I also love eating, so it's a win-win.
-
-**Games** — Strategy games like Civilization and Frostpunk, fighting games, Nintendo games, and board games of all kinds.
+<div class="card-grid">
+  <div class="card interest-card">
+    <div class="interest-icon">{% include icon.html name="book" %}</div>
+    <h3>Reading</h3>
+    <p>My favorite book of all time is probably Pachinko by Min Jin Lee, which I recommend everyone read.</p>
+  </div>
+  <div class="card interest-card">
+    <div class="interest-icon">{% include icon.html name="record-player" %}</div>
+    <h3>Music</h3>
+    <p>I listen to Jazz, Rock, Spanish/Latin Folk, Metal, Blues, Funk, and many more. I'm also Turkish — if you want to give Turkish music a try, I recommend Cem Karaca.</p>
+  </div>
+  <div class="card interest-card">
+    <div class="interest-icon">{% include icon.html name="pot" %}</div>
+    <h3>Cooking</h3>
+    <p>I enjoy cooking and experimenting with different cuisines and flavors. It's a creative outlet that allows me to share my culture and experiences. I also love eating, so it's a win-win.</p>
+  </div>
+  <div class="card interest-card">
+    <div class="interest-icon">{% include icon.html name="controller" %}</div>
+    <h3>Games</h3>
+    <p>Strategy games like Civilization and Frostpunk, fighting games, Nintendo games, and board games of all kinds.</p>
+  </div>
+</div>

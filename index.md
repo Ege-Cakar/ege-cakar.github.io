@@ -12,64 +12,34 @@ title: Home
       I'm a fourth-year (Senior) student at Harvard, pursuing a joint AB in Statistics and Physics alongside a concurrent SM in Computer Science. I'm interested in understanding the nature of intelligence and reasoning through different methods and lenses, with downstream applications of more intelligent systems to assist scientists and research.
     </p>
     <ul class="contact-links">
-      <li><a href="mailto:ecakar@college.harvard.edu">Email</a></li>
-      <li><a href="https://github.com/Ege-Cakar" target="_blank">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/egecakar" target="_blank">LinkedIn</a></li>
-      <li><a href="/cv/">CV</a></li>
+      <li><a href="mailto:ecakar@college.harvard.edu">{% include icon.html name="envelope" %}Email</a></li>
+      <li><a href="https://github.com/Ege-Cakar" target="_blank">{% include icon.html name="cat" %}GitHub</a></li>
+      <li><a href="https://linkedin.com/in/egecakar" target="_blank">{% include icon.html name="id-card" %}LinkedIn</a></li>
+      <li><a href="/cv/">{% include icon.html name="scroll" %}CV</a></li>
     </ul>
   </div>
 </div>
 
 <div class="pub-tabs">
   <div class="tab-buttons">
-    <button class="tab-btn active" data-tab="publications">Peer-Reviewed Papers</button>
-    <button class="tab-btn" data-tab="preprints">Preprints & Technical Reports</button>
+    <button class="tab-btn active" data-tab="publications">{% include icon.html name="sealed-paper" %}Peer-Reviewed Papers</button>
+    <button class="tab-btn" data-tab="preprints">{% include icon.html name="paper-stack" %}Preprints & Technical Reports</button>
     <span class="tab-indicator"></span>
   </div>
 
   <div class="tab-content active" id="publications">
     <ul class="pub-list">
-      <li>
-        <strong>Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces</strong><br>
-        <span class="pub-authors">William L. Tong, <b>Ege Çakar</b>, Cengiz Pehlevan</span><br>
-        <span class="pub-venue">To appear in NeurIPS 2026 Main Track.</span><br>
-        <a href="https://arxiv.org/abs/2602.14404" target="_blank">Paper</a>
-      </li>
-      <li>
-        <strong>Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b>, Kayden Kehe, Hannah Guan</span><br>
-        <span class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience (Seoul, South Korea, June 2026; to appear in proceedings) and the ICLR 2026 Workshop on Representational Alignment (Re-Align) (Rio de Janeiro, Brazil, April 2026).</span><br>
-        <a href="https://arxiv.org/abs/2607.08883" target="_blank">Paper</a>
-      </li>
-      <li>
-        <strong>LASER: Low-Rank Activation SVD for Efficient Recursion</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b>, Ketan Ali Raghu, Lia Zheng</span><br>
-        <span class="pub-venue">Accepted to the ICLR 2026 Workshop on Latent &amp; Implicit Thinking (LIT). Rio de Janeiro, Brazil, April 2026.</span><br>
-        <a href="https://arxiv.org/abs/2604.17224" target="_blank">Paper</a>
-      </li>
+      {% assign papers = site.data.papers | where: "type", "peer-reviewed" %}
+      {% for p in papers %}<li class="pub-item">{% include paper.html p=p %}</li>
+      {% endfor %}
     </ul>
   </div>
 
   <div class="tab-content" id="preprints">
     <ul class="pub-list">
-      <li>
-        <strong>Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b></span><br>
-        <span class="pub-venue">Technical Report, 2026</span><br>
-        <span class="pub-note">Blog post and manuscript forthcoming</span>
-      </li>
-      <li>
-        <strong>The Argument is the Explanation: Structured Argumentation for Trust in Agents</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b>, Per Ola Kristensson</span><br>
-        <span class="pub-venue">arXiv preprint arXiv:2510.03442, 2025</span><br>
-        <a href="https://arxiv.org/abs/2510.03442" target="_blank">Paper</a> · <a href="https://github.com/Ege-Cakar/Structured-Argumentation-For-Trust" target="_blank">Code</a>
-      </li>
-      <li>
-        <strong>In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures</strong><br>
-        <span class="pub-authors"><b>Ege Çakar</b></span><br>
-        <span class="pub-venue">Technical Report, 2025</span><br>
-        <a href="/assets/files/MLPMixer_ICL_Report.pdf" target="_blank">Paper</a>
-      </li>
+      {% assign papers = site.data.papers | where: "type", "preprint" %}
+      {% for p in papers %}<li class="pub-item">{% include paper.html p=p %}</li>
+      {% endfor %}
     </ul>
   </div>
 </div>
@@ -101,17 +71,25 @@ title: Home
 
 ## News
 
-<ul class="news-list">
+<ol class="timeline compact">
   <li>
-    <span class="news-date">September 2026</span>
-    <span><a href="https://arxiv.org/abs/2602.14404" target="_blank">Boule or Baguette?</a> was accepted to the NeurIPS 2026 Main Track!</span>
+    <div class="tl-date">October 2026</div>
+    <div class="tl-body">Released State Space Attention on arXiv (link coming soon).</div>
   </li>
   <li>
-    <span class="news-date">Fall 2026</span>
-    <span>Became a Teaching Fellow for COMPSCI 2881R.</span>
+    <div class="tl-date">September 2026</div>
+    <div class="tl-body"><a href="https://arxiv.org/abs/2602.14404" target="_blank">Boule or Baguette?</a> was accepted to the NeurIPS 2026 Main Track!</div>
   </li>
   <li>
-    <span class="news-date">Feb 2026</span>
-    <span>Accepted into the SM in Computer Science program at Harvard GSAS.</span>
+    <div class="tl-date">Fall 2026</div>
+    <div class="tl-body">Joined the Du Lab at the Kempner Institute, working on Energy-Based Transformers.</div>
   </li>
-</ul>
+  <li>
+    <div class="tl-date">Fall 2026</div>
+    <div class="tl-body">Became a Teaching Fellow for COMPSCI 2881R.</div>
+  </li>
+  <li>
+    <div class="tl-date">Feb 2026</div>
+    <div class="tl-body">Accepted into the SM in Computer Science program at Harvard GSAS.</div>
+  </li>
+</ol>

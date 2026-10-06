@@ -4,28 +4,37 @@ title: Teaching
 permalink: /teaching/
 ---
 
-<div class="course-list">
-  <div class="course-item">
-    <div class="course-title">COMPSCI 2881R: AI Safety</div>
-    <div class="course-term">Teaching Fellow · Fall 2026 · Boaz Barak</div>
-    <p>Taught section; prepared and piloted reading groups; gave feedback on research projects; and created and graded assignments.</p>
-  </div>
-
-  <div class="course-item">
-    <div class="course-title">COMPSCI 1810: Machine Learning</div>
-    <div class="course-term">Teaching Fellow · Spring 2026 · David Alvarez-Melis and Yilun Du</div>
-    <p>Taught section; proctored exams; wrote homework and course materials; and held office hours and review sessions.</p>
-  </div>
-
-  <div class="course-item">
-    <div class="course-title">Physics 143a: Quantum Mechanics 1</div>
-    <div class="course-term">Teaching Assistant · Spring 2025 · Louis Deslauriers</div>
-    <p>Graded homework and helped students during office hours.</p>
-  </div>
-
-  <div class="course-item">
-    <div class="course-title">Physics 19: Introduction to Theoretical Physics</div>
-    <div class="course-term">Teaching Assistant · Fall 2024 · Jacob Barandes</div>
-    <p>Graded homework and helped students during office hours.</p>
-  </div>
-</div>
+<ol class="timeline">
+  <li class="current">
+    <div class="tl-date">Fall 2026</div>
+    <div class="tl-body">
+      <h3 class="tl-title">COMPSCI 2881R: AI Safety</h3>
+      <p class="tl-meta">Teaching Fellow · Boaz Barak</p>
+      <p>Taught section; prepared and piloted reading groups; gave feedback on research projects; and created and graded assignments.</p>
+    </div>
+  </li>
+  <li>
+    <div class="tl-date">Spring 2026</div>
+    <div class="tl-body">
+      <h3 class="tl-title">COMPSCI 1810: Machine Learning</h3>
+      <p class="tl-meta">Teaching Fellow · David Alvarez-Melis and Yilun Du</p>
+      <p>Taught section; proctored exams; wrote homework and course materials; and held office hours and review sessions.</p>
+    </div>
+  </li>
+  <li>
+    <div class="tl-date">Spring 2025</div>
+    <div class="tl-body">
+      <h3 class="tl-title">Physics 143a: Quantum Mechanics 1</h3>
+      <p class="tl-meta">Teaching Assistant · Louis Deslauriers</p>
+      <p>Graded homework and helped students during office hours.</p>
+    </div>
+  </li>
+  <li>
+    <div class="tl-date">Fall 2024</div>
+    <div class="tl-body">
+      <h3 class="tl-title">Physics 19: Introduction to Theoretical Physics</h3>
+      <p class="tl-meta">Teaching Assistant · Jacob Barandes</p>
+      <p>Graded homework and helped students during office hours.</p>
+    </div>
+  </li>
+</ol>

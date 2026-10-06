@@ -5,9 +5,14 @@
       <li>
         <a href="{{ item.url | relative_url }}"
            {% if page.url == item.url %}class="active"{% endif %}>
-          {{ item.title }}
+          {% include icon.html name=item.icon %}{{ item.title }}{% if page.url == item.url %}<span class="nav-underline"></span>{% endif %}
         </a>
       </li>
     {% endfor %}
+    <li>
+      <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+        {% include icon.html name="lamp" %}
+      </button>
+    </li>
   </ul>
 </nav>

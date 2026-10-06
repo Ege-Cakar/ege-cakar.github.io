@@ -15,3 +15,9 @@ vendor/
 /node_modules
 /build
 /coverage
+
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json

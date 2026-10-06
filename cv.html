@@ -1,0 +1,51 @@
+---
+layout: page
+title: CV
+permalink: /cv/
+---
+{% assign cv = site.data.cv %}
+<p class="cv-contact">
+  {{ cv.location }} · <a href="mailto:{{ site.email }}">Email</a> · <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a> · <a href="{{ cv.pdf }}" target="_blank" rel="noopener">Download PDF</a>
+</p>
+
+{% assign fn = 0 %}
+{% for s in cv.sections %}
+<section class="cv-section">
+  <h2>{{ s.title }}</h2>
+
+  {% for g in s.paper_groups %}
+  <h3>{{ g.title }}</h3>
+  <ul class="pub-list">
+    {% assign papers = site.data.papers | where: "type", g.type %}
+    {% for p in papers %}
+    {% if p.footnote %}{% assign fn = fn | plus: 1 %}{% assign ref = fn %}{% else %}{% assign ref = nil %}{% endif %}
+    <li class="pub-item">{% include paper.html p=p fn=ref %}</li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+
+  {% for e in s.entries %}
+  <div class="cv-entry">
+    {% if e.text %}<p>{{ e.text | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+    {% if e.org %}<div class="cv-row"><span class="cv-title">{{ e.org }}</span><span class="cv-date">{{ e.location }}</span></div>{% endif %}
+    {% if e.bullets %}<ul>{% for b in e.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+    {% for r in e.roles %}
+    <div class="cv-row"><em>{{ r.title }}</em><span class="cv-date">{{ r.date }}</span></div>
+    <ul>
+      {% if r.coursework %}<li>Relevant Coursework:<ul class="chips">{% for c in r.coursework %}<li>{{ c }}</li>{% endfor %}</ul></li>{% endif %}
+      {% for b in r.bullets %}<li>{{ b }}</li>{% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
+
+{% if fn > 0 %}
+<ol class="cv-footnotes">
+  {% assign n = 0 %}
+  {% for s in cv.sections %}{% for g in s.paper_groups %}{% assign papers = site.data.papers | where: "type", g.type %}{% for p in papers %}{% if p.footnote %}{% assign n = n | plus: 1 %}
+  <li id="fn-{{ n }}">{{ p.footnote }} <a href="#fnref-{{ n }}" aria-label="Back to reference">↩</a></li>
+  {% endif %}{% endfor %}{% endfor %}{% endfor %}
+</ol>
+{% endif %}

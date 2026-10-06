@@ -1,0 +1,59 @@
+# Single source for papers on Home, Research, and CV (_includes/paper.html renders one).
+# type: peer-reviewed | preprint. badges: short venue chips beside the title. footnote: CV page only.
+- id: ssa
+  type: preprint
+  title: "State Space Attention: Learning Context-Dependent Memory Retention"
+  badges: [Preprint]
+  authors: Ege Çakar, Cengiz Pehlevan
+  venue: Preprint, 2026
+  note: arXiv link coming soon
+
+- id: boule-or-baguette
+  type: peer-reviewed
+  title: "Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces"
+  badges: [NeurIPS 2026]
+  authors: William L. Tong, Ege Çakar, Cengiz Pehlevan
+  venue: To appear in NeurIPS 2026 Main Track.
+  url: https://arxiv.org/abs/2602.14404
+
+- id: safety-representations
+  type: peer-reviewed
+  title: "Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal"
+  badges: [AAAI 2026 Symposium, ICLR 2026 Workshop]
+  authors: Ege Çakar, Hannah Guan, Kayden Kehe
+  venue: "Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience (Seoul, South Korea, June 2026; to appear in proceedings) and the ICLR 2026 Workshop on Representational Alignment (Re-Align) (Rio de Janeiro, Brazil, April 2026)."
+  url: https://arxiv.org/abs/2607.08883
+  footnote: 'Submitted to the ICLR 2026 Workshop on Representational Alignment (Re-Align) under the title "Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives."'
+
+- id: laser
+  type: peer-reviewed
+  title: "LASER: Low-Rank Activation SVD for Efficient Recursion"
+  badges: [ICLR 2026 Workshop]
+  authors: Ege Çakar, Ketan Ali Raghu, Lia Zheng
+  venue: Accepted to the ICLR 2026 Workshop on Latent & Implicit Thinking (LIT). Rio de Janeiro, Brazil, April 2026.
+  url: https://arxiv.org/abs/2604.17224
+
+- id: mathlib-geometry
+  type: preprint
+  title: "Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs"
+  badges: [Technical Report]
+  authors: Ege Çakar
+  venue: Technical Report, 2026
+  note: Blog post and manuscript forthcoming
+
+- id: argument-is-the-explanation
+  type: preprint
+  title: "The Argument is the Explanation: Structured Argumentation for Trust in Agents"
+  badges: [Preprint]
+  authors: Ege Çakar, Per Ola Kristensson
+  venue: arXiv preprint arXiv:2510.03442, 2025
+  url: https://arxiv.org/abs/2510.03442
+  code: https://github.com/Ege-Cakar/Structured-Argumentation-For-Trust
+
+- id: mlp-mixer-icl
+  type: preprint
+  title: "In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures"
+  badges: [Technical Report]
+  authors: Ege Çakar
+  venue: Technical Report, 2025
+  url: /assets/files/MLPMixer_ICL_Report.pdf

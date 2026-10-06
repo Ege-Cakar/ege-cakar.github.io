@@ -1,0 +1,96 @@
+# Source: tab 1 (t.0) of the CV Google Doc. The PDF link exports that tab live.
+pdf: https://docs.google.com/document/d/1jzbjXIH8LOpnRMIYW4cbgsuk_og59mL2VI3CmVdl3Bo/export?format=pdf&tab=t.0
+location: Cambridge, MA
+
+sections:
+  - title: Education
+    entries:
+      - org: Harvard University
+        location: Cambridge, MA
+        roles:
+          - title: "AB Joint Concentration in Statistics and Physics, SM in Computer Science, GPA: 3.91/4.0"
+            date: Expected May 2027
+            coursework:
+              - Machine Learning (U)
+              - Reinforcement Learning (U)
+              - Biological and Artificial Intelligence (G)
+              - Probability (U)
+              - Statistical Inference (U)
+              - Algorithms and Their Limitations (U)
+              - AI Safety (G)
+              - Optimal Transport (G)
+              - Computing at Scale (G)
+              - Linear and Generalized Linear Models (G)
+              - Spectral Graph Theory (G)
+              - Reinforcement Learning (G)
+              - Computational Neuroscience (G)
+              - Inference, Information Theory, Learning and Statistical Mechanics (G)
+              - Sparse Inference, Network and Text Analysis (G)
+            bullets:
+              - John Harvard Scholar, given to the top 10% of class, 2023-2024.
+
+  - title: Publications
+    paper_groups:
+      - type: peer-reviewed
+        title: Peer-Reviewed
+      - type: preprint
+        title: Preprints & Technical Reports
+
+  - title: Relevant Experience
+    entries:
+      - org: The Kempner Institute for the Study of Natural and Artificial Intelligence, Pehlevan Lab
+        location: Cambridge, MA
+        roles:
+          - title: Student Researcher; KRANIUM Fellow (Summer 2024), KURE Fellow (Fall 2024, Fall 2025)
+            date: June 2024 - Present
+            bullets:
+              - Achieved >90% consistent performance across network widths (64-2048) on compositional Boolean tasks by applying μP normalization to MLPs. Investigated OOD generalization across MLPs, LSTMs, and Transformers.
+              - Benchmarked Transformers, MLPs, and MLP-Mixers on synthetic in-context learning. Ran studies showing clear in-weight to in-context learning transitions. Showed the best performing Transformer had 3x the parameters of the best performing Mixer.
+              - Modified the MLP Mixer to enforce causality on the HyperMixer architecture, matching GPT-2 perplexity on Shakespeare with fewer parameters.
+              - Currently designing constant memory architectures with strong long context exact recall performance.
+      - org: The Kempner Institute for the Study of Natural and Artificial Intelligence, Du Lab
+        location: Cambridge, MA
+        roles:
+          - title: Student Researcher
+            date: September 2026 - Present
+            bullets:
+              - Working on Energy-Based Transformers.
+      - org: University of Cambridge, Department of Engineering, Kristensson Lab
+        location: Cambridge, UK
+        roles:
+          - title: Student Researcher; Harvard-Cambridge Summer Fellowship Scholar (1 of 4 selected annually)
+            date: June 2025 - August 2025
+            bullets:
+              - Developed automated risk-analysis system using 12+ agentic large language models utilizing SWIFT risk assessment methodology. Implemented framework using Structured Argumentation for internal consistency checking and fact checking.
+              - First-author preprint, achieving 94.44 F1 on AAEC (dataset) argument extraction (5.7 points above prior work, SOTA) and 0.81 F1 on 3-class AMT (dataset) relation classification (AMT 1 + 2 combined), exceeding published baselines.
+              - Created optimized open-source Bipolar ABA implementation in Python and production-ready Docker containers for deployment. Matched the performance of our best model up to ~0.01 F1 with a model more than 2000x smaller in size.
+      - org: Harvard University
+        location: Cambridge, MA
+        roles:
+          - title: "Teaching Fellow, COMPSCI 2881R: Topics in Foundations of ML: AI Alignment and Safety"
+            date: September 2026 - Present
+            bullets:
+              - Lead the course's reading group initiative, organizing research paper discussions and student presentations.
+              - Design section materials and homework assignments; lead sections and office hours for the graduate-level course.
+          - title: Teaching Fellow, Introduction to Machine Learning, COMPSCI 1810
+            date: January 2026 - May 2026
+            bullets:
+              - Updated course content, wrote section notes and homework, hosted section and office hours weekly, participated in organizational meetings and proctored exams for the ~160 students in the class.
+          - title: Course Assistant, Theoretical Physics, Quantum Mechanics 1
+            date: September 2024 - May 2025
+            bullets:
+              - Provided supplementary education for students with upper level physics concepts. Evaluated assignments and provided feedback for 80+ students.
+
+  - title: Technical Skills & Projects
+    entries:
+      - text: "**Skills:** PyTorch, JAX, NumPy, TensorFlow, Gymnasium, PettingZoo, Wandb, TensorBoard, LangGraph, AutoGen, OpenAI/Anthropic API, Docker, RunPod/Cloud services, Fine-Tuning (LoRA), C++, Mathematica, MATLAB, SLURM, GitHub, Matplotlib & Seaborn"
+      - org: "ProofGOAT: OT-Based Proof Generation (CS2840 Optimal Transport Final Project)"
+        bullets:
+          - Developed OT framework aligning natural-language proofs with formal Lean code, achieving ~80% alignment for faster RLVR.
+      - org: "Eco Civilization MDP: A Multi-Agent Environment for Studying Sustainable Growth + Policivilization MDP"
+        bullets:
+          - Developed custom PettingZoo environment for training agents via MAPPO to model sustainable growth strategies. Extended with terrain, population dynamics, and government types.
+      - org: BUTLER Personal Agent
+        bullets:
+          - Anthropic Harvard Hackathon Finalist (1 of 4), architected multi-tool personal assistant with a sandboxed macOS VM via custom computer use package, file system access, and API integrations in 24 hours.
+      - text: "**Service:** Hosted 10+ Coffee Breaks for the Statistics Department at Harvard. Equity, Diversity, Inclusion and Belonging Committee Member for the Statistics Department."

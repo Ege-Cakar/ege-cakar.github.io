@@ -1,0 +1,118 @@
+// Icon motion. Moving parts are classed in _includes/icons/*.svg. They animate while the
+// icon's link, button, or interest card is hovered, and continuously in page and post titles.
+.icon {
+  * { transform-box: fill-box; }
+
+  .puff { opacity: 0; }
+  .draw { stroke-dasharray: 1; }
+  .feather { transform-origin: 0 100%; }
+  .seal, .record { transform-origin: 50% 50%; }
+  .flap, .lamp-chain, .swing-right { transform-origin: 50% 0; }
+  .ear-right, .lid { transform-origin: 50% 100%; }
+  .swing-left, .arm { transform-origin: 100% 0; }
+  .neuron { transform-origin: 50% 50%; }
+  .axon { opacity: 0; stroke-width: 1.4; stroke-dasharray: 0.3 2; stroke-dashoffset: 0.3; }
+
+  .handle, .seal, .back, .flap, .ribbon, .arm, .lamp-chain { transition: transform 0.25s ease; }
+}
+.icon-id-card { transition: transform 0.25s ease; }
+
+:is(a, button, .interest-card):hover .icon,
+:is(.page-header, .post-header) .icon {
+  .puff, .steam { animation: rise 1.2s ease-out infinite; }
+  .slide { animation: nudge 1s ease-in-out infinite; }
+  .neuron { animation: fire 1.2s ease-in-out infinite; }
+  .axon { opacity: 1; animation: signal 1.2s linear infinite; }
+  .draw { animation: draw 0.9s ease-out; }
+  .handle { transform: translateY(-1.5px); }
+  .feather { animation: wiggle 0.6s ease-in-out infinite; }
+  .seal { transform: scale(1.15); }
+  .back { transform: translate(1px, -1px); }
+  .flap { transform: scaleY(-1); }
+  .ear-right { animation: twitch 1.4s ease-in-out infinite; }
+  .lamp-chain { animation: sway 0.8s ease-in-out infinite; }
+  .antenna { animation: bob 0.3s ease-in-out infinite alternate; }
+  .swing-left { animation: swing-left 1.4s ease-in-out infinite; }
+  .swing-right { animation: swing-right 1.4s ease-in-out infinite; }
+  .ribbon { transform: translateY(1.5px); }
+  .record { animation: spin 2s linear infinite; }
+  .arm { transform: rotate(12deg); }
+  .lid { animation: rattle 0.3s ease-in-out infinite alternate; }
+
+  &.icon-id-card { transform: rotate(-8deg); }
+  &.icon-chess-knight { animation: knight-hop 0.9s ease-in-out; }
+  &.icon-controller { animation: rumble 0.12s linear 4; }
+}
+
+// Title icons loop the motions that are one-shot or hold-on-hover elsewhere
+:is(.page-header, .post-header) .icon {
+  .draw { animation: draw-loop 2.4s ease-in-out infinite; }
+  .handle { animation: lift 1.6s ease-in-out infinite; }
+}
+
+// Pull-chain tug while the lamp is pressed
+.theme-toggle:active .lamp-chain { animation: none; transform: translateY(1.5px); }
+
+@keyframes rise { 0% { opacity: 0; transform: translateY(1px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-2px); } }
+// Brain: a pulse runs along each axon (dash period 2.3 > path length 1, so one pulse at a time)
+// and each neuron flashes as it arrives; per-element delays are set inline in brain.svg
+@keyframes fire { 0%, 40%, 100% { transform: scale(1); opacity: 0.85; } 15% { transform: scale(1.7); opacity: 1; } }
+@keyframes signal { 0% { stroke-dashoffset: 0.3; } 35%, 100% { stroke-dashoffset: -1; } }
+@keyframes nudge { 25% { transform: translateX(1.5px); } 75% { transform: translateX(-1.5px); } }
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes draw-loop { 0% { stroke-dashoffset: 1; } 40%, 100% { stroke-dashoffset: 0; } }
+@keyframes lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
+@keyframes wiggle { 25% { transform: rotate(-8deg); } 75% { transform: rotate(6deg); } }
+@keyframes twitch { 0%, 60%, 100% { transform: rotate(0); } 70% { transform: rotate(18deg); } 80% { transform: rotate(-4deg); } 90% { transform: rotate(14deg); } }
+@keyframes sway { 0%, 100% { transform: rotate(-12deg); } 50% { transform: rotate(12deg); } }
+@keyframes bob { to { transform: translateY(-1px); } }
+// Newton's cradle: left ball falls in (-15.6deg makes its string vertical), right ball swings out, then back
+@keyframes swing-left { 0%, 100% { transform: rotate(0); } 25%, 75% { transform: rotate(-15.6deg); } }
+@keyframes swing-right { 0%, 25%, 75%, 100% { transform: rotate(0); } 50% { transform: rotate(-8deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes rattle { from { transform: rotate(-4deg); } to { transform: rotate(4deg) translateY(-0.5px); } }
+@keyframes knight-hop { 30% { transform: translate(0, -3px); } 60% { transform: translate(3px, -3px); } }
+@keyframes rumble { 25% { transform: translateX(-0.6px); } 75% { transform: translateX(0.6px); } }
+
+// Timeline: dots fill in as entries scroll into view (assets/js/site.js adds .seen);
+// the ongoing entry's dot pulses.
+.timeline {
+  .tl-body::before { transition: background 0.5s ease; }
+  > li.seen .tl-body::before { background: var(--accent); animation: dot-pop 0.5s ease; }
+
+  > li.current .tl-body::after {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 0.4rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    animation: pulse 2s ease-out infinite;
+  }
+}
+
+@keyframes dot-pop { 50% { transform: scale(1.4); } }
+@keyframes pulse { from { transform: scale(1); opacity: 0.7; } to { transform: scale(2.4); opacity: 0; } }
+
+// Page transitions (Chrome, Edge, Safari): pages cross-fade and the nav underline
+// slides to the new tab. Other browsers navigate normally.
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.25s; }
+::view-transition-group(nav-underline) { animation-duration: 0.35s; animation-timing-function: ease-in-out; }
+
+// Colors cross-fade when the lamp toggles the theme (class set briefly by toggleTheme)
+html.theme-fade, html.theme-fade * {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .icon, .icon *, .interest-card, .interest-icon, .timeline .tl-body::before {
+    animation: none !important;
+    transition: none !important;
+  }
+  .interest-card:hover, .interest-card:hover .interest-icon { transform: none; }
+  .timeline > li.current .tl-body::after { display: none; }
+}

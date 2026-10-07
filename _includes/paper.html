@@ -5,7 +5,8 @@
 <div class="pub-authors">{{ p.authors | replace: 'Ege Çakar', '<b>Ege Çakar</b>' }}</div>
 <div class="pub-venue">{{ p.venue }}</div>
 {% if p.note %}<div class="pub-note">{{ p.note }}</div>{% endif %}
-{% if p.url or p.code %}<div class="pub-links">
+{% if p.url or p.code or p.post %}<div class="pub-links">
   {%- if p.url %}<a class="btn" href="{{ p.url }}" target="_blank" rel="noopener">{% include icon.html name="paper-stack" %}Paper</a>{% endif %}
   {%- if p.code %}<a class="btn" href="{{ p.code }}" target="_blank" rel="noopener">{% include icon.html name="cat" %}Code</a>{% endif -%}
+  {%- if p.post %}<a class="btn" href="{{ p.post }}">{% include icon.html name="quill" %}Blog post</a>{% endif -%}
 </div>{% endif %}

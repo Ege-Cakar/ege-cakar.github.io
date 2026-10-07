@@ -387,6 +387,68 @@ def ssa():
            'to every retained chunk and to the candidate leaving the window, and the lowest score is evicted.', '\n'.join(b))
 
 
-for f in (argument, boule, mixer, gcg, laser, ssa):
+# ---------------------------------------------------------------------------
+# Mathlib proof graphs (technical report, 2026). Illustrative layout, not real data:
+# tree-like communities around hubs, one large shared hub (heavy-tailed degree),
+# sparse links between communities, next to the report's headline numbers
+# (Tables 1 and 3).
+def mathlib():
+    import random
+    P = 'mathlib'
+    rng = random.Random(7)
+    colors = ['var(--blue)', 'var(--red)', '#5f8a5a', '#b8893a']
+    centers = [(78, 66), (214, 58), (86, 178), (220, 176)]
+    nodes, edges = [], []  # nodes: [x, y, community or None]; edges: (i, j)
+    def add(x, y, c):
+        nodes.append([x, y, c]); return len(nodes) - 1
+    hubs = []
+    for c, (cx, cy) in enumerate(centers):
+        hub = add(cx, cy, c); hubs.append(hub)
+        base = rng.uniform(0, 2 * math.pi)
+        for k in range(6):  # children of the hub, each with a few leaves: locally tree-like
+            a = base + k * 2 * math.pi / 6 + rng.uniform(-0.25, 0.25)
+            r1 = rng.uniform(24, 30)
+            ch = add(cx + r1 * math.cos(a), cy + r1 * math.sin(a), c); edges.append((hub, ch))
+            for _ in range(rng.choice([0, 1, 2, 2, 3])):
+                b = a + rng.uniform(-0.6, 0.6); r2 = rng.uniform(13, 19)
+                lf = add(nodes[ch][0] + r2 * math.cos(b), nodes[ch][1] + r2 * math.sin(b), c); edges.append((ch, lf))
+    core = add(150, 118, None)  # the shared infrastructure hub
+    for h in hubs:
+        edges.append((core, h))
+    for c in range(4):  # a few more declarations from every community cite the shared hub
+        members = [i for i, n in enumerate(nodes) if n[2] == c and i not in hubs]
+        for i in rng.sample(members, 5):
+            edges.append((core, i))
+    edges += [(hubs[0], hubs[1]), (hubs[2], hubs[3])]  # sparse links between communities
+    deg = [0] * len(nodes)
+    for i, j in edges:
+        deg[i] += 1; deg[j] += 1
+    b = []
+    for i, j in edges:
+        (x1, y1, c1), (x2, y2, c2) = nodes[i], nodes[j]
+        same = c1 is not None and c1 == c2
+        style = f'stroke:{colors[c1]};stroke-width:.8;opacity:.55' if same else 'stroke:var(--muted);stroke-width:.6;opacity:.45'
+        b.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" style="{style}"/>')
+    for i, (x, y, c) in enumerate(nodes):
+        r = 1.6 + 0.9 * math.sqrt(deg[i])
+        fill = 'var(--ink)' if c is None else colors[c]
+        b.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" style="fill:{fill};stroke:var(--paper);stroke-width:.8"/>')
+    b.append('<text x="150" y="141" font-size="8.5" text-anchor="middle" class="t-muted" '
+             'style="paint-order:stroke;stroke:var(--paper);stroke-width:3">shared hub</text>')
+    b.append(text(12, 234, 'illustrative layout', 't-muted', 8.5, 'start'))
+    # headline numbers from the report
+    stats = [('138,333', 'declarations'), ('309,396', 'dependency edges'),
+             ('240', 'communities, Q = 0.592'), ('2.37', 'degree-tail exponent')]
+    b.append('<line x1="292" y1="20" x2="292" y2="222" class="s-muted" style="stroke-width:.6"/>')
+    for k, (v, label) in enumerate(stats):
+        y = 44 + k * 50
+        b.append(text(302, y, v, '', 15, 'start', 600))
+        b.append(text(302, y + 13, label, 't-muted', 8.5, 'start'))
+    svg(P, 'Illustrative layout of Mathlib\'s theorem-dependency graph: four tree-like communities grown around hubs, one large shared hub '
+           'that all communities cite, and sparse links between communities. Beside it, the report\'s numbers: 138,333 declarations, '
+           '309,396 dependency edges, 240 communities with modularity 0.592, and a degree-tail exponent of 2.37.', '\n'.join(b))
+
+
+for f in (argument, boule, mixer, gcg, laser, ssa, mathlib):
     f()
 print('wrote', sorted(os.listdir(OUT)))

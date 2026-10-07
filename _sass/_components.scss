@@ -335,6 +335,9 @@
   .t-blue { fill: var(--blue); }
 }
 
+// Research figure shown at the top of a blog post
+.post-figure { max-width: 640px; margin: 0 auto 2rem; }
+
 // Pill-shaped tags
 .chips {
   display: flex;

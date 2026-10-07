@@ -40,6 +40,7 @@ permalink: /research/
   <div class="tl-date">Spring 2026</div>
   <div class="tl-body">
   <h3 class="tl-title">Pehlevan Lab · Kempner Institute</h3>
+  <h4>Main Project</h4>
   <div class="tl-split">
   <div>
   {% assign p = site.data.papers | where: "id", "boule-or-baguette" | first %}
@@ -47,6 +48,15 @@ permalink: /research/
   <blockquote>Our findings overall identify fundamental benefits and limitations inherent in using reasoning traces.</blockquote>
   </div>
   <figure class="paper-figure">{% include figures/boule.svg %}</figure>
+  </div>
+  <h4>Side Project</h4>
+  <div class="tl-split">
+  <div>
+  {% assign p = site.data.papers | where: "id", "mathlib-geometry" | first %}
+  <div class="tl-paper">{% include paper.html p=p %}</div>
+  <blockquote>This paper analyzes Mathlib through two graphs extracted from LeanDojo traces: a theorem-dependency graph, whose edges record premise use, and a state-tactic hypergraph, whose edges record goal-level proof-state transformations induced by tactics.</blockquote>
+  </div>
+  <figure class="paper-figure">{% include figures/mathlib.svg %}</figure>
   </div>
   </div>
   </li>

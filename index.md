@@ -74,7 +74,7 @@ title: Home
 <ol class="timeline compact">
   <li>
     <div class="tl-date">October 2026</div>
-    <div class="tl-body">Released State Space Attention on arXiv (link coming soon).</div>
+    <div class="tl-body"><a href="{% post_url 2026-10-06-mathlib-proof-graphs %}">Blog post</a> over my side project in Pehlevan Lab over Spring 2026 is up!</div>
   </li>
   <li>
     <div class="tl-date">September 2026</div>

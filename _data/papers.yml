@@ -1,5 +1,6 @@
 # Single source for papers on Home, Research, and CV (_includes/paper.html renders one).
 # type: peer-reviewed | preprint. badges: short venue chips beside the title. footnote: CV page only.
+# url / code / post add Paper, Code, and Blog post buttons.
 - id: ssa
   type: preprint
   title: "State Space Attention: Learning Context-Dependent Memory Retention"
@@ -39,7 +40,9 @@
   badges: [Technical Report]
   authors: Ege Çakar
   venue: Technical Report, 2026
-  note: Blog post and manuscript forthcoming
+  url: /assets/files/Mathlib_Proof_Graphs_Report.pdf
+  code: https://github.com/Ege-Cakar/mathlib_analysis
+  post: /blog/2026/10/06/mathlib-proof-graphs/
 
 - id: argument-is-the-explanation
   type: preprint

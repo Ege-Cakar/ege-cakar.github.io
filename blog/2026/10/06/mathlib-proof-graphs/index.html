@@ -1,4 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://egecakar.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://egecakar.com/" rel="alternate" type="text/html" /><updated>2026-10-07T04:12:00+00:00</updated><id>https://egecakar.com/feed.xml</id><title type="html">Ege Çakar</title><subtitle>Machine Learning &amp; Physics | Harvard University</subtitle><entry><title type="html">Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs</title><link href="https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs/" rel="alternate" type="text/html" title="Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs" /><published>2026-10-06T00:00:00+00:00</published><updated>2026-10-06T00:00:00+00:00</updated><id>https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs</id><content type="html" xml:base="https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs/"><![CDATA[<figure class="paper-figure post-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Illustrative layout of Mathlib's theorem-dependency graph: four tree-like communities grown around hubs, one large shared hub that all communities cite, and sparse links between communities. Beside it, the report's numbers: 138,333 declarations, 309,396 dependency edges, 240 communities with modularity 0.592, and a degree-tail exponent of 2.37.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs | Ege Çakar</title>
+<meta name="description" content="Machine Learning & Physics | Harvard University">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<script>
+  // The theme follows the OS. The lamp overrides it for this tab session (sessionStorage,
+  // applied before first paint), and the override is dropped when the OS theme changes.
+  try { var t = sessionStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  var osDark = matchMedia('(prefers-color-scheme: dark)');
+  osDark.addEventListener('change', function () {
+    delete document.documentElement.dataset.theme;
+    try { sessionStorage.removeItem('theme'); } catch (e) {}
+  });
+  function toggleTheme() {
+    var r = document.documentElement;
+    var dark = r.dataset.theme ? r.dataset.theme === 'dark' : osDark.matches;
+    r.classList.add('theme-fade');
+    r.dataset.theme = dark ? 'light' : 'dark';
+    setTimeout(function () { r.classList.remove('theme-fade'); }, 450);
+    try { sessionStorage.setItem('theme', r.dataset.theme); } catch (e) {}
+  }
+</script>
+<link rel="stylesheet" href="/assets/css/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://egecakar.com/feed.xml" title="Ege Çakar" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs | Ege Çakar</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="shared hub illustrative layout 138,333 declarations 309,396 dependency edges 240 communities, Q = 0.592 2.37 degree-tail exponent" />
+<meta property="og:description" content="shared hub illustrative layout 138,333 declarations 309,396 dependency edges 240 communities, Q = 0.592 2.37 degree-tail exponent" />
+<link rel="canonical" href="https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs/" />
+<meta property="og:url" content="https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs/" />
+<meta property="og:site_name" content="Ege Çakar" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-06T00:00:00+00:00","datePublished":"2026-10-06T00:00:00+00:00","description":"shared hub illustrative layout 138,333 declarations 309,396 dependency edges 240 communities, Q = 0.592 2.37 degree-tail exponent","headline":"Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs","mainEntityOfPage":{"@type":"WebPage","@id":"https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs/"},"url":"https://egecakar.com/blog/2026/10/06/mathlib-proof-graphs/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+<body>
+  <div class="site-wrapper">
+    <nav class="site-nav">
+  <a href="/" class="site-title">Ege Çakar</a>
+  <ul class="nav-links">
+    
+      <li>
+        <a href="/"
+           >
+          <svg class="icon icon-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path class="fill" d="M10 20v-5h4v5"/><path d="M16 6.7V4.5h2v3.9"/><path class="puff" d="M17.3 3.4c-.7-.6.2-1.3-.4-2"/>
+</svg>
+Home
+        </a>
+      </li>
+    
+      <li>
+        <a href="/research/"
+           >
+          <svg class="icon icon-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M11.2 3.6C9.4 2.5 5.6 3 6.6 6 4 5.6 2.6 8 4.9 9.4 2.4 10.2 2.4 12.8 4.9 13.6 2.6 14.6 3.6 17.6 6.7 17.3 6.4 20.6 9.8 21.4 11.2 20.2Z"/><path class="fill" d="M12.8 3.6C14.6 2.5 18.4 3 17.4 6 20 5.6 21.4 8 19.1 9.4 21.6 10.2 21.6 12.8 19.1 13.6 21.4 14.6 20.4 17.6 17.3 17.3 17.6 20.6 14.2 21.4 12.8 20.2Z"/><path d="M8.2 7.4 15.8 15.8 8.2 15.8 15.8 7.4" style="stroke-width:.8;stroke-opacity:.45"/><path class="axon" pathLength="1" d="M8.2 7.4 15.8 15.8"/><path class="axon" pathLength="1" d="M15.8 15.8 8.2 15.8" style="animation-delay:0.25s"/><path class="axon" pathLength="1" d="M8.2 15.8 15.8 7.4" style="animation-delay:0.5s"/><circle class="neuron" cx="8.2" cy="7.4" r="1.15" fill="currentColor" stroke="none"/><circle class="neuron" cx="15.8" cy="15.8" r="1.15" fill="currentColor" stroke="none" style="animation-delay:0.25s"/><circle class="neuron" cx="8.2" cy="15.8" r="1.15" fill="currentColor" stroke="none" style="animation-delay:0.5s"/><circle class="neuron" cx="15.8" cy="7.4" r="1.15" fill="currentColor" stroke="none" style="animation-delay:0.75s"/>
+</svg>
+Research
+        </a>
+      </li>
+    
+      <li>
+        <a href="/teaching/"
+           >
+          <svg class="icon icon-chalkboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="3" y="3.5" width="18" height="12" rx="1"/><path class="draw" pathLength="1" d="M6.5 11c1-3 2-3 3 0s2 3 3 0"/><path d="M15 7.5h3M15 10h2"/><path d="M7 15.5 5.5 21M17 15.5l1.5 5.5M2.5 15.5h19"/>
+</svg>
+Teaching
+        </a>
+      </li>
+    
+      <li>
+        <a href="/projects/"
+           >
+          <svg class="icon icon-toolbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="11" rx="1.5"/><path class="handle" d="M9 9V6.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V9"/><path d="M3 13.5h18"/><rect class="fill" x="10.5" y="12" width="3" height="3" rx=".5"/>
+</svg>
+Projects
+        </a>
+      </li>
+    
+      <li>
+        <a href="/cv/"
+           >
+          <svg class="icon icon-scroll" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="6" y="3" width="13" height="3.5" rx="1.75"/><rect class="fill" x="5" y="17.5" width="13" height="3.5" rx="1.75"/><path d="M7.5 6.5v11M16.5 6.5v11"/><path class="draw" pathLength="1" d="M10 10h4M10 13h4"/>
+</svg>
+CV
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/"
+           >
+          <svg class="icon icon-quill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5.5 16h6v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/><path d="M6.5 16v-2h4v2"/><g class="feather"><path d="M8.5 14C10 9 14 4.5 20.5 3c-1 5-4.5 9-10 10.5"/><path d="M8.5 14l5.5-6.5"/></g>
+</svg>
+Blog
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about/"
+           >
+          <svg class="icon icon-mug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.5h11V16a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4z"/><path class="fill" d="M4.5 9.5h11V12h-11z" stroke="none"/><path d="M15.5 11.5h1.5a2.5 2.5 0 0 1 0 5h-1.6"/><path class="steam" d="M8 3.5c-1 1.2 1 2.3 0 3.5M12 3.5c-1 1.2 1 2.3 0 3.5"/>
+</svg>
+About
+        </a>
+      </li>
+    
+    <li>
+      <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon icon-lamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="lamp-glow" d="M5 11h14l3 10H2z" stroke="none"/><path class="lamp-shade" d="M8 3h8l3 8H5z"/><path d="M12 11v9M8 20.5h8"/><g class="lamp-chain"><path d="M15.5 11v3"/><circle cx="15.5" cy="14.6" r=".6"/></g>
+</svg>
+
+      </button>
+    </li>
+  </ul>
+</nav>
+
+    <main class="site-content">
+      <article>
+  <div class="post-header">
+    <h1><svg class="icon icon-quill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5.5 16h6v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/><path d="M6.5 16v-2h4v2"/><g class="feather"><path d="M8.5 14C10 9 14 4.5 20.5 3c-1 5-4.5 9-10 10.5"/><path d="M8.5 14l5.5-6.5"/></g>
+</svg>
+Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs</h1>
+    <p class="post-meta">October 6, 2026</p>
+  </div>
+
+  <figure class="paper-figure post-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Illustrative layout of Mathlib's theorem-dependency graph: four tree-like communities grown around hubs, one large shared hub that all communities cite, and sparse links between communities. Beside it, the report's numbers: 138,333 declarations, 309,396 dependency edges, 240 communities with modularity 0.592, and a degree-tail exponent of 2.37.">
 <defs>
 <marker id="mathlib-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="mathlib-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
@@ -223,199 +363,27 @@
 
 <p>Code: <a href="https://github.com/Ege-Cakar/mathlib_analysis" target="_blank">github.com/Ege-Cakar/mathlib_analysis</a></p>
 
-<iframe title="Mathlib Proof Graphs Report" src="/assets/files/Mathlib_Proof_Graphs_Report.pdf" width="100%" height="900" style="border: 1px solid var(--border); border-radius: 6px;"></iframe>]]></content><author><name></name></author><summary type="html"><![CDATA[shared hub illustrative layout 138,333 declarations 309,396 dependency edges 240 communities, Q = 0.592 2.37 degree-tail exponent]]></summary></entry><entry><title type="html">In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers</title><link href="https://egecakar.com/blog/2025/05/07/mlp-mixer-icl/" rel="alternate" type="text/html" title="In-Context Learning Without Attention: MLP Mixers as an Alternative to Transformers" /><published>2025-05-07T00:00:00+00:00</published><updated>2025-05-07T00:00:00+00:00</updated><id>https://egecakar.com/blog/2025/05/07/mlp-mixer-icl</id><content type="html" xml:base="https://egecakar.com/blog/2025/05/07/mlp-mixer-icl/"><![CDATA[<figure class="paper-figure post-figure"><svg viewBox="0 0 400 240" role="img" aria-label="A one-layer MLP Mixer reads a sequence of context exemplars and labels plus a query. A token-mixing MLP mixes across positions, a channel-mixing MLP acts per token, and average pooling gives the query label. As the number of clusters grows, in-weight accuracy falls and in-context accuracy rises.">
-<defs>
-<marker id="mixer-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
-<marker id="mixer-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
-<marker id="mixer-muted" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 9 5 0 9z" style="fill:var(--muted)" /></marker>
-<marker id="mixer-flat" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M8 0V10" class="s-red" style="stroke-width:2.2" /></marker>
-</defs>
-<rect x="14" y="38" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
-<text x="22" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">1</tspan></text>
-<rect x="35" y="38" width="18" height="18" rx="2" class="s f-white" />
-<text x="43" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">1</tspan></text>
-<rect x="56" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
-<text x="64" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">2</tspan></text>
-<rect x="77" y="38" width="18" height="18" rx="2" class="s f-white" />
-<text x="85" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">2</tspan></text>
-<text x="104" y="51" class="" font-size="12" text-anchor="middle">⋯</text>
-<rect x="112" y="38" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" />
-<text x="120" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">L</tspan></text>
-<rect x="133" y="38" width="18" height="18" rx="2" class="s f-white" />
-<text x="141" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">L</tspan></text>
-<rect x="154" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
-<text x="162" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">q</tspan></text>
-<line x1="23" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<rect x="14" y="98" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
-<rect x="35" y="98" width="18" height="18" rx="2" class="s f-white" />
-<rect x="56" y="98" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
-<rect x="77" y="98" width="18" height="18" rx="2" class="s f-white" />
-<text x="104" y="111" class="" font-size="12" text-anchor="middle">⋯</text>
-<rect x="112" y="98" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" />
-<rect x="133" y="98" width="18" height="18" rx="2" class="s f-white" />
-<rect x="154" y="98" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
-<line x1="23.0" y1="116.0" x2="23.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<line x1="44.0" y1="116.0" x2="44.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<line x1="65.0" y1="116.0" x2="65.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<line x1="86.0" y1="116.0" x2="86.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<line x1="121.0" y1="116.0" x2="121.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<line x1="142.0" y1="116.0" x2="142.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<line x1="163.0" y1="116.0" x2="163.0" y2="141.0" class="s" marker-end="url(#mixer-ink)" style="stroke-width:1" />
-<rect x="14" y="142" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
-<rect x="35" y="142" width="18" height="18" rx="2" class="s f-white" />
-<rect x="56" y="142" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
-<rect x="77" y="142" width="18" height="18" rx="2" class="s f-white" />
-<text x="104" y="155" class="" font-size="12" text-anchor="middle">⋯</text>
-<rect x="112" y="142" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" />
-<rect x="133" y="142" width="18" height="18" rx="2" class="s f-white" />
-<rect x="154" y="142" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
-<text x="182" y="70" class="t-red" font-size="11" text-anchor="start">token-mixing</text>
-<text x="182" y="82" class="t-muted" font-size="10" text-anchor="start">across</text>
-<text x="182" y="93" class="t-muted" font-size="10" text-anchor="start">positions</text>
-<text x="182" y="131" class="" font-size="11" text-anchor="start">channel-</text>
-<text x="182" y="143" class="" font-size="11" text-anchor="start">mixing</text>
-<text x="182" y="155" class="t-muted" font-size="10" text-anchor="start">per token</text>
-<line x1="23" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<line x1="44" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<line x1="65" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<line x1="86" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<line x1="121" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<line x1="142" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<line x1="163" y1="160" x2="90" y2="184" class="s-muted" style="stroke-width:.8" />
-<rect x="64" y="184" width="52" height="16" rx="3" class="s f-node" />
-<text x="90" y="196" class="" font-size="10" text-anchor="middle">avg pool</text>
-<line x1="90.0" y1="200.0" x2="90.0" y2="214.0" class="s" marker-end="url(#mixer-ink)" />
-<text x="90" y="228" class="" font-size="10" text-anchor="middle">4 logits → label of</text>
-<text x="150" y="228" class="m" text-anchor="middle" font-size="12">x<tspan dy="3" font-size="8">q</tspan></text>
-<path d="M280 34 V168 H392" class="s" style="stroke-width:1" />
-<text x="276" y="172.0" class="t-muted" font-size="9" text-anchor="end">0.2</text>
-<text x="276" y="108.0" class="t-muted" font-size="9" text-anchor="end">0.6</text>
-<text x="276" y="44.0" class="t-muted" font-size="9" text-anchor="end">1</text>
-<text x="280" y="28" class="t-muted" font-size="10" text-anchor="start">accuracy</text>
-<polyline points="280.0,40.0 298.0,40.0 316.0,41.6 334.0,43.2 352.0,65.6 370.0,147.2 388.0,158.4" class="s-muted dash" style="stroke-width:1.6" />
-<polyline points="280.0,153.6 298.0,160.0 316.0,158.4 334.0,160.0 352.0,150.4 370.0,76.8 388.0,40.0" class="s-blue" />
-<circle cx="280.0" cy="153.6" r="2.2" class="f-blue" />
-<circle cx="298.0" cy="160.0" r="2.2" class="f-blue" />
-<circle cx="316.0" cy="158.4" r="2.2" class="f-blue" />
-<circle cx="334.0" cy="160.0" r="2.2" class="f-blue" />
-<circle cx="352.0" cy="150.4" r="2.2" class="f-blue" />
-<circle cx="370.0" cy="76.8" r="2.2" class="f-blue" />
-<circle cx="388.0" cy="40.0" r="2.2" class="f-blue" />
-<text x="284.0" y="55.0" class="t-muted" font-size="10" text-anchor="start">IWL test</text>
-<text x="384.0" y="34.0" class="t-blue" font-size="10" text-anchor="end">ICL test</text>
-<text x="280" y="181" class="t-muted" font-size="10" text-anchor="middle">2<tspan dy="-5" font-size="8">5</tspan></text>
-<text x="388" y="181" class="t-muted" font-size="10" text-anchor="middle">2<tspan dy="-5" font-size="8">11</tspan></text>
-<text x="334.0" y="183" class="t-muted" font-size="10" text-anchor="middle">clusters <tspan class="m" font-size="12">k</tspan></text>
-<text x="334.0" y="202" class="t-muted" font-size="9" text-anchor="middle">sketch of report Fig. 1c</text>
+<iframe title="Mathlib Proof Graphs Report" src="/assets/files/Mathlib_Proof_Graphs_Report.pdf" width="100%" height="900" style="border: 1px solid var(--border); border-radius: 6px;"></iframe>
+
+</article>
+
+    </main>
+    <footer class="site-footer">
+  <div class="footer-links">
+    <a href="mailto:ecakar@college.harvard.edu"><svg class="icon icon-envelope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path class="flap" d="M3.5 6.5 12 13l8.5-6.5"/><path d="M3.5 18 9.5 12M20.5 18l-6-6"/>
 </svg>
-</figure>
+Email</a>
+    <a href="https://github.com/Ege-Cakar" target="_blank" rel="noopener"><svg class="icon icon-cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5 10.5C5 8 7 7.3 9.5 7.3h5c2.5 0 4.5.7 4.5 3.2 0 5-3 8-7 8s-7-3-7-8z"/><path class="fill ear" d="M5.1 9.2 5.5 4l4 3.3"/><path class="fill ear ear-right" d="M18.9 9.2 18.5 4l-4 3.3"/><circle cx="9.3" cy="11.5" r=".6" fill="currentColor"/><circle cx="14.7" cy="11.5" r=".6" fill="currentColor"/><path d="M11.3 14h1.4l-.7.7zM2.5 13h3.5M2.8 15.3l3.4-.8M21.5 13H18M21.2 15.3l-3.4-.8"/>
+</svg>
+GitHub</a>
+    <a href="https://linkedin.com/in/egecakar" target="_blank" rel="noopener"><svg class="icon icon-id-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><circle class="fill" cx="8.5" cy="10.5" r="1.8"/><path d="M5.5 15.5c.4-1.6 1.6-2.5 3-2.5s2.6.9 3 2.5M14 10h4M14 13h3"/>
+</svg>
+LinkedIn</a>
+  </div>
+  <p>&copy; 2026 Ege Çakar. Built with Jekyll.</p>
+</footer>
 
-<p>During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters.</p>
-
-<p>The prevailing wisdom says yes: attention seems essential for comparing information across positions. But recent work from Tong and Pehlevan showed even vanilla MLPs could learn in-context under certain conditions. This made me wonder about MLP Mixers, which achieve global information transfer through token-mixing operations rather than attention.</p>
-
-<h3 id="the-experiment">The Experiment</h3>
-
-<p>I used synthetic classification tasks based on Gaussian mixture models. Models had to infer cluster-to-label mappings from context examples and apply them to a query point. By varying the number of clusters (k) from 32 to 2048, I forced a transition from memorization to true in-context learning—with enough clusters, memorization becomes impossible.</p>
-
-<h3 id="key-results">Key Results</h3>
-
-<ul>
-  <li>MLP Mixers matched Transformer performance while using 3x fewer parameters. My best Mixer had only 3,389 parameters compared to the Transformer’s 9,508.</li>
-  <li>The Mixer showed a sharp transition from memorization to ICL around 2^9 clusters.</li>
-</ul>
-
-<p>However, the Transformer results were unexpected and somewhat concerning—it showed minimal improvement in ICL performance even at high cluster counts. This likely indicates the Transformer needed more parameters or different training dynamics, but it deserves deeper investigation before drawing strong conclusions.</p>
-
-<h3 id="whats-next">What’s Next</h3>
-
-<p>I’m currently working on several follow-up directions:</p>
-
-<ul>
-  <li>Retraining with decoder-only Transformers to see if the architecture makes a difference</li>
-  <li>Comparing Mixer behavior to what Transformers actually do and what Gautam Reddy’s work predicts they should do</li>
-  <li>Borrowing methods from Reddy’s papers for more rigorous mechanistic analysis</li>
-  <li>Testing whether one layer and one head is sufficient for these tasks</li>
-</ul>
-
-<p>The mechanistic interpretability remains elusive. Activation analysis suggests the Mixer focuses on context rather than query tokens, and attribution flows through limited channels, but the full picture of how information routes through the model needs more work.</p>
-
-<h3 id="why-this-matters">Why This Matters</h3>
-
-<p>If Mixers can achieve comparable ICL with fewer parameters, that opens new architectural possibilities—especially important as training costs and energy consumption bottleneck large language models. The results suggest in-context learning might be more general than we thought, not intrinsically tied to attention mechanisms.</p>
-
-<p>But the Transformer underperformance is a puzzle that needs solving before making strong claims.</p>
-
-<hr />
-
-<h2 id="citation">Citation</h2>
-
-<p>If you use this work, please cite the report:</p>
-
-<blockquote>
-  <p>Ege Çakar. <em>In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures.</em> Technical report, Department of Statistics, Harvard University, May 2025. <a href="/assets/files/MLPMixer_ICL_Report.pdf">egecakar.com/assets/files/MLPMixer_ICL_Report.pdf</a></p>
-</blockquote>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@techreport</span><span class="p">{</span><span class="nl">cakar2025mixericl</span><span class="p">,</span>
-  <span class="na">title</span>       <span class="p">=</span> <span class="s">{In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures}</span><span class="p">,</span>
-  <span class="na">author</span>      <span class="p">=</span> <span class="s">{{\c{C}}akar, Ege}</span><span class="p">,</span>
-  <span class="na">institution</span> <span class="p">=</span> <span class="s">{Department of Statistics, Harvard University}</span><span class="p">,</span>
-  <span class="na">year</span>        <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
-  <span class="na">month</span>       <span class="p">=</span> <span class="nv">may</span><span class="p">,</span>
-  <span class="na">url</span>         <span class="p">=</span> <span class="s">{https://egecakar.com/assets/files/MLPMixer_ICL_Report.pdf}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="full-report">Full Report</h2>
-
-<p><a href="/assets/files/MLPMixer_ICL_Report.pdf" target="_blank">Download PDF</a></p>
-
-<iframe title="MLP Mixer ICL Report" src="/assets/files/MLPMixer_ICL_Report.pdf" width="100%" height="900" style="border: 1px solid var(--border); border-radius: 6px;"></iframe>]]></content><author><name></name></author><summary type="html"><![CDATA[x1 y1 x2 y2 ⋯ xL yL xq ⋯ ⋯ token-mixing across positions channel- mixing per token avg pool 4 logits → label of xq 0.2 0.6 1 accuracy IWL test ICL test 25 211 clusters k sketch of report Fig. 1c]]></summary></entry></feed>
+  </div>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

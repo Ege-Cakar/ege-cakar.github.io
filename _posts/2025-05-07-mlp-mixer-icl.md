@@ -4,6 +4,8 @@ title: "In-Context Learning Without Attention: MLP Mixers as an Alternative to T
 date: 2025-05-07
 ---
 
+<figure class="paper-figure post-figure">{% include figures/mixer.svg %}</figure>
+
 During my work in the Pehlevan Lab over the Spring 2025 semester, I investigated whether you really need attention mechanisms for in-context learning (ICL)—the ability of models to learn from examples in their input without updating parameters.
 
 The prevailing wisdom says yes: attention seems essential for comparing information across positions. But recent work from Tong and Pehlevan showed even vanilla MLPs could learn in-context under certain conditions. This made me wonder about MLP Mixers, which achieve global information transfer through token-mixing operations rather than attention.
@@ -37,6 +39,25 @@ If Mixers can achieve comparable ICL with fewer parameters, that opens new archi
 But the Transformer underperformance is a puzzle that needs solving before making strong claims.
 
 ---
+
+## Citation
+
+If you use this work, please cite the report:
+
+> Ege Çakar. *In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures.* Technical report, Department of Statistics, Harvard University, May 2025. [egecakar.com/assets/files/MLPMixer_ICL_Report.pdf](/assets/files/MLPMixer_ICL_Report.pdf)
+
+{% raw %}
+```bibtex
+@techreport{cakar2025mixericl,
+  title       = {In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures},
+  author      = {{\c{C}}akar, Ege},
+  institution = {Department of Statistics, Harvard University},
+  year        = {2025},
+  month       = may,
+  url         = {https://egecakar.com/assets/files/MLPMixer_ICL_Report.pdf}
+}
+```
+{% endraw %}
 
 ## Full Report
 

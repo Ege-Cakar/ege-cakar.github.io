@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="profile">
-  <img src="/assets/img/pfp.jpg" alt="Ege Çakar" class="profile-photo">
+  <img src="/assets/img/pfp.jpg" alt="Ege Çakar" class="profile-photo" width="150" height="150">
   <div class="profile-info">
     <h1>Ege Çakar</h1>
     <p class="subtitle">Machine Learning · Physics · Statistics</p>

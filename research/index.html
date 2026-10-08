@@ -119,6 +119,13 @@ About
       </li>
     
     <li>
+      <button class="search-toggle" type="button" aria-label="Search (Cmd/Ctrl+K)" title="Search (⌘K)">
+        <svg class="icon icon-magnifier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="lens"><circle class="fill" cx="10.5" cy="10.5" r="6"/><path d="M8 8.2a3.2 3.2 0 0 1 2.4-1.2" style="stroke-width:1.2;stroke-opacity:.7"/><path d="M15 15l5.5 5.5" style="stroke-width:2.2"/></g>
+</svg>
+
+      </button>
+    </li>
+    <li>
       <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg class="icon icon-lamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="lamp-glow" d="M5 11h14l3 10H2z" stroke="none"/><path class="lamp-shade" d="M8 3h8l3 8H5z"/><path d="M12 11v9M8 20.5h8"/><g class="lamp-chain"><path d="M15.5 11v3"/><circle cx="15.5" cy="14.6" r=".6"/></g>
 </svg>
@@ -135,6 +142,16 @@ About
 </svg>
 Research</h1>
 </div>
+
+<h2 id="research-map">Research Map</h2>
+
+<div class="research-map">
+  <ul class="map-themes"><li data-theme="memory">Memory &amp; efficiency</li><li data-theme="reasoning">Reasoning</li><li data-theme="formal-math">Formal math</li><li data-theme="safety">Safety &amp; trust</li></ul>
+  <ul class="map-papers"><li data-themes="memory"><a href="#paper-ssa">State Space Attention</a></li><li data-themes="reasoning"><a href="#paper-boule-or-baguette">Boule or Baguette?</a></li><li data-themes="safety"><a href="#paper-safety-representations">Activation-Guided Adversarial Suffixes</a></li><li data-themes="memory reasoning"><a href="#paper-laser">LASER</a></li><li data-themes="reasoning formal-math"><a href="#paper-mathlib-geometry">Mathlib as a Geometry</a></li><li data-themes="safety"><a href="#paper-argument-is-the-explanation">The Argument is the Explanation</a></li><li data-themes="memory"><a href="#paper-mlp-mixer-icl">MLP Mixer ICL</a></li></ul>
+  <svg class="map-edges" aria-hidden="true"></svg>
+</div>
+
+<h2 id="timeline">Timeline</h2>
 
 <ol class="timeline">
   <li class="current">
@@ -164,57 +181,64 @@ Research</h1>
 <div class="pub-authors"><b>Ege Çakar</b>, Cengiz Pehlevan</div>
 <div class="pub-venue">Preprint, 2026</div>
 <div class="pub-note">arXiv link coming soon</div>
-
+<div class="pub-links"><button class="btn cite-btn" type="button" data-bibtex="@misc{cakar2026ssa,
+  title  = {State Space Attention: Learning Context-Dependent Memory Retention},
+  author = {{\c{C}}akar, Ege and Pehlevan, Cengiz},
+  year   = {2026},
+  note   = {Preprint}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </div>
   <blockquote>We introduce State Space Attention (SSA), an attention architecture that learns to maintain a bounded set of past representations and reads them using standard attention.</blockquote>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="The input is split into chunks. At step t the reader attends with ordinary softmax attention over a bounded set: M retained chunks, w window chunks, and the current chunk, at most R = (M+w+1)C tokens. A learned scorer gives keep scores to every retained chunk and to the candidate leaving the window, and the lowest score is evicted.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="The input is split into chunks. At step t the reader attends with ordinary softmax attention over a bounded set: M retained chunks, w window chunks, and the current chunk, at most R = (M+w+1)C tokens. A learned scorer gives keep scores to every retained chunk and to the candidate leaving the window, and the lowest score is evicted." data-figure="ssa">
 <defs>
 <marker id="ssa-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="ssa-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
 <marker id="ssa-muted" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 9 5 0 9z" style="fill:var(--muted)" /></marker>
 <marker id="ssa-flat" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M8 0V10" class="s-red" style="stroke-width:2.2" /></marker>
 </defs>
-<rect x="30" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" />
-<rect x="56" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
-<rect x="82" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" />
-<rect x="108" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
-<rect x="134" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
-<rect x="160" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" />
-<rect x="186" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
-<rect x="212" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" />
-<rect x="238" y="24" width="22" height="14" rx="2" style="fill:rgba(59,106,154,.3);stroke:var(--blue);stroke-width:1.2" />
-<rect x="264" y="24" width="22" height="14" rx="2" style="fill:#fffdf8;stroke:var(--ink);stroke-width:1.2" />
-<rect x="290" y="24" width="22" height="14" rx="2" style="fill:none;stroke:var(--muted);stroke-dasharray:3 2;stroke-width:1.2" />
-<rect x="316" y="24" width="22" height="14" rx="2" style="fill:none;stroke:var(--muted);stroke-dasharray:3 2;stroke-width:1.2" />
+<rect x="30" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" data-pos="0" />
+<rect x="56" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" data-pos="1" />
+<rect x="82" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" data-pos="2" />
+<rect x="108" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" data-pos="3" />
+<rect x="134" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" data-pos="4" />
+<rect x="160" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" data-pos="5" />
+<rect x="186" y="24" width="22" height="14" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" data-pos="6" />
+<rect x="212" y="24" width="22" height="14" rx="2" style="fill:#d4d3cc;stroke:#b9b6ad;stroke-width:1.2" data-pos="7" />
+<rect x="238" y="24" width="22" height="14" rx="2" style="fill:rgba(59,106,154,.3);stroke:var(--blue);stroke-width:1.2" data-pos="8" />
+<rect x="264" y="24" width="22" height="14" rx="2" style="fill:#fffdf8;stroke:var(--ink);stroke-width:1.2" data-pos="9" />
+<rect x="290" y="24" width="22" height="14" rx="2" style="fill:none;stroke:var(--muted);stroke-dasharray:3 2;stroke-width:1.2" data-pos="10" />
+<rect x="316" y="24" width="22" height="14" rx="2" style="fill:none;stroke:var(--muted);stroke-dasharray:3 2;stroke-width:1.2" data-pos="11" />
 <text x="352" y="35" class="t-muted" font-size="12" text-anchor="middle">⋯</text>
-<text x="275" y="16" font-size="10" text-anchor="middle" class="t-muted">step <tspan class="m" font-size="12">t</tspan></text>
-<path d="M67 39 C 67 56, 89 56, 89 73" class="s-muted" style="stroke-width:.9" />
+<text x="275" y="16" font-size="10" text-anchor="middle" class="t-muted" data-label="step">step <tspan class="m" font-size="12">t</tspan></text>
+<path d="M67 39 C 67 56, 89 56, 89 73" class="s-muted" style="stroke-width:.9" data-slot="0" />
 <rect x="72" y="74" width="34" height="22" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
 <line x1="80.5" y1="76" x2="80.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="89.0" y1="76" x2="89.0" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="97.5" y1="76" x2="97.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
-<path d="M119 39 C 119 56, 129 56, 129 73" class="s-muted" style="stroke-width:.9" />
+<path d="M119 39 C 119 56, 129 56, 129 73" class="s-muted" style="stroke-width:.9" data-slot="1" />
 <rect x="112" y="74" width="34" height="22" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
 <line x1="120.5" y1="76" x2="120.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="129.0" y1="76" x2="129.0" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="137.5" y1="76" x2="137.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
-<path d="M145 39 C 145 56, 169 56, 169 73" class="s-muted" style="stroke-width:.9" />
+<path d="M145 39 C 145 56, 169 56, 169 73" class="s-muted" style="stroke-width:.9" data-slot="2" />
 <rect x="152" y="74" width="34" height="22" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
 <line x1="160.5" y1="76" x2="160.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="169.0" y1="76" x2="169.0" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="177.5" y1="76" x2="177.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
-<path d="M197 39 C 197 56, 209 56, 209 73" class="s-muted" style="stroke-width:.9" />
+<path d="M197 39 C 197 56, 209 56, 209 73" class="s-muted" style="stroke-width:.9" data-slot="3" />
 <rect x="192" y="74" width="34" height="22" rx="2" style="fill:var(--blue);stroke:var(--blue);stroke-width:1.2" />
 <line x1="200.5" y1="76" x2="200.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="209.0" y1="76" x2="209.0" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
 <line x1="217.5" y1="76" x2="217.5" y2="94" style="stroke:#fffdf8;stroke-width:.6;opacity:.7" />
-<path d="M249 39 C 249 56, 253 56, 253 73" class="s-muted" style="stroke-width:.9" />
+<path d="M249 39 C 249 56, 253 56, 253 73" class="s-muted" style="stroke-width:.9" data-slot="4" />
 <rect x="236" y="74" width="34" height="22" rx="2" style="fill:rgba(59,106,154,.3);stroke:var(--blue);stroke-width:1.2" />
 <line x1="244.5" y1="76" x2="244.5" y2="94" style="stroke:var(--muted);stroke-width:.6;opacity:.7" />
 <line x1="253.0" y1="76" x2="253.0" y2="94" style="stroke:var(--muted);stroke-width:.6;opacity:.7" />
 <line x1="261.5" y1="76" x2="261.5" y2="94" style="stroke:var(--muted);stroke-width:.6;opacity:.7" />
-<path d="M275 39 C 275 56, 303 56, 303 73" class="s-muted" style="stroke-width:.9" />
+<path d="M275 39 C 275 56, 303 56, 303 73" class="s-muted" style="stroke-width:.9" data-slot="5" />
 <rect x="286" y="74" width="34" height="22" rx="2" style="fill:#fffdf8;stroke:var(--ink);stroke-width:1.2" />
 <line x1="294.5" y1="76" x2="294.5" y2="94" style="stroke:var(--muted);stroke-width:.6;opacity:.7" />
 <line x1="303.0" y1="76" x2="303.0" y2="94" style="stroke:var(--muted);stroke-width:.6;opacity:.7" />
@@ -232,14 +256,14 @@ Research</h1>
 <rect x="8" y="178" width="54" height="28" rx="4" class="s-red f-white" />
 <text x="35" y="196" class="t-red" font-size="11" text-anchor="middle" font-weight="600">scorer</text>
 <line x1="64.0" y1="192.0" x2="78.0" y2="192.0" class="s-red" marker-end="url(#ssa-red)" />
-<rect x="82" y="188" width="14" height="34" rx="1.5" class="f-red" />
-<rect x="122" y="200" width="14" height="22" rx="1.5" class="f-red" />
-<rect x="162" y="216" width="14" height="6" rx="1.5" class="" style="fill:#c9c6bd" />
-<rect x="202" y="204" width="14" height="18" rx="1.5" class="f-red" />
-<rect x="246" y="196" width="14" height="26" rx="1.5" class="f-red" />
+<rect x="82" y="188" width="14" height="34" rx="1.5" class="f-red" data-bar="0" />
+<rect x="122" y="200" width="14" height="22" rx="1.5" class="f-red" data-bar="1" />
+<rect x="162" y="216" width="14" height="6" rx="1.5" class="" style="fill:#c9c6bd" data-bar="2" />
+<rect x="202" y="204" width="14" height="18" rx="1.5" class="f-red" data-bar="3" />
+<rect x="246" y="196" width="14" height="26" rx="1.5" class="f-red" data-bar="4" />
 <line x1="78" y1="222" x2="330" y2="222" class="s-muted" style="stroke-width:.8" />
-<text x="169" y="235" class="t-muted" font-size="10" text-anchor="middle">evict</text>
-<text x="253" y="235" class="t-red" font-size="10" text-anchor="middle">candidate</text>
+<text x="169" y="235" class="t-muted" font-size="10" text-anchor="middle" data-label="evict">evict</text>
+<text x="253" y="235" class="t-red" font-size="10" text-anchor="middle" data-label="candidate">candidate</text>
 <text x="303" y="235" class="t-muted" font-size="10" text-anchor="middle">context</text>
 <text x="84" y="180" class="t-red" font-size="10" text-anchor="start">keep scores</text>
 </svg>
@@ -262,11 +286,21 @@ Research</h1>
 
 <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2602.14404" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@inproceedings{tong2026boule,
+  title         = {Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces},
+  author        = {Tong, William L. and {\c{C}}akar, Ege and Pehlevan, Cengiz},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  year          = {2026},
+  eprint        = {2602.14404},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </div>
   <blockquote>Our findings overall identify fundamental benefits and limitations inherent in using reasoning traces.</blockquote>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Two task shapes. A boule is broad and shallow: many short chains, where models trained on reasoning traces (RT) length-generalize better than direct prediction (DP). A baguette is narrow and deep: few long chains, where DP does better.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Two task shapes. A boule is broad and shallow: many short chains, where models trained on reasoning traces (RT) length-generalize better than direct prediction (DP). A baguette is narrow and deep: few long chains, where DP does better." data-figure="boule">
 <defs>
 <marker id="boule-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="boule-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
@@ -293,7 +327,7 @@ Paper</a></div>
 <circle cx="104" cy="92" r="3.5" class="f-ink" />
 <circle cx="104" cy="110" r="3.5" class="f-ink" />
 <circle cx="104" cy="128" r="3.5" class="f-ink" />
-<line x1="126" y1="86" x2="126" y2="134" class="s-red" style="stroke-width:5;opacity:.35" />
+<line x1="126" y1="86" x2="126" y2="134" class="s-red" style="stroke-width:5;opacity:.35" data-trace="boule" data-points="126,92 126,110 126,128" />
 <line x1="126.0" y1="96.0" x2="126.0" y2="105.5" class="s" marker-end="url(#boule-ink)" style="stroke-width:1" />
 <line x1="126.0" y1="114.0" x2="126.0" y2="123.5" class="s" marker-end="url(#boule-ink)" style="stroke-width:1" />
 <circle cx="126" cy="92" r="3.5" class="f-ink" />
@@ -324,7 +358,7 @@ Paper</a></div>
 <circle cx="297" cy="114.7" r="3.5" class="f-ink" />
 <circle cx="297" cy="134.3" r="3.5" class="f-ink" />
 <circle cx="297" cy="154.0" r="3.5" class="f-ink" />
-<line x1="313" y1="30.0" x2="313" y2="160.0" class="s-red" style="stroke-width:5;opacity:.35" />
+<line x1="313" y1="30.0" x2="313" y2="160.0" class="s-red" style="stroke-width:5;opacity:.35" data-trace="baguette" data-points="313,36.0 313,55.7 313,75.3 313,95.0 313,114.7 313,134.3 313,154.0" />
 <line x1="313.0" y1="40.0" x2="313.0" y2="51.2" class="s" marker-end="url(#boule-ink)" style="stroke-width:1" />
 <line x1="313.0" y1="59.7" x2="313.0" y2="70.8" class="s" marker-end="url(#boule-ink)" style="stroke-width:1" />
 <line x1="313.0" y1="79.3" x2="313.0" y2="90.5" class="s" marker-end="url(#boule-ink)" style="stroke-width:1" />
@@ -342,11 +376,11 @@ Paper</a></div>
 <text x="115" y="186" class="" font-size="13" text-anchor="middle" font-weight="600">boule</text>
 <text x="115" y="201" class="t-muted" font-size="11" text-anchor="middle">broad · shallow</text>
 <text x="115" y="215" class="t-muted" font-size="11" text-anchor="middle">Full, Imply</text>
-<text x="115" y="233" class="t-red" font-size="13" text-anchor="middle" font-weight="700">RT &gt; DP</text>
+<text x="115" y="233" class="t-red" font-size="13" text-anchor="middle" font-weight="700" data-result="boule">RT &gt; DP</text>
 <text x="305" y="186" class="" font-size="13" text-anchor="middle" font-weight="600">baguette</text>
 <text x="305" y="201" class="t-muted" font-size="11" text-anchor="middle">narrow · deep</text>
 <text x="305" y="215" class="t-muted" font-size="11" text-anchor="middle">Or, PHP</text>
-<text x="305" y="233" class="" font-size="13" text-anchor="middle" font-weight="700">DP &gt; RT</text>
+<text x="305" y="233" class="" font-size="13" text-anchor="middle" font-weight="700" data-result="baguette">DP &gt; RT</text>
 </svg>
 </figure>
   </div>
@@ -364,170 +398,179 @@ Paper</a><a class="btn" href="https://github.com/Ege-Cakar/mathlib_analysis" tar
 </svg>
 Code</a><a class="btn" href="/blog/2026/10/06/mathlib-proof-graphs/"><svg class="icon icon-quill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5.5 16h6v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z" /><path d="M6.5 16v-2h4v2" /><g class="feather"><path d="M8.5 14C10 9 14 4.5 20.5 3c-1 5-4.5 9-10 10.5" /><path d="M8.5 14l5.5-6.5" /></g>
 </svg>
-Blog post</a></div>
+Blog post</a><button class="btn cite-btn" type="button" data-bibtex="@techreport{cakar2026mathlib,
+  title       = {Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs},
+  author      = {{\c{C}}akar, Ege},
+  institution = {Harvard University},
+  year        = {2026},
+  month       = may,
+  url         = {https://egecakar.com/assets/files/Mathlib_Proof_Graphs_Report.pdf}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </div>
   <blockquote>This paper analyzes Mathlib through two graphs extracted from LeanDojo traces: a theorem-dependency graph, whose edges record premise use, and a state-tactic hypergraph, whose edges record goal-level proof-state transformations induced by tactics.</blockquote>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Illustrative layout of Mathlib's theorem-dependency graph: four tree-like communities grown around hubs, one large shared hub that all communities cite, and sparse links between communities. Beside it, the report's numbers: 138,333 declarations, 309,396 dependency edges, 240 communities with modularity 0.592, and a degree-tail exponent of 2.37.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Illustrative layout of Mathlib's theorem-dependency graph: four tree-like communities grown around hubs, one large shared hub that all communities cite, and sparse links between communities. Beside it, the report's numbers: 138,333 declarations, 309,396 dependency edges, 240 communities with modularity 0.592, and a degree-tail exponent of 2.37." data-figure="mathlib">
 <defs>
 <marker id="mathlib-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="mathlib-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
 <marker id="mathlib-muted" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 9 5 0 9z" style="fill:var(--muted)" /></marker>
 <marker id="mathlib-flat" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M8 0V10" class="s-red" style="stroke-width:2.2" /></marker>
 </defs>
-<line x1="78.0" y1="66.0" x2="70.0" y2="92.7" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="78.0" y1="66.0" x2="53.6" y2="63.5" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="53.6" y1="63.5" x2="39.0" y2="70.2" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="53.6" y1="63.5" x2="39.5" y2="70.4" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="53.6" y1="63.5" x2="41.2" y2="69.0" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="78.0" y1="66.0" x2="61.1" y2="42.4" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="78.0" y1="66.0" x2="95.6" y2="44.5" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="95.6" y1="44.5" x2="111.1" y2="38.9" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="95.6" y1="44.5" x2="105.7" y2="28.6" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="95.6" y1="44.5" x2="98.2" y2="26.6" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="78.0" y1="66.0" x2="102.5" y2="61.9" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="78.0" y1="66.0" x2="92.3" y2="89.4" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="92.3" y1="89.4" x2="106.3" y2="97.9" style="stroke:var(--blue);stroke-width:.8;opacity:.55" />
-<line x1="214.0" y1="58.0" x2="229.8" y2="81.5" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="229.8" y1="81.5" x2="242.6" y2="87.7" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="229.8" y1="81.5" x2="235.5" y2="95.9" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="229.8" y1="81.5" x2="241.8" y2="92.8" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="214.0" y1="58.0" x2="198.7" y2="78.8" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="198.7" y1="78.8" x2="187.7" y2="88.1" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="214.0" y1="58.0" x2="187.2" y2="53.4" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="187.2" y1="53.4" x2="174.0" y2="47.0" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="187.2" y1="53.4" x2="177.2" y2="44.1" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="214.0" y1="58.0" x2="202.1" y2="32.1" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="202.1" y1="32.1" x2="203.4" y2="16.6" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="214.0" y1="58.0" x2="233.0" y2="42.6" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="233.0" y1="42.6" x2="248.1" y2="32.3" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="233.0" y1="42.6" x2="243.6" y2="29.0" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="233.0" y1="42.6" x2="246.9" y2="33.7" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="214.0" y1="58.0" x2="242.9" y2="61.2" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="242.9" y1="61.2" x2="259.8" y2="62.6" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="242.9" y1="61.2" x2="258.6" y2="54.3" style="stroke:var(--red);stroke-width:.8;opacity:.55" />
-<line x1="86.0" y1="178.0" x2="74.7" y2="151.4" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="74.7" y1="151.4" x2="72.2" y2="133.2" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="74.7" y1="151.4" x2="64.5" y2="135.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="86.0" y1="178.0" x2="94.9" y2="151.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="94.9" y1="151.8" x2="91.4" y2="134.6" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="94.9" y1="151.8" x2="93.2" y2="137.4" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="86.0" y1="178.0" x2="114.8" y2="172.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="86.0" y1="178.0" x2="105.2" y2="196.1" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="105.2" y1="196.1" x2="111.4" y2="213.0" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="105.2" y1="196.1" x2="110.6" y2="209.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="86.0" y1="178.0" x2="76.8" y2="202.5" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="76.8" y1="202.5" x2="65.9" y2="211.0" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="76.8" y1="202.5" x2="77.3" y2="216.9" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="86.0" y1="178.0" x2="60.0" y2="184.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="60.0" y1="184.8" x2="48.2" y2="193.6" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="60.0" y1="184.8" x2="47.4" y2="195.0" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="60.0" y1="184.8" x2="45.2" y2="186.7" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" />
-<line x1="220.0" y1="176.0" x2="236.8" y2="200.5" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="220.0" y1="176.0" x2="213.0" y2="204.4" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="213.0" y1="204.4" x2="211.2" y2="219.7" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="213.0" y1="204.4" x2="216.8" y2="220.7" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="213.0" y1="204.4" x2="216.7" y2="217.2" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="220.0" y1="176.0" x2="197.0" y2="185.8" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="197.0" y1="185.8" x2="184.0" y2="189.6" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="197.0" y1="185.8" x2="181.7" y2="191.0" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="220.0" y1="176.0" x2="205.3" y2="152.5" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="220.0" y1="176.0" x2="232.1" y2="151.1" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="232.1" y1="151.1" x2="242.9" y2="135.8" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="220.0" y1="176.0" x2="246.3" y2="170.5" style="stroke:#b8893a;stroke-width:.8;opacity:.55" />
-<line x1="150.0" y1="118.0" x2="78.0" y2="66.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="214.0" y2="58.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="86.0" y2="178.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="220.0" y2="176.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="111.1" y2="38.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="106.3" y2="97.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="92.3" y2="89.4" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="102.5" y2="61.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="41.2" y2="69.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="235.5" y2="95.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="198.7" y2="78.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="241.8" y2="92.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="233.0" y2="42.6" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="187.7" y2="88.1" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="111.4" y2="213.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="47.4" y2="195.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="60.0" y2="184.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="65.9" y2="211.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="64.5" y2="135.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="205.3" y2="152.5" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="236.8" y2="200.5" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="216.8" y2="220.7" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="246.3" y2="170.5" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="150.0" y1="118.0" x2="197.0" y2="185.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="78.0" y1="66.0" x2="214.0" y2="58.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<line x1="86.0" y1="178.0" x2="220.0" y2="176.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" />
-<circle cx="78.0" cy="66.0" r="4.1" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="70.0" cy="92.7" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="53.6" cy="63.5" r="3.4" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="39.0" cy="70.2" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="39.5" cy="70.4" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="41.2" cy="69.0" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="61.1" cy="42.4" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="95.6" cy="44.5" r="3.4" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="111.1" cy="38.9" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="105.7" cy="28.6" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="98.2" cy="26.6" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="102.5" cy="61.9" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="92.3" cy="89.4" r="3.2" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="106.3" cy="97.9" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" />
-<circle cx="214.0" cy="58.0" r="4.1" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="229.8" cy="81.5" r="3.4" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="242.6" cy="87.7" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="235.5" cy="95.9" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="241.8" cy="92.8" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="198.7" cy="78.8" r="3.2" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="187.7" cy="88.1" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="187.2" cy="53.4" r="3.2" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="174.0" cy="47.0" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="177.2" cy="44.1" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="202.1" cy="32.1" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="203.4" cy="16.6" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="233.0" cy="42.6" r="3.6" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="248.1" cy="32.3" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="243.6" cy="29.0" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="246.9" cy="33.7" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="242.9" cy="61.2" r="3.2" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="259.8" cy="62.6" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="258.6" cy="54.3" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" />
-<circle cx="86.0" cy="178.0" r="4.1" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="74.7" cy="151.4" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="72.2" cy="133.2" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="64.5" cy="135.8" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="94.9" cy="151.8" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="91.4" cy="134.6" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="93.2" cy="137.4" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="114.8" cy="172.8" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="105.2" cy="196.1" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="111.4" cy="213.0" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="110.6" cy="209.8" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="76.8" cy="202.5" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="65.9" cy="211.0" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="77.3" cy="216.9" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="60.0" cy="184.8" r="3.6" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="48.2" cy="193.6" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="47.4" cy="195.0" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="45.2" cy="186.7" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="220.0" cy="176.0" r="4.1" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="236.8" cy="200.5" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="213.0" cy="204.4" r="3.4" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="211.2" cy="219.7" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="216.8" cy="220.7" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="216.7" cy="217.2" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="197.0" cy="185.8" r="3.4" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="184.0" cy="189.6" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="181.7" cy="191.0" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="205.3" cy="152.5" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="232.1" cy="151.1" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="242.9" cy="135.8" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="246.3" cy="170.5" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" />
-<circle cx="150.0" cy="118.0" r="6.0" style="fill:var(--ink);stroke:var(--paper);stroke-width:.8" />
-<text x="150" y="141" font-size="8.5" text-anchor="middle" class="t-muted" style="paint-order:stroke;stroke:var(--paper);stroke-width:3">shared hub</text>
-<text x="12" y="234" class="t-muted" font-size="8.5" text-anchor="start">illustrative layout</text>
+<line x1="78.0" y1="66.0" x2="70.0" y2="92.7" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="0" data-b="1" />
+<line x1="78.0" y1="66.0" x2="53.6" y2="63.5" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="0" data-b="2" />
+<line x1="53.6" y1="63.5" x2="39.0" y2="70.2" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="2" data-b="3" />
+<line x1="53.6" y1="63.5" x2="39.5" y2="70.4" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="2" data-b="4" />
+<line x1="53.6" y1="63.5" x2="41.2" y2="69.0" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="2" data-b="5" />
+<line x1="78.0" y1="66.0" x2="61.1" y2="42.4" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="0" data-b="6" />
+<line x1="78.0" y1="66.0" x2="95.6" y2="44.5" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="0" data-b="7" />
+<line x1="95.6" y1="44.5" x2="111.1" y2="38.9" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="7" data-b="8" />
+<line x1="95.6" y1="44.5" x2="105.7" y2="28.6" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="7" data-b="9" />
+<line x1="95.6" y1="44.5" x2="98.2" y2="26.6" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="7" data-b="10" />
+<line x1="78.0" y1="66.0" x2="102.5" y2="61.9" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="0" data-b="11" />
+<line x1="78.0" y1="66.0" x2="92.3" y2="89.4" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="0" data-b="12" />
+<line x1="92.3" y1="89.4" x2="106.3" y2="97.9" style="stroke:var(--blue);stroke-width:.8;opacity:.55" data-a="12" data-b="13" />
+<line x1="214.0" y1="58.0" x2="229.8" y2="81.5" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="14" data-b="15" />
+<line x1="229.8" y1="81.5" x2="242.6" y2="87.7" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="15" data-b="16" />
+<line x1="229.8" y1="81.5" x2="235.5" y2="95.9" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="15" data-b="17" />
+<line x1="229.8" y1="81.5" x2="241.8" y2="92.8" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="15" data-b="18" />
+<line x1="214.0" y1="58.0" x2="198.7" y2="78.8" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="14" data-b="19" />
+<line x1="198.7" y1="78.8" x2="187.7" y2="88.1" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="19" data-b="20" />
+<line x1="214.0" y1="58.0" x2="187.2" y2="53.4" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="14" data-b="21" />
+<line x1="187.2" y1="53.4" x2="174.0" y2="47.0" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="21" data-b="22" />
+<line x1="187.2" y1="53.4" x2="177.2" y2="44.1" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="21" data-b="23" />
+<line x1="214.0" y1="58.0" x2="202.1" y2="32.1" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="14" data-b="24" />
+<line x1="202.1" y1="32.1" x2="203.4" y2="16.6" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="24" data-b="25" />
+<line x1="214.0" y1="58.0" x2="233.0" y2="42.6" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="14" data-b="26" />
+<line x1="233.0" y1="42.6" x2="248.1" y2="32.3" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="26" data-b="27" />
+<line x1="233.0" y1="42.6" x2="243.6" y2="29.0" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="26" data-b="28" />
+<line x1="233.0" y1="42.6" x2="246.9" y2="33.7" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="26" data-b="29" />
+<line x1="214.0" y1="58.0" x2="242.9" y2="61.2" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="14" data-b="30" />
+<line x1="242.9" y1="61.2" x2="259.8" y2="62.6" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="30" data-b="31" />
+<line x1="242.9" y1="61.2" x2="258.6" y2="54.3" style="stroke:var(--red);stroke-width:.8;opacity:.55" data-a="30" data-b="32" />
+<line x1="86.0" y1="178.0" x2="74.7" y2="151.4" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="33" data-b="34" />
+<line x1="74.7" y1="151.4" x2="72.2" y2="133.2" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="34" data-b="35" />
+<line x1="74.7" y1="151.4" x2="64.5" y2="135.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="34" data-b="36" />
+<line x1="86.0" y1="178.0" x2="94.9" y2="151.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="33" data-b="37" />
+<line x1="94.9" y1="151.8" x2="91.4" y2="134.6" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="37" data-b="38" />
+<line x1="94.9" y1="151.8" x2="93.2" y2="137.4" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="37" data-b="39" />
+<line x1="86.0" y1="178.0" x2="114.8" y2="172.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="33" data-b="40" />
+<line x1="86.0" y1="178.0" x2="105.2" y2="196.1" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="33" data-b="41" />
+<line x1="105.2" y1="196.1" x2="111.4" y2="213.0" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="41" data-b="42" />
+<line x1="105.2" y1="196.1" x2="110.6" y2="209.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="41" data-b="43" />
+<line x1="86.0" y1="178.0" x2="76.8" y2="202.5" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="33" data-b="44" />
+<line x1="76.8" y1="202.5" x2="65.9" y2="211.0" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="44" data-b="45" />
+<line x1="76.8" y1="202.5" x2="77.3" y2="216.9" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="44" data-b="46" />
+<line x1="86.0" y1="178.0" x2="60.0" y2="184.8" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="33" data-b="47" />
+<line x1="60.0" y1="184.8" x2="48.2" y2="193.6" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="47" data-b="48" />
+<line x1="60.0" y1="184.8" x2="47.4" y2="195.0" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="47" data-b="49" />
+<line x1="60.0" y1="184.8" x2="45.2" y2="186.7" style="stroke:#5f8a5a;stroke-width:.8;opacity:.55" data-a="47" data-b="50" />
+<line x1="220.0" y1="176.0" x2="236.8" y2="200.5" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="51" data-b="52" />
+<line x1="220.0" y1="176.0" x2="213.0" y2="204.4" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="51" data-b="53" />
+<line x1="213.0" y1="204.4" x2="211.2" y2="219.7" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="53" data-b="54" />
+<line x1="213.0" y1="204.4" x2="216.8" y2="220.7" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="53" data-b="55" />
+<line x1="213.0" y1="204.4" x2="216.7" y2="217.2" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="53" data-b="56" />
+<line x1="220.0" y1="176.0" x2="197.0" y2="185.8" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="51" data-b="57" />
+<line x1="197.0" y1="185.8" x2="184.0" y2="189.6" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="57" data-b="58" />
+<line x1="197.0" y1="185.8" x2="181.7" y2="191.0" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="57" data-b="59" />
+<line x1="220.0" y1="176.0" x2="205.3" y2="152.5" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="51" data-b="60" />
+<line x1="220.0" y1="176.0" x2="232.1" y2="151.1" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="51" data-b="61" />
+<line x1="232.1" y1="151.1" x2="242.9" y2="135.8" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="61" data-b="62" />
+<line x1="220.0" y1="176.0" x2="246.3" y2="170.5" style="stroke:#b8893a;stroke-width:.8;opacity:.55" data-a="51" data-b="63" />
+<line x1="150.0" y1="118.0" x2="78.0" y2="66.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="0" />
+<line x1="150.0" y1="118.0" x2="214.0" y2="58.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="14" />
+<line x1="150.0" y1="118.0" x2="86.0" y2="178.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="33" />
+<line x1="150.0" y1="118.0" x2="220.0" y2="176.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="51" />
+<line x1="150.0" y1="118.0" x2="111.1" y2="38.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="8" />
+<line x1="150.0" y1="118.0" x2="106.3" y2="97.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="13" />
+<line x1="150.0" y1="118.0" x2="92.3" y2="89.4" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="12" />
+<line x1="150.0" y1="118.0" x2="102.5" y2="61.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="11" />
+<line x1="150.0" y1="118.0" x2="41.2" y2="69.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="5" />
+<line x1="150.0" y1="118.0" x2="235.5" y2="95.9" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="17" />
+<line x1="150.0" y1="118.0" x2="198.7" y2="78.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="19" />
+<line x1="150.0" y1="118.0" x2="241.8" y2="92.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="18" />
+<line x1="150.0" y1="118.0" x2="233.0" y2="42.6" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="26" />
+<line x1="150.0" y1="118.0" x2="187.7" y2="88.1" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="20" />
+<line x1="150.0" y1="118.0" x2="111.4" y2="213.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="42" />
+<line x1="150.0" y1="118.0" x2="47.4" y2="195.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="49" />
+<line x1="150.0" y1="118.0" x2="60.0" y2="184.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="47" />
+<line x1="150.0" y1="118.0" x2="65.9" y2="211.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="45" />
+<line x1="150.0" y1="118.0" x2="64.5" y2="135.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="36" />
+<line x1="150.0" y1="118.0" x2="205.3" y2="152.5" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="60" />
+<line x1="150.0" y1="118.0" x2="236.8" y2="200.5" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="52" />
+<line x1="150.0" y1="118.0" x2="216.8" y2="220.7" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="55" />
+<line x1="150.0" y1="118.0" x2="246.3" y2="170.5" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="63" />
+<line x1="150.0" y1="118.0" x2="197.0" y2="185.8" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="64" data-b="57" />
+<line x1="78.0" y1="66.0" x2="214.0" y2="58.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="0" data-b="14" />
+<line x1="86.0" y1="178.0" x2="220.0" y2="176.0" style="stroke:var(--muted);stroke-width:.6;opacity:.45" data-a="33" data-b="51" />
+<circle cx="78.0" cy="66.0" r="4.1" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="0" data-c="0" />
+<circle cx="70.0" cy="92.7" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="1" data-c="0" />
+<circle cx="53.6" cy="63.5" r="3.4" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="2" data-c="0" />
+<circle cx="39.0" cy="70.2" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="3" data-c="0" />
+<circle cx="39.5" cy="70.4" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="4" data-c="0" />
+<circle cx="41.2" cy="69.0" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="5" data-c="0" />
+<circle cx="61.1" cy="42.4" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="6" data-c="0" />
+<circle cx="95.6" cy="44.5" r="3.4" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="7" data-c="0" />
+<circle cx="111.1" cy="38.9" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="8" data-c="0" />
+<circle cx="105.7" cy="28.6" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="9" data-c="0" />
+<circle cx="98.2" cy="26.6" r="2.5" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="10" data-c="0" />
+<circle cx="102.5" cy="61.9" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="11" data-c="0" />
+<circle cx="92.3" cy="89.4" r="3.2" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="12" data-c="0" />
+<circle cx="106.3" cy="97.9" r="2.9" style="fill:var(--blue);stroke:var(--paper);stroke-width:.8" data-n="13" data-c="0" />
+<circle cx="214.0" cy="58.0" r="4.1" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="14" data-c="1" />
+<circle cx="229.8" cy="81.5" r="3.4" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="15" data-c="1" />
+<circle cx="242.6" cy="87.7" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="16" data-c="1" />
+<circle cx="235.5" cy="95.9" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="17" data-c="1" />
+<circle cx="241.8" cy="92.8" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="18" data-c="1" />
+<circle cx="198.7" cy="78.8" r="3.2" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="19" data-c="1" />
+<circle cx="187.7" cy="88.1" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="20" data-c="1" />
+<circle cx="187.2" cy="53.4" r="3.2" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="21" data-c="1" />
+<circle cx="174.0" cy="47.0" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="22" data-c="1" />
+<circle cx="177.2" cy="44.1" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="23" data-c="1" />
+<circle cx="202.1" cy="32.1" r="2.9" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="24" data-c="1" />
+<circle cx="203.4" cy="16.6" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="25" data-c="1" />
+<circle cx="233.0" cy="42.6" r="3.6" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="26" data-c="1" />
+<circle cx="248.1" cy="32.3" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="27" data-c="1" />
+<circle cx="243.6" cy="29.0" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="28" data-c="1" />
+<circle cx="246.9" cy="33.7" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="29" data-c="1" />
+<circle cx="242.9" cy="61.2" r="3.2" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="30" data-c="1" />
+<circle cx="259.8" cy="62.6" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="31" data-c="1" />
+<circle cx="258.6" cy="54.3" r="2.5" style="fill:var(--red);stroke:var(--paper);stroke-width:.8" data-n="32" data-c="1" />
+<circle cx="86.0" cy="178.0" r="4.1" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="33" data-c="2" />
+<circle cx="74.7" cy="151.4" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="34" data-c="2" />
+<circle cx="72.2" cy="133.2" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="35" data-c="2" />
+<circle cx="64.5" cy="135.8" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="36" data-c="2" />
+<circle cx="94.9" cy="151.8" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="37" data-c="2" />
+<circle cx="91.4" cy="134.6" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="38" data-c="2" />
+<circle cx="93.2" cy="137.4" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="39" data-c="2" />
+<circle cx="114.8" cy="172.8" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="40" data-c="2" />
+<circle cx="105.2" cy="196.1" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="41" data-c="2" />
+<circle cx="111.4" cy="213.0" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="42" data-c="2" />
+<circle cx="110.6" cy="209.8" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="43" data-c="2" />
+<circle cx="76.8" cy="202.5" r="3.2" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="44" data-c="2" />
+<circle cx="65.9" cy="211.0" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="45" data-c="2" />
+<circle cx="77.3" cy="216.9" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="46" data-c="2" />
+<circle cx="60.0" cy="184.8" r="3.6" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="47" data-c="2" />
+<circle cx="48.2" cy="193.6" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="48" data-c="2" />
+<circle cx="47.4" cy="195.0" r="2.9" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="49" data-c="2" />
+<circle cx="45.2" cy="186.7" r="2.5" style="fill:#5f8a5a;stroke:var(--paper);stroke-width:.8" data-n="50" data-c="2" />
+<circle cx="220.0" cy="176.0" r="4.1" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="51" data-c="3" />
+<circle cx="236.8" cy="200.5" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="52" data-c="3" />
+<circle cx="213.0" cy="204.4" r="3.4" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="53" data-c="3" />
+<circle cx="211.2" cy="219.7" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="54" data-c="3" />
+<circle cx="216.8" cy="220.7" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="55" data-c="3" />
+<circle cx="216.7" cy="217.2" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="56" data-c="3" />
+<circle cx="197.0" cy="185.8" r="3.4" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="57" data-c="3" />
+<circle cx="184.0" cy="189.6" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="58" data-c="3" />
+<circle cx="181.7" cy="191.0" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="59" data-c="3" />
+<circle cx="205.3" cy="152.5" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="60" data-c="3" />
+<circle cx="232.1" cy="151.1" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="61" data-c="3" />
+<circle cx="242.9" cy="135.8" r="2.5" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="62" data-c="3" />
+<circle cx="246.3" cy="170.5" r="2.9" style="fill:#b8893a;stroke:var(--paper);stroke-width:.8" data-n="63" data-c="3" />
+<circle cx="150.0" cy="118.0" r="6.0" style="fill:var(--ink);stroke:var(--paper);stroke-width:.8" data-n="64" data-c="-1" />
+<text x="150" y="141" font-size="8.5" text-anchor="middle" class="t-muted" style="paint-order:stroke;stroke:var(--paper);stroke-width:3" data-follow="64">shared hub</text>
+<text x="12" y="234" class="t-muted" font-size="8.5" data-hint="illustrative layout · drag the nodes">illustrative layout</text>
 <line x1="292" y1="20" x2="292" y2="222" class="s-muted" style="stroke-width:.6" />
 <text x="302" y="44" class="" font-size="15" text-anchor="start" font-weight="600">138,333</text>
 <text x="302" y="57" class="t-muted" font-size="8.5" text-anchor="start">declarations</text>
@@ -560,11 +603,22 @@ Blog post</a></div>
 
 <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2607.08883" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@inproceedings{cakar2026safety,
+  title         = {Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal},
+  author        = {{\c{C}}akar, Ege and Guan, Hannah and Kehe, Kayden},
+  booktitle     = {AAAI 2026 Summer Symposium Series: AI-Driven Resilience},
+  year          = {2026},
+  note          = {Also accepted to the ICLR 2026 Workshop on Representational Alignment (Re-Align)},
+  eprint        = {2607.08883},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </div>
   <blockquote>We introduce Activation-Guided GCG, which replaces output-based objectives with losses that directly target a model's internal refusal direction.</blockquote>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Two methods. (a) Activation-guided GCG: an adversarial suffix is optimized so that hidden states at every layer and position have near-zero projection on a fixed refusal direction. (b) Soft-GCG: each suffix position is a Gumbel-Softmax distribution over the vocabulary that sharpens to nearly one-hot as the temperature is lowered, trained on an output loss and discretized by argmax; about 33 times faster than GCG.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Two methods. (a) Activation-guided GCG: an adversarial suffix is optimized so that hidden states at every layer and position have near-zero projection on a fixed refusal direction. (b) Soft-GCG: each suffix position is a Gumbel-Softmax distribution over the vocabulary that sharpens to nearly one-hot as the temperature is lowered, trained on an output loss and discretized by argmax; about 33 times faster than GCG." data-figure="gcg">
 <defs>
 <marker id="gcg-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="gcg-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
@@ -596,8 +650,8 @@ Paper</a></div>
 <rect x="20" y="134" width="12" height="12" rx="2" class="s f-white" />
 <rect x="34" y="134" width="12" height="12" rx="2" class="s f-white" />
 <rect x="48" y="134" width="12" height="12" rx="2" class="s f-white" />
-<rect x="62" y="134" width="12" height="12" rx="2" class="s " style="fill:rgba(196,85,59,.35)" />
-<rect x="76" y="134" width="12" height="12" rx="2" class="s " style="fill:rgba(196,85,59,.35)" />
+<rect x="62" y="134" width="12" height="12" rx="2" class="s " style="fill:rgba(196,85,59,.35)" data-part="suffix-0" />
+<rect x="76" y="134" width="12" height="12" rx="2" class="s " style="fill:rgba(196,85,59,.35)" data-part="suffix-1" />
 <line x1="54.0" y1="132.0" x2="54.0" y2="122.0" class="s" marker-end="url(#gcg-ink)" />
 <text x="40" y="160" class="t-muted" font-size="9" text-anchor="middle">instr.</text>
 <text x="75" y="160" class="t-red" font-size="9" text-anchor="middle">suffix</text>
@@ -606,19 +660,20 @@ Paper</a></div>
 <line x1="150.1" y1="164.9" x2="106.4" y2="102.7" class="s-muted dash" />
 <line x1="134.0" y1="142.0" x2="186.4" y2="105.3" class="s" marker-end="url(#gcg-ink)" style="stroke-width:1.6" />
 <text x="184.4" y="127.3" class="m" font-size="13" text-anchor="middle"><tspan font-weight="bold">d</tspan><tspan dy="3" font-size="8">refusal</tspan></text>
-<line x1="157.9" y1="95.9" x2="171.7" y2="115.6" class="s-muted dash" />
-<path d="M152.9 95.9 Q 139.1 81.9 125.2 118.3" class="s-red" marker-end="url(#gcg-red)" />
-<circle cx="157.9" cy="95.9" r="4" class="s-muted f-white" />
-<circle cx="120.2" cy="122.3" r="4" class="f-red" />
+<line x1="157.9" y1="95.9" x2="171.7" y2="115.6" class="s-muted dash" data-part="drop" />
+<path d="M152.9 95.9 Q 139.1 81.9 125.2 118.3" class="s-red" marker-end="url(#gcg-red)" data-part="move" />
+<circle cx="157.9" cy="95.9" r="4" class="s-muted f-white" data-part="before" />
+<circle cx="120.2" cy="122.3" r="4" class="f-red" data-part="after" />
 <text x="164.898" y="91.94" class="t-muted" font-size="9" text-anchor="start">before</text>
 <text x="114.224" y="136.344" class="t-red" font-size="9" text-anchor="end">after</text>
-<text x="150" y="190" font-size="12" text-anchor="middle"><tspan class="m">(</tspan><tspan class="m" font-weight="bold">h</tspan><tspan class="m">·</tspan><tspan class="m" font-weight="bold">d̂</tspan><tspan class="m">)</tspan><tspan dy="-5" font-size="8">2</tspan><tspan dy="5"> → 0</tspan></text>
+<text x="150" y="190" font-size="12" text-anchor="middle" data-part="loss"><tspan class="m">(</tspan><tspan class="m" font-weight="bold">h</tspan><tspan class="m">·</tspan><tspan class="m" font-weight="bold">d̂</tspan><tspan class="m">)</tspan><tspan dy="-5" font-size="8">2</tspan><tspan dy="5"> → 0</tspan></text>
 <text x="150" y="203" class="t-muted" font-size="9" text-anchor="middle">all layers, positions</text>
-<path d="M108 186 C 100 182, 96 164, 92 149" class="s-muted dash" marker-end="url(#gcg-muted)" />
+<path d="M108 186 C 100 182, 96 164, 92 149" class="s-muted dash" marker-end="url(#gcg-muted)" data-part="swap" />
 <text x="58" y="186" class="t-muted" font-size="9" text-anchor="middle">token swaps</text>
 <text x="212" y="18" class="" font-size="10.5" text-anchor="start" font-weight="600">(b) Soft-GCG</text>
 <text x="302" y="40" class="m" font-size="12" text-anchor="middle">s̃ = softmax((φ + g) / τ)</text>
 <text x="302" y="53" class="t-muted" font-size="8.5" text-anchor="middle">one suffix position, over the vocabulary</text>
+<g data-part="stage-0">
 <rect x="214.0" y="97" width="4" height="9" class="f-blue" />
 <rect x="219.3" y="95" width="4" height="11" class="f-blue" />
 <rect x="224.6" y="98" width="4" height="8" class="f-blue" />
@@ -628,6 +683,8 @@ Paper</a></div>
 <rect x="245.8" y="96" width="4" height="10" class="f-blue" />
 <rect x="251.1" y="95" width="4" height="11" class="f-blue" />
 <line x1="212" y1="106" x2="257" y2="106" class="s-muted" style="stroke-width:.8" />
+</g>
+<g data-part="stage-1">
 <rect x="280.0" y="101" width="4" height="5" class="f-blue" />
 <rect x="285.3" y="99" width="4" height="7" class="f-blue" />
 <rect x="290.6" y="102" width="4" height="4" class="f-blue" />
@@ -637,6 +694,8 @@ Paper</a></div>
 <rect x="311.8" y="100" width="4" height="6" class="f-blue" />
 <rect x="317.1" y="102" width="4" height="4" class="f-blue" />
 <line x1="278" y1="106" x2="323" y2="106" class="s-muted" style="stroke-width:.8" />
+</g>
+<g data-part="stage-2">
 <rect x="346.0" y="105" width="4" height="1" class="f-blue" />
 <rect x="351.3" y="105" width="4" height="1" class="f-blue" />
 <rect x="356.6" y="105" width="4" height="1" class="f-blue" />
@@ -646,23 +705,24 @@ Paper</a></div>
 <rect x="377.8" y="105" width="4" height="1" class="f-blue" />
 <rect x="383.1" y="105" width="4" height="1" class="f-blue" />
 <line x1="344" y1="106" x2="389" y2="106" class="s-muted" style="stroke-width:.8" />
-<line x1="260.0" y1="86.0" x2="276.0" y2="86.0" class="s" marker-end="url(#gcg-ink)" />
+</g>
+<line x1="260.0" y1="86.0" x2="276.0" y2="86.0" class="s" marker-end="url(#gcg-ink)" data-part="tau-0" />
 <text x="268" y="79" font-size="10" text-anchor="middle"><tspan class="m" font-size="11">τ</tspan> ↓</text>
-<line x1="326.0" y1="86.0" x2="342.0" y2="86.0" class="s" marker-end="url(#gcg-ink)" />
+<line x1="326.0" y1="86.0" x2="342.0" y2="86.0" class="s" marker-end="url(#gcg-ink)" data-part="tau-1" />
 <text x="334" y="79" font-size="10" text-anchor="middle"><tspan class="m" font-size="11">τ</tspan> ↓</text>
 <text x="235" y="120" font-size="9" text-anchor="middle" class="t-muted"><tspan class="m" font-size="10">τ</tspan> high</text>
 <text x="367" y="120" class="t-muted" font-size="9" text-anchor="middle">≈ one-hot</text>
-<rect x="212" y="140" width="40" height="20" rx="3" class="s f-white" />
-<text x="232.0" y="154" class="m" font-size="11" text-anchor="middle">s̃ᵀE</text>
-<rect x="268" y="140" width="34" height="20" rx="3" class="s f-white" />
-<text x="285.0" y="154" class="" font-size="9.5" text-anchor="middle">LLM</text>
-<rect x="318" y="140" width="70" height="20" rx="3" class="s f-white" />
-<text x="353.0" y="154" class="" font-size="9.5" text-anchor="middle">CE / CW loss</text>
-<line x1="253.0" y1="150.0" x2="266.0" y2="150.0" class="s" marker-end="url(#gcg-ink)" />
-<line x1="303.0" y1="150.0" x2="316.0" y2="150.0" class="s" marker-end="url(#gcg-ink)" />
-<path d="M353 162 C 350 184, 240 184, 232 163" class="s-muted dash" marker-end="url(#gcg-muted)" />
+<g data-part="box-0"><rect x="212" y="140" width="40" height="20" rx="3" class="s f-white" />
+<text x="232.0" y="154" class="m" font-size="11" text-anchor="middle">s̃ᵀE</text></g>
+<g data-part="box-1"><rect x="268" y="140" width="34" height="20" rx="3" class="s f-white" />
+<text x="285.0" y="154" class="" font-size="9.5" text-anchor="middle">LLM</text></g>
+<g data-part="box-2"><rect x="318" y="140" width="70" height="20" rx="3" class="s f-white" />
+<text x="353.0" y="154" class="" font-size="9.5" text-anchor="middle">CE / CW loss</text></g>
+<line x1="253.0" y1="150.0" x2="266.0" y2="150.0" class="s" marker-end="url(#gcg-ink)" data-part="flow-0" />
+<line x1="303.0" y1="150.0" x2="316.0" y2="150.0" class="s" marker-end="url(#gcg-ink)" data-part="flow-1" />
+<path d="M353 162 C 350 184, 240 184, 232 163" class="s-muted dash" marker-end="url(#gcg-muted)" data-part="adam" />
 <text x="292" y="191" font-size="9" text-anchor="middle" class="t-muted">Adam on <tspan class="m" font-size="11">φ</tspan></text>
-<text x="302" y="210" class="t-muted" font-size="9.5" text-anchor="middle">final suffix = argmax</text>
+<text x="302" y="210" class="t-muted" font-size="9.5" text-anchor="middle" data-part="argmax">final suffix = argmax</text>
 <text x="302" y="228" class="t-blue" font-size="11" text-anchor="middle" font-weight="600">≈33× faster than GCG</text>
 </svg>
 </figure>
@@ -677,11 +737,21 @@ Paper</a></div>
 
 <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2604.17224" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@inproceedings{cakar2026laser,
+  title         = {LASER: Low-Rank Activation SVD for Efficient Recursion},
+  author        = {{\c{C}}akar, Ege and Raghu, Ketan Ali and Zheng, Lia},
+  booktitle     = {ICLR 2026 Workshop on Latent \&amp; Implicit Thinking (LIT)},
+  year          = {2026},
+  eprint        = {2604.17224},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </div>
   <blockquote>We exploit this structure through LASER (Low-Rank Activation SVD for Efficient Recursion), a dynamic compression framework that maintains an evolving low-rank basis via matrix-free subspace tracking with a fidelity-triggered reset mechanism, achieving ~60% activation memory savings with no statistically significant accuracy degradation.</blockquote>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Each recursion step stores small coefficients Z_i = X_i Q against one shared low-rank basis Q instead of the full activation X_i. Across training steps, Q is updated by a power iteration; if fidelity drops below a threshold the rank grows, and repeated misses trigger an SVD reset.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Each recursion step stores small coefficients Z_i = X_i Q against one shared low-rank basis Q instead of the full activation X_i. Across training steps, Q is updated by a power iteration; if fidelity drops below a threshold the rank grows, and repeated misses trigger an SVD reset." data-figure="laser">
 <defs>
 <marker id="laser-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="laser-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
@@ -691,52 +761,52 @@ Paper</a></div>
 <text x="14" y="16" class="t-muted" font-size="10" text-anchor="start">within one forward pass</text>
 <text x="390" y="16" class="t-red" font-size="10" text-anchor="end">≈60% less activation memory</text>
 <text x="46" y="36" class="t-muted" font-size="10" text-anchor="middle">step 1</text>
-<rect x="18" y="42" width="56" height="22" rx="2" class="s-muted dash f-white" />
-<text x="44" y="58" class="m" text-anchor="middle" font-size="13" style="fill:var(--muted)">X<tspan dy="3" font-size="8">1</tspan></text>
-<line x1="46.0" y1="66.0" x2="46.0" y2="84.0" class="s" marker-end="url(#laser-ink)" style="stroke-width:1" />
+<g data-part="x-0"><rect x="18" y="42" width="56" height="22" rx="2" class="s-muted dash f-white" />
+<text x="44" y="58" class="m" text-anchor="middle" font-size="13" style="fill:var(--muted)">X<tspan dy="3" font-size="8">1</tspan></text></g>
+<line x1="46.0" y1="66.0" x2="46.0" y2="84.0" class="s" marker-end="url(#laser-ink)" style="stroke-width:1" data-part="down-0" />
 <text x="51" y="79" class="m" font-size="11" text-anchor="start">·Q</text>
-<rect x="39" y="86" width="14" height="22" rx="2" class="s f-node" />
+<rect x="39" y="86" width="14" height="22" rx="2" class="s f-node" data-part="z-0" />
 <text x="45" y="122" class="m" text-anchor="middle" font-size="12">Z<tspan dy="3" font-size="8">1</tspan></text>
 <text x="124" y="36" class="t-muted" font-size="10" text-anchor="middle">step 2</text>
-<rect x="96" y="42" width="56" height="22" rx="2" class="s-muted dash f-white" />
-<text x="122" y="58" class="m" text-anchor="middle" font-size="13" style="fill:var(--muted)">X<tspan dy="3" font-size="8">2</tspan></text>
-<line x1="124.0" y1="66.0" x2="124.0" y2="84.0" class="s" marker-end="url(#laser-ink)" style="stroke-width:1" />
+<g data-part="x-1"><rect x="96" y="42" width="56" height="22" rx="2" class="s-muted dash f-white" />
+<text x="122" y="58" class="m" text-anchor="middle" font-size="13" style="fill:var(--muted)">X<tspan dy="3" font-size="8">2</tspan></text></g>
+<line x1="124.0" y1="66.0" x2="124.0" y2="84.0" class="s" marker-end="url(#laser-ink)" style="stroke-width:1" data-part="down-1" />
 <text x="129" y="79" class="m" font-size="11" text-anchor="start">·Q</text>
-<rect x="117" y="86" width="14" height="22" rx="2" class="s f-node" />
+<rect x="117" y="86" width="14" height="22" rx="2" class="s f-node" data-part="z-1" />
 <text x="123" y="122" class="m" text-anchor="middle" font-size="12">Z<tspan dy="3" font-size="8">2</tspan></text>
 <text x="234" y="36" class="t-muted" font-size="10" text-anchor="middle">step n</text>
-<rect x="206" y="42" width="56" height="22" rx="2" class="s-muted dash f-white" />
-<text x="232" y="58" class="m" text-anchor="middle" font-size="13" style="fill:var(--muted)">X<tspan dy="3" font-size="8">n</tspan></text>
-<line x1="234.0" y1="66.0" x2="234.0" y2="84.0" class="s" marker-end="url(#laser-ink)" style="stroke-width:1" />
+<g data-part="x-2"><rect x="206" y="42" width="56" height="22" rx="2" class="s-muted dash f-white" />
+<text x="232" y="58" class="m" text-anchor="middle" font-size="13" style="fill:var(--muted)">X<tspan dy="3" font-size="8">n</tspan></text></g>
+<line x1="234.0" y1="66.0" x2="234.0" y2="84.0" class="s" marker-end="url(#laser-ink)" style="stroke-width:1" data-part="down-2" />
 <text x="239" y="79" class="m" font-size="11" text-anchor="start">·Q</text>
-<rect x="227" y="86" width="14" height="22" rx="2" class="s f-node" />
+<rect x="227" y="86" width="14" height="22" rx="2" class="s f-node" data-part="z-2" />
 <text x="233" y="122" class="m" text-anchor="middle" font-size="12">Z<tspan dy="3" font-size="8">n</tspan></text>
-<line x1="76.0" y1="53.0" x2="94.0" y2="53.0" class="s" marker-end="url(#laser-ink)" />
-<line x1="154.0" y1="53.0" x2="172.0" y2="53.0" class="s" marker-end="url(#laser-ink)" />
+<line x1="76.0" y1="53.0" x2="94.0" y2="53.0" class="s" marker-end="url(#laser-ink)" data-part="rec-0" />
+<line x1="154.0" y1="53.0" x2="172.0" y2="53.0" class="s" marker-end="url(#laser-ink)" data-part="rec-1" />
 <text x="188" y="57" class="" font-size="13" text-anchor="middle">⋯</text>
-<line x1="196.0" y1="53.0" x2="204.0" y2="53.0" class="s" marker-end="url(#laser-ink)" />
-<rect x="318" y="44" width="16" height="70" rx="2" class="s-red" style="fill:rgba(196,85,59,.25)" />
+<line x1="196.0" y1="53.0" x2="204.0" y2="53.0" class="s" marker-end="url(#laser-ink)" data-part="rec-2" />
+<rect x="318" y="44" width="16" height="70" rx="2" class="s-red" style="fill:rgba(196,85,59,.25)" data-part="q" />
 <text x="326" y="38" class="t-red" font-size="10" text-anchor="middle">shared</text>
 <text x="326" y="128" class="t-red" font-size="10" text-anchor="middle">basis</text>
 <text x="344" y="84" class="m" font-size="15">Q</text>
 <text x="344" y="100" font-size="9" class="t-muted">D×k</text>
-<path d="M54 97 C 106 97, 290 79, 316 79" class="s-red" style="stroke-width:.8;opacity:.6" />
-<path d="M132 97 C 184 97, 290 79, 316 79" class="s-red" style="stroke-width:.8;opacity:.6" />
-<path d="M242 97 C 294 97, 290 79, 316 79" class="s-red" style="stroke-width:.8;opacity:.6" />
+<path d="M54 97 C 106 97, 290 79, 316 79" class="s-red" style="stroke-width:.8;opacity:.6" data-part="zq-0" />
+<path d="M132 97 C 184 97, 290 79, 316 79" class="s-red" style="stroke-width:.8;opacity:.6" data-part="zq-1" />
+<path d="M242 97 C 294 97, 290 79, 316 79" class="s-red" style="stroke-width:.8;opacity:.6" data-part="zq-2" />
 <line x1="14" y1="140" x2="390" y2="140" class="s-muted" style="stroke-width:.6" />
 <text x="14" y="158" class="t-muted" font-size="10" text-anchor="start">across training steps</text>
-<rect x="22" y="170" width="44" height="24" rx="3" class="s f-node" />
-<text x="42" y="187" class="m" text-anchor="middle" font-size="13">Q<tspan dy="3" font-size="8">t−1</tspan></text>
-<line x1="68.0" y1="182.0" x2="146.0" y2="182.0" class="s" marker-end="url(#laser-ink)" />
+<g data-part="qprev"><rect x="22" y="170" width="44" height="24" rx="3" class="s f-node" />
+<text x="42" y="187" class="m" text-anchor="middle" font-size="13">Q<tspan dy="3" font-size="8">t−1</tspan></text></g>
+<line x1="68.0" y1="182.0" x2="146.0" y2="182.0" class="s" marker-end="url(#laser-ink)" data-part="pi" />
 <text x="107" y="175" class="t-muted" font-size="9" text-anchor="middle">power iteration</text>
-<path d="M190 166 L 228 182 L 190 198 L 152 182 Z" class="s f-white" />
-<text x="190" y="186" font-size="11" text-anchor="middle"><tspan class="m" font-size="12">F</tspan><tspan dy="3" font-size="8" class="m">t</tspan><tspan dy="-3"> ≥ </tspan><tspan class="m" font-size="12">ε</tspan></text>
-<line x1="230.0" y1="182.0" x2="296.0" y2="182.0" class="s" marker-end="url(#laser-ink)" />
+<g data-part="gate"><path d="M190 166 L 228 182 L 190 198 L 152 182 Z" class="s f-white" />
+<text x="190" y="186" font-size="11" text-anchor="middle"><tspan class="m" font-size="12">F</tspan><tspan dy="3" font-size="8" class="m">t</tspan><tspan dy="-3"> ≥ </tspan><tspan class="m" font-size="12">ε</tspan></text></g>
+<line x1="230.0" y1="182.0" x2="296.0" y2="182.0" class="s" marker-end="url(#laser-ink)" data-part="yes" />
 <text x="262" y="175" class="t-muted" font-size="9" text-anchor="middle">yes</text>
-<rect x="298" y="170" width="44" height="24" rx="3" class="s f-node" />
-<text x="318" y="187" class="m" text-anchor="middle" font-size="13">Q<tspan dy="3" font-size="8">t</tspan></text>
-<line x1="190.0" y1="200.0" x2="190.0" y2="214.0" class="s-muted dash" marker-end="url(#laser-muted)" />
-<text x="190" y="230" class="t-muted" font-size="10" text-anchor="middle">no: grow rank; after p misses, SVD reset</text>
+<g data-part="qt"><rect x="298" y="170" width="44" height="24" rx="3" class="s f-node" />
+<text x="318" y="187" class="m" text-anchor="middle" font-size="13">Q<tspan dy="3" font-size="8">t</tspan></text></g>
+<line x1="190.0" y1="200.0" x2="190.0" y2="214.0" class="s-muted dash" marker-end="url(#laser-muted)" data-part="no" />
+<text x="190" y="230" class="t-muted" font-size="10" text-anchor="middle" data-part="notext">no: grow rank; after p misses, SVD reset</text>
 </svg>
 </figure>
   </div>
@@ -771,7 +841,7 @@ GitHub</a>
 Paper</a>
   </div>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Agent output is mined into literals and classified into a bipolar argument graph with support and attack edges. A user-supplied fact attacks one literal, which is flagged and sent back to the agents as feedback.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="Agent output is mined into literals and classified into a bipolar argument graph with support and attack edges. A user-supplied fact attacks one literal, which is flagged and sent back to the agents as feedback." data-figure="argument">
 <defs>
 <marker id="argument-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="argument-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
@@ -784,39 +854,39 @@ Paper</a>
 <text x="357" y="22" class="" font-size="11" text-anchor="start">attacks</text>
 <text x="60" y="32" class="t-muted" font-size="11" text-anchor="middle">agent output</text>
 <rect x="14" y="40" width="92" height="136" rx="4" class="s f-white" />
-<rect x="20" y="53" width="52" height="10" rx="2" class="f-blue-soft" />
+<rect x="20" y="53" width="52" height="10" rx="2" class="f-blue-soft" data-part="span-0" />
 <line x1="22.0" y1="58.0" x2="94.0" y2="58.0" class="s-muted" style="stroke-width:2" />
 <line x1="22.0" y1="72.0" x2="86.0" y2="72.0" class="s-muted" style="stroke-width:2" />
-<rect x="42" y="81" width="56" height="10" rx="2" class="f-blue-soft" />
+<rect x="42" y="81" width="56" height="10" rx="2" class="f-blue-soft" data-part="span-1" />
 <line x1="22.0" y1="86.0" x2="96.0" y2="86.0" class="s-muted" style="stroke-width:2" />
 <line x1="22.0" y1="100.0" x2="80.0" y2="100.0" class="s-muted" style="stroke-width:2" />
-<rect x="20" y="109" width="64" height="10" rx="2" class="f-blue-soft" />
+<rect x="20" y="109" width="64" height="10" rx="2" class="f-blue-soft" data-part="span-2" />
 <line x1="22.0" y1="114.0" x2="92.0" y2="114.0" class="s-muted" style="stroke-width:2" />
 <line x1="22.0" y1="128.0" x2="88.0" y2="128.0" class="s-muted" style="stroke-width:2" />
-<rect x="32" y="137" width="54" height="10" rx="2" class="f-blue-soft" />
+<rect x="32" y="137" width="54" height="10" rx="2" class="f-blue-soft" data-part="span-3" />
 <line x1="22.0" y1="142.0" x2="96.0" y2="142.0" class="s-muted" style="stroke-width:2" />
 <line x1="22.0" y1="156.0" x2="70.0" y2="156.0" class="s-muted" style="stroke-width:2" />
-<line x1="114.0" y1="108.0" x2="160.0" y2="108.0" class="s" marker-end="url(#argument-ink)" />
+<line x1="114.0" y1="108.0" x2="160.0" y2="108.0" class="s" marker-end="url(#argument-ink)" data-part="mine" />
 <text x="137" y="99" class="t-muted" font-size="11" text-anchor="middle">extract</text>
 <text x="137" y="126" class="t-muted" font-size="11" text-anchor="middle">classify</text>
-<line x1="201.9" y1="69.3" x2="249.2" y2="98.2" class="s" marker-end="url(#argument-ink)" />
-<line x1="201.9" y1="142.7" x2="249.2" y2="113.8" class="s" marker-end="url(#argument-ink)" />
-<line x1="249.9" y1="184.9" x2="203.0" y2="157.6" class="s-red" marker-end="url(#argument-flat)" />
-<circle cx="262" cy="106" r="20" class="s-red" />
-<circle cx="190" cy="62" r="14" class="s f-node" />
-<text x="189" y="66" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">1</tspan></text>
-<circle cx="190" cy="150" r="14" class="s f-node" />
-<text x="189" y="154" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">2</tspan></text>
-<circle cx="262" cy="106" r="14" class="s f-node" />
-<text x="261" y="110" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">3</tspan></text>
-<circle cx="262" cy="192" r="14" class="s f-node" />
-<text x="261" y="196" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">4</tspan></text>
+<line x1="201.9" y1="69.3" x2="249.2" y2="98.2" class="s" marker-end="url(#argument-ink)" data-part="edge-0" />
+<line x1="201.9" y1="142.7" x2="249.2" y2="113.8" class="s" marker-end="url(#argument-ink)" data-part="edge-1" />
+<line x1="249.9" y1="184.9" x2="203.0" y2="157.6" class="s-red" marker-end="url(#argument-flat)" data-part="edge-2" />
+<circle cx="262" cy="106" r="20" class="s-red" data-part="ring" />
+<g data-part="node-0"><circle cx="190" cy="62" r="14" class="s f-node" />
+<text x="189" y="66" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">1</tspan></text></g>
+<g data-part="node-1"><circle cx="190" cy="150" r="14" class="s f-node" />
+<text x="189" y="154" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">2</tspan></text></g>
+<g data-part="node-2"><circle cx="262" cy="106" r="14" class="s f-node" />
+<text x="261" y="110" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">3</tspan></text></g>
+<g data-part="node-3"><circle cx="262" cy="192" r="14" class="s f-node" />
+<text x="261" y="196" class="m" text-anchor="middle" font-size="15">a<tspan dy="3" font-size="10">4</tspan></text></g>
 <rect x="334" y="92" width="52" height="28" rx="3" class="s-red f-white" />
 <rect x="337" y="95" width="46" height="22" rx="2" class="s-red" />
 <text x="360" y="110" class="t-red" font-size="12" text-anchor="middle">fact</text>
-<line x1="334.0" y1="106.0" x2="283.0" y2="106.0" class="s-red" marker-end="url(#argument-flat)" />
-<text x="300" y="136" class="t-red" font-size="11" text-anchor="start">flagged</text>
-<path d="M282 118 C 322 146, 332 222, 282 222 L 74 222 C 62 222, 60 212, 60 182" class="s-muted dash" marker-end="url(#argument-muted)" />
+<line x1="334.0" y1="106.0" x2="283.0" y2="106.0" class="s-red" marker-end="url(#argument-flat)" data-part="fact" />
+<text x="300" y="136" class="t-red" font-size="11" text-anchor="start" data-part="flagged">flagged</text>
+<path d="M282 118 C 322 146, 332 222, 282 222 L 74 222 C 62 222, 60 212, 60 182" class="s-muted dash" marker-end="url(#argument-muted)" data-part="feedback" />
 <text x="178" y="216" class="t-muted" font-size="11" text-anchor="middle">test-time feedback</text>
 </svg>
 </figure>
@@ -843,77 +913,77 @@ Report</a>
 Blog post</a>
   </div>
   </div>
-  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="A one-layer MLP Mixer reads a sequence of context exemplars and labels plus a query. A token-mixing MLP mixes across positions, a channel-mixing MLP acts per token, and average pooling gives the query label. As the number of clusters grows, in-weight accuracy falls and in-context accuracy rises.">
+  <figure class="paper-figure"><svg viewBox="0 0 400 240" role="img" aria-label="A one-layer MLP Mixer reads a sequence of context exemplars and labels plus a query. A token-mixing MLP mixes across positions, a channel-mixing MLP acts per token, and average pooling gives the query label. As the number of clusters grows, in-weight accuracy falls and in-context accuracy rises." data-figure="mixer" data-plot="{&quot;x0&quot;: 280, &quot;x1&quot;: 388, &quot;yt&quot;: 40, &quot;yb&quot;: 168, &quot;k&quot;: [5, 6, 7, 8, 9, 10, 11], &quot;iwl&quot;: [1.0, 1.0, 0.99, 0.98, 0.84, 0.33, 0.26], &quot;icl&quot;: [0.29, 0.25, 0.26, 0.25, 0.31, 0.77, 1.0]}">
 <defs>
 <marker id="mixer-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="mixer-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
 <marker id="mixer-muted" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 9 5 0 9z" style="fill:var(--muted)" /></marker>
 <marker id="mixer-flat" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M8 0V10" class="s-red" style="stroke-width:2.2" /></marker>
 </defs>
-<rect x="14" y="38" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
+<rect x="14" y="38" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" data-tok="0" />
 <text x="22" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">1</tspan></text>
-<rect x="35" y="38" width="18" height="18" rx="2" class="s f-white" />
+<rect x="35" y="38" width="18" height="18" rx="2" class="s f-white" data-tok="1" />
 <text x="43" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">1</tspan></text>
-<rect x="56" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
+<rect x="56" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" data-tok="2" />
 <text x="64" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">2</tspan></text>
-<rect x="77" y="38" width="18" height="18" rx="2" class="s f-white" />
+<rect x="77" y="38" width="18" height="18" rx="2" class="s f-white" data-tok="3" />
 <text x="85" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">2</tspan></text>
 <text x="104" y="51" class="" font-size="12" text-anchor="middle">⋯</text>
-<rect x="112" y="38" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" />
+<rect x="112" y="38" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" data-tok="4" />
 <text x="120" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">L</tspan></text>
-<rect x="133" y="38" width="18" height="18" rx="2" class="s f-white" />
+<rect x="133" y="38" width="18" height="18" rx="2" class="s f-white" data-tok="5" />
 <text x="141" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">L</tspan></text>
-<rect x="154" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
+<rect x="154" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" data-tok="6" />
 <text x="162" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">q</tspan></text>
-<line x1="23" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
+<line x1="23" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="0" />
+<line x1="23" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="1" />
+<line x1="23" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="2" />
+<line x1="23" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="3" />
+<line x1="23" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="4" />
+<line x1="23" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="5" />
+<line x1="23" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="6" />
+<line x1="44" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="0" />
+<line x1="44" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="1" />
+<line x1="44" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="2" />
+<line x1="44" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="3" />
+<line x1="44" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="4" />
+<line x1="44" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="5" />
+<line x1="44" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="6" />
+<line x1="65" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="0" />
+<line x1="65" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="1" />
+<line x1="65" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="2" />
+<line x1="65" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="3" />
+<line x1="65" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="4" />
+<line x1="65" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="5" />
+<line x1="65" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="6" />
+<line x1="86" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="0" />
+<line x1="86" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="1" />
+<line x1="86" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="2" />
+<line x1="86" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="3" />
+<line x1="86" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="4" />
+<line x1="86" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="5" />
+<line x1="86" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="6" />
+<line x1="121" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="0" />
+<line x1="121" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="1" />
+<line x1="121" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="2" />
+<line x1="121" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="3" />
+<line x1="121" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="4" />
+<line x1="121" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="5" />
+<line x1="121" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="6" />
+<line x1="142" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="0" />
+<line x1="142" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="1" />
+<line x1="142" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="2" />
+<line x1="142" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="3" />
+<line x1="142" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="4" />
+<line x1="142" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="5" />
+<line x1="142" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="6" />
+<line x1="163" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="0" />
+<line x1="163" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="1" />
+<line x1="163" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="2" />
+<line x1="163" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="3" />
+<line x1="163" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="4" />
+<line x1="163" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="5" />
+<line x1="163" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="6" />
 <rect x="14" y="98" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
 <rect x="35" y="98" width="18" height="18" rx="2" class="s f-white" />
 <rect x="56" y="98" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
@@ -1008,37 +1078,75 @@ Blog post</a>
 <h2 id="papers">Papers</h2>
 
 <ul class="pub-list">
-  <li class="pub-item"><span class="pub-title">State Space Attention: Learning Context-Dependent Memory Retention</span> <span class="badge">Preprint</span>
+  <li class="pub-item" id="paper-ssa"><span class="pub-title">State Space Attention: Learning Context-Dependent Memory Retention</span> <span class="badge">Preprint</span>
 <div class="pub-authors"><b>Ege Çakar</b>, Cengiz Pehlevan</div>
 <div class="pub-venue">Preprint, 2026</div>
 <div class="pub-note">arXiv link coming soon</div>
-
+<div class="pub-links"><button class="btn cite-btn" type="button" data-bibtex="@misc{cakar2026ssa,
+  title  = {State Space Attention: Learning Context-Dependent Memory Retention},
+  author = {{\c{C}}akar, Ege and Pehlevan, Cengiz},
+  year   = {2026},
+  note   = {Preprint}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
-  <li class="pub-item"><a class="pub-title" href="https://arxiv.org/abs/2602.14404" target="_blank" rel="noopener">Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces</a> <span class="badge">NeurIPS 2026</span>
+  <li class="pub-item" id="paper-boule-or-baguette"><a class="pub-title" href="https://arxiv.org/abs/2602.14404" target="_blank" rel="noopener">Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces</a> <span class="badge">NeurIPS 2026</span>
 <div class="pub-authors">William L. Tong, <b>Ege Çakar</b>, Cengiz Pehlevan</div>
 <div class="pub-venue">To appear in NeurIPS 2026 Main Track.</div>
 
 <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2602.14404" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@inproceedings{tong2026boule,
+  title         = {Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces},
+  author        = {Tong, William L. and {\c{C}}akar, Ege and Pehlevan, Cengiz},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  year          = {2026},
+  eprint        = {2602.14404},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
-  <li class="pub-item"><a class="pub-title" href="https://arxiv.org/abs/2607.08883" target="_blank" rel="noopener">Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal</a> <span class="badge">AAAI 2026 Symposium</span> <span class="badge">ICLR 2026 Workshop</span>
+  <li class="pub-item" id="paper-safety-representations"><a class="pub-title" href="https://arxiv.org/abs/2607.08883" target="_blank" rel="noopener">Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal</a> <span class="badge">AAAI 2026 Symposium</span> <span class="badge">ICLR 2026 Workshop</span>
 <div class="pub-authors"><b>Ege Çakar</b>, Hannah Guan, Kayden Kehe</div>
 <div class="pub-venue">Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience (Seoul, South Korea, June 2026; to appear in proceedings) and the ICLR 2026 Workshop on Representational Alignment (Re-Align) (Rio de Janeiro, Brazil, April 2026).</div>
 
 <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2607.08883" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@inproceedings{cakar2026safety,
+  title         = {Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal},
+  author        = {{\c{C}}akar, Ege and Guan, Hannah and Kehe, Kayden},
+  booktitle     = {AAAI 2026 Summer Symposium Series: AI-Driven Resilience},
+  year          = {2026},
+  note          = {Also accepted to the ICLR 2026 Workshop on Representational Alignment (Re-Align)},
+  eprint        = {2607.08883},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
-  <li class="pub-item"><a class="pub-title" href="https://arxiv.org/abs/2604.17224" target="_blank" rel="noopener">LASER: Low-Rank Activation SVD for Efficient Recursion</a> <span class="badge">ICLR 2026 Workshop</span>
+  <li class="pub-item" id="paper-laser"><a class="pub-title" href="https://arxiv.org/abs/2604.17224" target="_blank" rel="noopener">LASER: Low-Rank Activation SVD for Efficient Recursion</a> <span class="badge">ICLR 2026 Workshop</span>
 <div class="pub-authors"><b>Ege Çakar</b>, Ketan Ali Raghu, Lia Zheng</div>
 <div class="pub-venue">Accepted to the ICLR 2026 Workshop on Latent &amp; Implicit Thinking (LIT). Rio de Janeiro, Brazil, April 2026.</div>
 
 <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2604.17224" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@inproceedings{cakar2026laser,
+  title         = {LASER: Low-Rank Activation SVD for Efficient Recursion},
+  author        = {{\c{C}}akar, Ege and Raghu, Ketan Ali and Zheng, Lia},
+  booktitle     = {ICLR 2026 Workshop on Latent \&amp; Implicit Thinking (LIT)},
+  year          = {2026},
+  eprint        = {2604.17224},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
-  <li class="pub-item"><a class="pub-title" href="/assets/files/Mathlib_Proof_Graphs_Report.pdf" target="_blank" rel="noopener">Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs</a> <span class="badge">Technical Report</span>
+  <li class="pub-item" id="paper-mathlib-geometry"><a class="pub-title" href="/assets/files/Mathlib_Proof_Graphs_Report.pdf" target="_blank" rel="noopener">Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs</a> <span class="badge">Technical Report</span>
 <div class="pub-authors"><b>Ege Çakar</b></div>
 <div class="pub-venue">Technical Report, 2026</div>
 
@@ -1048,9 +1156,18 @@ Paper</a><a class="btn" href="https://github.com/Ege-Cakar/mathlib_analysis" tar
 </svg>
 Code</a><a class="btn" href="/blog/2026/10/06/mathlib-proof-graphs/"><svg class="icon icon-quill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5.5 16h6v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z" /><path d="M6.5 16v-2h4v2" /><g class="feather"><path d="M8.5 14C10 9 14 4.5 20.5 3c-1 5-4.5 9-10 10.5" /><path d="M8.5 14l5.5-6.5" /></g>
 </svg>
-Blog post</a></div>
+Blog post</a><button class="btn cite-btn" type="button" data-bibtex="@techreport{cakar2026mathlib,
+  title       = {Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs},
+  author      = {{\c{C}}akar, Ege},
+  institution = {Harvard University},
+  year        = {2026},
+  month       = may,
+  url         = {https://egecakar.com/assets/files/Mathlib_Proof_Graphs_Report.pdf}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
-  <li class="pub-item"><a class="pub-title" href="https://arxiv.org/abs/2510.03442" target="_blank" rel="noopener">The Argument is the Explanation: Structured Argumentation for Trust in Agents</a> <span class="badge">Preprint</span>
+  <li class="pub-item" id="paper-argument-is-the-explanation"><a class="pub-title" href="https://arxiv.org/abs/2510.03442" target="_blank" rel="noopener">The Argument is the Explanation: Structured Argumentation for Trust in Agents</a> <span class="badge">Preprint</span>
 <div class="pub-authors"><b>Ege Çakar</b>, Per Ola Kristensson</div>
 <div class="pub-venue">arXiv preprint arXiv:2510.03442, 2025</div>
 
@@ -1058,15 +1175,33 @@ Blog post</a></div>
 </svg>
 Paper</a><a class="btn" href="https://github.com/Ege-Cakar/Structured-Argumentation-For-Trust" target="_blank" rel="noopener"><svg class="icon icon-cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5 10.5C5 8 7 7.3 9.5 7.3h5c2.5 0 4.5.7 4.5 3.2 0 5-3 8-7 8s-7-3-7-8z" /><path class="fill ear" d="M5.1 9.2 5.5 4l4 3.3" /><path class="fill ear ear-right" d="M18.9 9.2 18.5 4l-4 3.3" /><circle cx="9.3" cy="11.5" r=".6" fill="currentColor" /><circle cx="14.7" cy="11.5" r=".6" fill="currentColor" /><path d="M11.3 14h1.4l-.7.7zM2.5 13h3.5M2.8 15.3l3.4-.8M21.5 13H18M21.2 15.3l-3.4-.8" />
 </svg>
-Code</a></div>
+Code</a><button class="btn cite-btn" type="button" data-bibtex="@misc{cakar2025argument,
+  title         = {The Argument is the Explanation: Structured Argumentation for Trust in Agents},
+  author        = {{\c{C}}akar, Ege and Kristensson, Per Ola},
+  year          = {2025},
+  eprint        = {2510.03442},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
-  <li class="pub-item"><a class="pub-title" href="/assets/files/MLPMixer_ICL_Report.pdf" target="_blank" rel="noopener">In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures</a> <span class="badge">Technical Report</span>
+  <li class="pub-item" id="paper-mlp-mixer-icl"><a class="pub-title" href="/assets/files/MLPMixer_ICL_Report.pdf" target="_blank" rel="noopener">In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures</a> <span class="badge">Technical Report</span>
 <div class="pub-authors"><b>Ege Çakar</b></div>
 <div class="pub-venue">Technical Report, 2025</div>
 
 <div class="pub-links"><a class="btn" href="/assets/files/MLPMixer_ICL_Report.pdf" target="_blank" rel="noopener"><svg class="icon icon-paper-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="back" d="M8.5 3.5H18a1 1 0 0 1 1 1V17" /><rect x="5" y="6.5" width="11" height="14.5" rx="1" /><path d="M8 11h5M8 14h5M8 17h3" /><path d="M10 4.5v4.5a1.25 1.25 0 0 0 2.5 0V5.5" />
 </svg>
-Paper</a></div>
+Paper</a><button class="btn cite-btn" type="button" data-bibtex="@techreport{cakar2025mixericl,
+  title       = {In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures},
+  author      = {{\c{C}}akar, Ege},
+  institution = {Department of Statistics, Harvard University},
+  year        = {2025},
+  month       = may,
+  url         = {https://egecakar.com/assets/files/MLPMixer_ICL_Report.pdf}
+}" title="Copy BibTeX"><svg class="icon icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="fill" x="5" y="4.5" width="14" height="17" rx="2" /><rect class="clip" x="9" y="3" width="6" height="3.5" rx="1" fill="currentColor" stroke="none" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+</svg>
+<span>Cite</span></button></div>
 </li>
   
 </ul>
@@ -1120,6 +1255,13 @@ LinkedIn</a>
 </footer>
 
   </div>
+  <dialog class="search-dialog" aria-label="Search the site">
+    <input type="search" placeholder="Search papers, posts, projects…" aria-label="Search" autocomplete="off" spellcheck="false">
+    <ul class="search-results"></ul>
+    <p class="search-hint">↑ ↓ to move · Enter to open · Esc to close</p>
+  </dialog>
   <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/figures.js"></script>
 </body>
 </html>

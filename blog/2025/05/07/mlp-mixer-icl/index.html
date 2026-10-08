@@ -120,6 +120,13 @@ About
       </li>
     
     <li>
+      <button class="search-toggle" type="button" aria-label="Search (Cmd/Ctrl+K)" title="Search (⌘K)">
+        <svg class="icon icon-magnifier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="lens"><circle class="fill" cx="10.5" cy="10.5" r="6"/><path d="M8 8.2a3.2 3.2 0 0 1 2.4-1.2" style="stroke-width:1.2;stroke-opacity:.7"/><path d="M15 15l5.5 5.5" style="stroke-width:2.2"/></g>
+</svg>
+
+      </button>
+    </li>
+    <li>
       <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg class="icon icon-lamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="lamp-glow" d="M5 11h14l3 10H2z" stroke="none"/><path class="lamp-shade" d="M8 3h8l3 8H5z"/><path d="M12 11v9M8 20.5h8"/><g class="lamp-chain"><path d="M15.5 11v3"/><circle cx="15.5" cy="14.6" r=".6"/></g>
 </svg>
@@ -130,7 +137,8 @@ About
 </nav>
 
     <main class="site-content">
-      <article>
+      <div class="read-progress" aria-hidden="true"></div>
+<article>
   <div class="post-header">
     <h1><svg class="icon icon-quill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5.5 16h6v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/><path d="M6.5 16v-2h4v2"/><g class="feather"><path d="M8.5 14C10 9 14 4.5 20.5 3c-1 5-4.5 9-10 10.5"/><path d="M8.5 14l5.5-6.5"/></g>
 </svg>
@@ -138,77 +146,77 @@ In-Context Learning Without Attention: MLP Mixers as an Alternative to Transform
     <p class="post-meta">May 7, 2025</p>
   </div>
 
-  <figure class="paper-figure post-figure"><svg viewBox="0 0 400 240" role="img" aria-label="A one-layer MLP Mixer reads a sequence of context exemplars and labels plus a query. A token-mixing MLP mixes across positions, a channel-mixing MLP acts per token, and average pooling gives the query label. As the number of clusters grows, in-weight accuracy falls and in-context accuracy rises.">
+  <figure class="paper-figure post-figure"><svg viewBox="0 0 400 240" role="img" aria-label="A one-layer MLP Mixer reads a sequence of context exemplars and labels plus a query. A token-mixing MLP mixes across positions, a channel-mixing MLP acts per token, and average pooling gives the query label. As the number of clusters grows, in-weight accuracy falls and in-context accuracy rises." data-figure="mixer" data-plot="{&quot;x0&quot;: 280, &quot;x1&quot;: 388, &quot;yt&quot;: 40, &quot;yb&quot;: 168, &quot;k&quot;: [5, 6, 7, 8, 9, 10, 11], &quot;iwl&quot;: [1.0, 1.0, 0.99, 0.98, 0.84, 0.33, 0.26], &quot;icl&quot;: [0.29, 0.25, 0.26, 0.25, 0.31, 0.77, 1.0]}">
 <defs>
 <marker id="mixer-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink" /></marker>
 <marker id="mixer-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red" /></marker>
 <marker id="mixer-muted" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 9 5 0 9z" style="fill:var(--muted)" /></marker>
 <marker id="mixer-flat" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M8 0V10" class="s-red" style="stroke-width:2.2" /></marker>
 </defs>
-<rect x="14" y="38" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
+<rect x="14" y="38" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" data-tok="0" />
 <text x="22" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">1</tspan></text>
-<rect x="35" y="38" width="18" height="18" rx="2" class="s f-white" />
+<rect x="35" y="38" width="18" height="18" rx="2" class="s f-white" data-tok="1" />
 <text x="43" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">1</tspan></text>
-<rect x="56" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
+<rect x="56" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" data-tok="2" />
 <text x="64" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">2</tspan></text>
-<rect x="77" y="38" width="18" height="18" rx="2" class="s f-white" />
+<rect x="77" y="38" width="18" height="18" rx="2" class="s f-white" data-tok="3" />
 <text x="85" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">2</tspan></text>
 <text x="104" y="51" class="" font-size="12" text-anchor="middle">⋯</text>
-<rect x="112" y="38" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" />
+<rect x="112" y="38" width="18" height="18" rx="2" class="s" style="fill:#c6d3b4" data-tok="4" />
 <text x="120" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">L</tspan></text>
-<rect x="133" y="38" width="18" height="18" rx="2" class="s f-white" />
+<rect x="133" y="38" width="18" height="18" rx="2" class="s f-white" data-tok="5" />
 <text x="141" y="32" class="m" text-anchor="middle" font-size="13">y<tspan dy="3" font-size="8">L</tspan></text>
-<rect x="154" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
+<rect x="154" y="38" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" data-tok="6" />
 <text x="162" y="32" class="m" text-anchor="middle" font-size="13">x<tspan dy="3" font-size="8">q</tspan></text>
-<line x1="23" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="23" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="44" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="65" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="86" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="121" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="142" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
-<line x1="163" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" />
+<line x1="23" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="0" />
+<line x1="23" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="1" />
+<line x1="23" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="2" />
+<line x1="23" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="3" />
+<line x1="23" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="4" />
+<line x1="23" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="5" />
+<line x1="23" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="0" data-to="6" />
+<line x1="44" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="0" />
+<line x1="44" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="1" />
+<line x1="44" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="2" />
+<line x1="44" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="3" />
+<line x1="44" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="4" />
+<line x1="44" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="5" />
+<line x1="44" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="1" data-to="6" />
+<line x1="65" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="0" />
+<line x1="65" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="1" />
+<line x1="65" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="2" />
+<line x1="65" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="3" />
+<line x1="65" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="4" />
+<line x1="65" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="5" />
+<line x1="65" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="2" data-to="6" />
+<line x1="86" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="0" />
+<line x1="86" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="1" />
+<line x1="86" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="2" />
+<line x1="86" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="3" />
+<line x1="86" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="4" />
+<line x1="86" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="5" />
+<line x1="86" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="3" data-to="6" />
+<line x1="121" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="0" />
+<line x1="121" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="1" />
+<line x1="121" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="2" />
+<line x1="121" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="3" />
+<line x1="121" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="4" />
+<line x1="121" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="5" />
+<line x1="121" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="4" data-to="6" />
+<line x1="142" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="0" />
+<line x1="142" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="1" />
+<line x1="142" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="2" />
+<line x1="142" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="3" />
+<line x1="142" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="4" />
+<line x1="142" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="5" />
+<line x1="142" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="5" data-to="6" />
+<line x1="163" y1="56" x2="23" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="0" />
+<line x1="163" y1="56" x2="44" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="1" />
+<line x1="163" y1="56" x2="65" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="2" />
+<line x1="163" y1="56" x2="86" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="3" />
+<line x1="163" y1="56" x2="121" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="4" />
+<line x1="163" y1="56" x2="142" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="5" />
+<line x1="163" y1="56" x2="163" y2="98" class="s-red" style="stroke-width:.7;opacity:.55" data-from="6" data-to="6" />
 <rect x="14" y="98" width="18" height="18" rx="2" class="s" style="fill:#d9c7a7" />
 <rect x="35" y="98" width="18" height="18" rx="2" class="s f-white" />
 <rect x="56" y="98" width="18" height="18" rx="2" class="s" style="fill:#b7c7d8" />
@@ -354,6 +362,13 @@ LinkedIn</a>
 </footer>
 
   </div>
+  <dialog class="search-dialog" aria-label="Search the site">
+    <input type="search" placeholder="Search papers, posts, projects…" aria-label="Search" autocomplete="off" spellcheck="false">
+    <ul class="search-results"></ul>
+    <p class="search-hint">↑ ↓ to move · Enter to open · Esc to close</p>
+  </dialog>
   <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/figures.js"></script>
 </body>
 </html>

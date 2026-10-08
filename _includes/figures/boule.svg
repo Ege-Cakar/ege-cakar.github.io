@@ -1,4 +1,4 @@
-<svg viewBox="0 0 400 240" role="img" aria-label="Two task shapes. A boule is broad and shallow: many short chains, where models trained on reasoning traces (RT) length-generalize better than direct prediction (DP). A baguette is narrow and deep: few long chains, where DP does better.">
+<svg viewBox="0 0 400 240" role="img" aria-label="Two task shapes. A boule is broad and shallow: many short chains, where models trained on reasoning traces (RT) length-generalize better than direct prediction (DP). A baguette is narrow and deep: few long chains, where DP does better." data-figure="boule">
 <defs>
 <marker id="boule-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink"/></marker>
 <marker id="boule-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red"/></marker>
@@ -25,7 +25,7 @@
 <circle cx="104" cy="92" r="3.5" class="f-ink"/>
 <circle cx="104" cy="110" r="3.5" class="f-ink"/>
 <circle cx="104" cy="128" r="3.5" class="f-ink"/>
-<line x1="126" y1="86" x2="126" y2="134" class="s-red" style="stroke-width:5;opacity:.35"/>
+<line x1="126" y1="86" x2="126" y2="134" class="s-red" style="stroke-width:5;opacity:.35" data-trace="boule" data-points="126,92 126,110 126,128"/>
 <line x1="126.0" y1="96.0" x2="126.0" y2="105.5" class="s" marker-end="url(#boule-ink)" style="stroke-width:1"/>
 <line x1="126.0" y1="114.0" x2="126.0" y2="123.5" class="s" marker-end="url(#boule-ink)" style="stroke-width:1"/>
 <circle cx="126" cy="92" r="3.5" class="f-ink"/>
@@ -56,7 +56,7 @@
 <circle cx="297" cy="114.7" r="3.5" class="f-ink"/>
 <circle cx="297" cy="134.3" r="3.5" class="f-ink"/>
 <circle cx="297" cy="154.0" r="3.5" class="f-ink"/>
-<line x1="313" y1="30.0" x2="313" y2="160.0" class="s-red" style="stroke-width:5;opacity:.35"/>
+<line x1="313" y1="30.0" x2="313" y2="160.0" class="s-red" style="stroke-width:5;opacity:.35" data-trace="baguette" data-points="313,36.0 313,55.7 313,75.3 313,95.0 313,114.7 313,134.3 313,154.0"/>
 <line x1="313.0" y1="40.0" x2="313.0" y2="51.2" class="s" marker-end="url(#boule-ink)" style="stroke-width:1"/>
 <line x1="313.0" y1="59.7" x2="313.0" y2="70.8" class="s" marker-end="url(#boule-ink)" style="stroke-width:1"/>
 <line x1="313.0" y1="79.3" x2="313.0" y2="90.5" class="s" marker-end="url(#boule-ink)" style="stroke-width:1"/>
@@ -74,9 +74,9 @@
 <text x="115" y="186" class="" font-size="13" text-anchor="middle" font-weight="600">boule</text>
 <text x="115" y="201" class="t-muted" font-size="11" text-anchor="middle">broad · shallow</text>
 <text x="115" y="215" class="t-muted" font-size="11" text-anchor="middle">Full, Imply</text>
-<text x="115" y="233" class="t-red" font-size="13" text-anchor="middle" font-weight="700">RT &gt; DP</text>
+<text x="115" y="233" class="t-red" font-size="13" text-anchor="middle" font-weight="700" data-result="boule">RT &gt; DP</text>
 <text x="305" y="186" class="" font-size="13" text-anchor="middle" font-weight="600">baguette</text>
 <text x="305" y="201" class="t-muted" font-size="11" text-anchor="middle">narrow · deep</text>
 <text x="305" y="215" class="t-muted" font-size="11" text-anchor="middle">Or, PHP</text>
-<text x="305" y="233" class="" font-size="13" text-anchor="middle" font-weight="700">DP &gt; RT</text>
+<text x="305" y="233" class="" font-size="13" text-anchor="middle" font-weight="700" data-result="baguette">DP &gt; RT</text>
 </svg>

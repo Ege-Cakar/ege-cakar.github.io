@@ -4,6 +4,16 @@ title: Research
 permalink: /research/
 ---
 
+## Research Map
+
+<div class="research-map">
+  <ul class="map-themes">{% for t in site.data.themes %}<li data-theme="{{ t.id }}">{{ t.name }}</li>{% endfor %}</ul>
+  <ul class="map-papers">{% for p in site.data.papers %}<li data-themes="{{ p.themes | join: ' ' }}"><a href="#paper-{{ p.id }}">{{ p.short }}</a></li>{% endfor %}</ul>
+  <svg class="map-edges" aria-hidden="true"></svg>
+</div>
+
+## Timeline
+
 <ol class="timeline">
   <li class="current">
   <div class="tl-date">Fall 2026</div>
@@ -165,7 +175,7 @@ permalink: /research/
 ## Papers
 
 <ul class="pub-list">
-  {% for p in site.data.papers %}<li class="pub-item">{% include paper.html p=p %}</li>
+  {% for p in site.data.papers %}<li class="pub-item" id="paper-{{ p.id }}">{% include paper.html p=p %}</li>
   {% endfor %}
 </ul>
 

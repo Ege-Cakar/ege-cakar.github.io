@@ -73,7 +73,7 @@
 }
 
 // Dark mode toggle (lamp is lit in light mode)
-.theme-toggle {
+.theme-toggle, .search-toggle {
   display: flex;
   background: none;
   border: none;
@@ -84,12 +84,15 @@
   &:hover { color: var(--accent); }
   .icon { width: 22px; height: 22px; }
 }
+.search-toggle .icon { width: 20px; height: 20px; }
 
 // Main content
 .site-content {
   padding: 2.5rem 0;
   min-height: calc(100vh - #{v.$nav-height} - 80px);
-  animation: fadeInUp 0.4s ease both;
+  // backwards, not both: a transform kept after the animation would make <main> the
+  // containing block for position: fixed children (the reading progress bar).
+  animation: fadeInUp 0.4s ease backwards;
 }
 
 // Footer

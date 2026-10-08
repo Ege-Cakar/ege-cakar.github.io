@@ -13,7 +13,8 @@
   .neuron { transform-origin: 50% 50%; }
   .axon { opacity: 0; stroke-width: 1.4; stroke-dasharray: 0.3 2; stroke-dashoffset: 0.3; }
 
-  .handle, .seal, .back, .flap, .ribbon, .arm, .lamp-chain { transition: transform 0.25s ease; }
+  .handle, .seal, .back, .flap, .ribbon, .arm, .lamp-chain, .clip, .lens { transition: transform 0.25s ease; }
+  .lens { transform-origin: 40% 40%; }
 }
 .icon-id-card { transition: transform 0.25s ease; }
 
@@ -24,7 +25,8 @@
   .neuron { animation: fire 1.2s ease-in-out infinite; }
   .axon { opacity: 1; animation: signal 1.2s linear infinite; }
   .draw { animation: draw 0.9s ease-out; }
-  .handle { transform: translateY(-1.5px); }
+  .handle, .clip { transform: translateY(-1.5px); }
+  .lens { transform: rotate(-12deg) scale(1.08); }
   .feather { animation: wiggle 0.6s ease-in-out infinite; }
   .seal { transform: scale(1.15); }
   .back { transform: translate(1px, -1px); }
@@ -102,6 +104,16 @@
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.25s; }
 ::view-transition-group(nav-underline) { animation-duration: 0.35s; animation-timing-function: ease-in-out; }
 
+// Search dialog rises and scales in over a fading backdrop; .closing (search.js) reverses it
+.search-dialog[open] { animation: search-in 0.24s cubic-bezier(0.2, 0.9, 0.3, 1.15) both; }
+.search-dialog[open]::backdrop { animation: fade-in 0.24s ease both; }
+.search-dialog.closing { animation: search-out 0.16s ease-in both; }
+.search-dialog.closing::backdrop { animation: fade-out 0.16s ease-in both; }
+@keyframes search-in { from { opacity: 0; transform: translateY(-12px) scale(0.96); } }
+@keyframes search-out { to { opacity: 0; transform: translateY(-8px) scale(0.97); } }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes fade-out { to { opacity: 0; } }
+
 // Colors cross-fade when the lamp toggles the theme (class set briefly by toggleTheme)
 html.theme-fade, html.theme-fade * {
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease !important;
@@ -115,4 +127,5 @@ html.theme-fade, html.theme-fade * {
   }
   .interest-card:hover, .interest-card:hover .interest-icon { transform: none; }
   .timeline > li.current .tl-body::after { display: none; }
+  .paper-figure [data-result], .search-dialog, .search-dialog::backdrop { animation: none !important; }
 }

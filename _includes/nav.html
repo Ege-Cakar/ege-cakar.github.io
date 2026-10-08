@@ -10,6 +10,11 @@
       </li>
     {% endfor %}
     <li>
+      <button class="search-toggle" type="button" aria-label="Search (Cmd/Ctrl+K)" title="Search (⌘K)">
+        {% include icon.html name="magnifier" %}
+      </button>
+    </li>
+    <li>
       <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
         {% include icon.html name="lamp" %}
       </button>

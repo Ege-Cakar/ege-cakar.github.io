@@ -1,0 +1,9 @@
+# Themes for the research map (Research page); papers list theirs in _data/papers.yml.
+- id: memory
+  name: Memory & efficiency
+- id: reasoning
+  name: Reasoning
+- id: formal-math
+  name: Formal math
+- id: safety
+  name: Safety & trust

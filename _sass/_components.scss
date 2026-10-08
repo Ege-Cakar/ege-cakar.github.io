@@ -561,3 +561,218 @@
     &:target { background: var(--bg-secondary); }
   }
 }
+
+// Buttons that look like .btn links (Cite)
+button.btn { font-family: inherit; color: var(--accent); background: none; cursor: pointer; }
+
+// Reading progress bar on blog posts (width set by assets/js/site.js)
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 50;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+// Copy button on code blocks in posts
+article div.highlighter-rouge {
+  position: relative;
+
+  .copy-code {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    font: inherit;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, color 0.2s ease;
+  }
+  &:hover .copy-code, .copy-code:focus { opacity: 1; }
+  .copy-code:hover { color: var(--accent); }
+}
+
+// Search dialog (assets/js/search.js)
+.search-dialog {
+  width: min(620px, 92vw);
+  margin: 12vh auto auto;
+  padding: 0;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  &::backdrop { background: rgba(0, 0, 0, 0.35); backdrop-filter: blur(3px); }
+
+  input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font: inherit;
+    font-size: 1.05rem;
+    color: var(--text);
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    outline: none;
+  }
+}
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem;
+  max-height: min(60vh, 460px);
+  overflow-y: auto;
+
+  li { margin: 0; }
+  a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.1rem 0.6rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  li.active a, a:hover { background: var(--bg-secondary); }
+  .search-type {
+    grid-row: span 2;
+    align-self: start;
+    margin-top: 0.15rem;
+    padding: 0 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 4px;
+  }
+  .search-title { font-weight: 600; font-size: 0.95rem; }
+  .search-snippet { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
+  mark { color: inherit; background: var(--accent-soft); border-radius: 2px; }
+  .search-empty { padding: 0.9rem 0.85rem; color: var(--text-secondary); font-size: 0.9rem; }
+}
+
+.search-hint {
+  margin: 0;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+}
+
+// Interactive figures (assets/js/figures.js). Inline styles on the drawn lines need !important.
+.paper-figure {
+  svg { touch-action: none; }
+  [data-n] { cursor: grab; }
+  svg.dragging, svg.dragging [data-n] { cursor: grabbing; }
+  [data-tok] { cursor: pointer; }
+  svg.hl [data-n]:not(.on) { opacity: 0.2; }
+  svg.hl line[data-a]:not(.on), svg.hl line[data-from]:not(.on) { opacity: 0.08 !important; }
+  line[data-a].on { opacity: 0.9 !important; }
+  line[data-from].on { opacity: 1 !important; stroke-width: 1.4 !important; }
+  [data-result] { transform-box: fill-box; transform-origin: 50% 50%; }
+  [data-result].flash { animation: result-flash 0.6s ease 2; }
+}
+@keyframes result-flash { 50% { transform: scale(1.25); } }
+
+.fig-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.8rem;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--ink);
+
+  label { display: inline-flex; align-items: center; gap: 0.4rem; }
+  input[type="range"] { accent-color: var(--red); width: 140px; }
+  .fig-note { color: var(--muted); }
+}
+
+.fig-btn {
+  padding: 0.15rem 0.6rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fffdf8;
+  border: 1px solid #cfc8b8;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover { border-color: var(--red); color: var(--red); }
+}
+
+// Research map (Research page): themes left, papers right, curves drawn by figures.js
+.research-map {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 0 clamp(2rem, 8vw, 6rem);
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  ul {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li { margin: 0; transition: opacity 0.2s ease; }
+
+  .map-themes { align-items: flex-end; text-align: right; }
+  .map-themes li {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    cursor: default;
+  }
+  .map-papers { align-items: flex-start; }
+  .map-papers a {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    &:hover, &:focus-visible { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  }
+
+  .map-edges {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .map-edges path {
+    fill: none;
+    stroke: var(--text-secondary);
+    stroke-opacity: 0.35;
+    stroke-width: 1.5;
+    transition: stroke 0.2s ease, opacity 0.2s ease;
+  }
+
+  &.focus li:not(.on) { opacity: 0.4; }
+  &.focus .map-edges path { opacity: 0.3; }
+  &.focus .map-edges path.on { stroke: var(--accent); stroke-opacity: 1; opacity: 1; }
+}
+

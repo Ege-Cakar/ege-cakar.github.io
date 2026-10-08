@@ -1,4 +1,4 @@
-<svg viewBox="0 0 400 240" role="img" aria-label="Agent output is mined into literals and classified into a bipolar argument graph with support and attack edges. A user-supplied fact attacks one literal, which is flagged and sent back to the agents as feedback.">
+<svg viewBox="0 0 400 240" role="img" aria-label="Agent output is mined into literals and classified into a bipolar argument graph with support and attack edges. A user-supplied fact attacks one literal, which is flagged and sent back to the agents as feedback." data-figure="argument">
 <defs>
 <marker id="argument-ink" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-ink"/></marker>
 <marker id="argument-red" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 9 5 0 9z" class="f-red"/></marker>
@@ -11,38 +11,38 @@
 <text x="357" y="22" class="" font-size="11" text-anchor="start">attacks</text>
 <text x="60" y="32" class="t-muted" font-size="11" text-anchor="middle">agent output</text>
 <rect x="14" y="40" width="92" height="136" rx="4" class="s f-white"/>
-<rect x="20" y="53" width="52" height="10" rx="2" class="f-blue-soft"/>
+<rect x="20" y="53" width="52" height="10" rx="2" class="f-blue-soft" data-part="span-0"/>
 <line x1="22.0" y1="58.0" x2="94.0" y2="58.0" class="s-muted" style="stroke-width:2"/>
 <line x1="22.0" y1="72.0" x2="86.0" y2="72.0" class="s-muted" style="stroke-width:2"/>
-<rect x="42" y="81" width="56" height="10" rx="2" class="f-blue-soft"/>
+<rect x="42" y="81" width="56" height="10" rx="2" class="f-blue-soft" data-part="span-1"/>
 <line x1="22.0" y1="86.0" x2="96.0" y2="86.0" class="s-muted" style="stroke-width:2"/>
 <line x1="22.0" y1="100.0" x2="80.0" y2="100.0" class="s-muted" style="stroke-width:2"/>
-<rect x="20" y="109" width="64" height="10" rx="2" class="f-blue-soft"/>
+<rect x="20" y="109" width="64" height="10" rx="2" class="f-blue-soft" data-part="span-2"/>
 <line x1="22.0" y1="114.0" x2="92.0" y2="114.0" class="s-muted" style="stroke-width:2"/>
 <line x1="22.0" y1="128.0" x2="88.0" y2="128.0" class="s-muted" style="stroke-width:2"/>
-<rect x="32" y="137" width="54" height="10" rx="2" class="f-blue-soft"/>
+<rect x="32" y="137" width="54" height="10" rx="2" class="f-blue-soft" data-part="span-3"/>
 <line x1="22.0" y1="142.0" x2="96.0" y2="142.0" class="s-muted" style="stroke-width:2"/>
 <line x1="22.0" y1="156.0" x2="70.0" y2="156.0" class="s-muted" style="stroke-width:2"/>
-<line x1="114.0" y1="108.0" x2="160.0" y2="108.0" class="s" marker-end="url(#argument-ink)" />
+<line x1="114.0" y1="108.0" x2="160.0" y2="108.0" class="s" marker-end="url(#argument-ink)" data-part="mine"/>
 <text x="137" y="99" class="t-muted" font-size="11" text-anchor="middle">extract</text>
 <text x="137" y="126" class="t-muted" font-size="11" text-anchor="middle">classify</text>
-<line x1="201.9" y1="69.3" x2="249.2" y2="98.2" class="s" marker-end="url(#argument-ink)" />
-<line x1="201.9" y1="142.7" x2="249.2" y2="113.8" class="s" marker-end="url(#argument-ink)" />
-<line x1="249.9" y1="184.9" x2="203.0" y2="157.6" class="s-red" marker-end="url(#argument-flat)" />
-<circle cx="262" cy="106" r="20" class="s-red"/>
-<circle cx="190" cy="62" r="14" class="s f-node"/>
-<text x="189" y="66" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">1</tspan></text>
-<circle cx="190" cy="150" r="14" class="s f-node"/>
-<text x="189" y="154" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">2</tspan></text>
-<circle cx="262" cy="106" r="14" class="s f-node"/>
-<text x="261" y="110" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">3</tspan></text>
-<circle cx="262" cy="192" r="14" class="s f-node"/>
-<text x="261" y="196" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">4</tspan></text>
+<line x1="201.9" y1="69.3" x2="249.2" y2="98.2" class="s" marker-end="url(#argument-ink)" data-part="edge-0"/>
+<line x1="201.9" y1="142.7" x2="249.2" y2="113.8" class="s" marker-end="url(#argument-ink)" data-part="edge-1"/>
+<line x1="249.9" y1="184.9" x2="203.0" y2="157.6" class="s-red" marker-end="url(#argument-flat)" data-part="edge-2"/>
+<circle cx="262" cy="106" r="20" class="s-red" data-part="ring"/>
+<g data-part="node-0"><circle cx="190" cy="62" r="14" class="s f-node"/>
+<text x="189" y="66" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">1</tspan></text></g>
+<g data-part="node-1"><circle cx="190" cy="150" r="14" class="s f-node"/>
+<text x="189" y="154" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">2</tspan></text></g>
+<g data-part="node-2"><circle cx="262" cy="106" r="14" class="s f-node"/>
+<text x="261" y="110" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">3</tspan></text></g>
+<g data-part="node-3"><circle cx="262" cy="192" r="14" class="s f-node"/>
+<text x="261" y="196" class="m" text-anchor="middle" font-size="15" >a<tspan dy="3" font-size="10">4</tspan></text></g>
 <rect x="334" y="92" width="52" height="28" rx="3" class="s-red f-white"/>
 <rect x="337" y="95" width="46" height="22" rx="2" class="s-red"/>
 <text x="360" y="110" class="t-red" font-size="12" text-anchor="middle">fact</text>
-<line x1="334.0" y1="106.0" x2="283.0" y2="106.0" class="s-red" marker-end="url(#argument-flat)" />
-<text x="300" y="136" class="t-red" font-size="11" text-anchor="start">flagged</text>
-<path d="M282 118 C 322 146, 332 222, 282 222 L 74 222 C 62 222, 60 212, 60 182" class="s-muted dash" marker-end="url(#argument-muted)"/>
+<line x1="334.0" y1="106.0" x2="283.0" y2="106.0" class="s-red" marker-end="url(#argument-flat)" data-part="fact"/>
+<text x="300" y="136" class="t-red" font-size="11" text-anchor="start" data-part="flagged">flagged</text>
+<path d="M282 118 C 322 146, 332 222, 282 222 L 74 222 C 62 222, 60 212, 60 182" class="s-muted dash" marker-end="url(#argument-muted)" data-part="feedback"/>
 <text x="178" y="216" class="t-muted" font-size="11" text-anchor="middle">test-time feedback</text>
 </svg>

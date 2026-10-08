@@ -1,6 +1,7 @@
 # Single source for papers on Home, Research, and CV (_includes/paper.html renders one).
 # type: peer-reviewed | preprint. badges: short venue chips beside the title. footnote: CV page only.
-# url / code / post add Paper, Code, and Blog post buttons.
+# url / code / post add Paper, Code, and Blog post buttons; bibtex backs the Cite button.
+# short and themes (ids from _data/themes.yml) drive the research map on the Research page.
 - id: ssa
   type: preprint
   title: "State Space Attention: Learning Context-Dependent Memory Retention"
@@ -8,6 +9,15 @@
   authors: Ege Çakar, Cengiz Pehlevan
   venue: Preprint, 2026
   note: arXiv link coming soon
+  short: "State Space Attention"
+  themes: [memory]
+  bibtex: |
+    @misc{cakar2026ssa,
+      title  = {State Space Attention: Learning Context-Dependent Memory Retention},
+      author = {{\c{C}}akar, Ege and Pehlevan, Cengiz},
+      year   = {2026},
+      note   = {Preprint}
+    }
 
 - id: boule-or-baguette
   type: peer-reviewed
@@ -16,6 +26,18 @@
   authors: William L. Tong, Ege Çakar, Cengiz Pehlevan
   venue: To appear in NeurIPS 2026 Main Track.
   url: https://arxiv.org/abs/2602.14404
+  short: "Boule or Baguette?"
+  themes: [reasoning]
+  bibtex: |
+    @inproceedings{tong2026boule,
+      title         = {Boule or Baguette? A Study on Task Topology, Length Generalization, and the Benefit of Reasoning Traces},
+      author        = {Tong, William L. and {\c{C}}akar, Ege and Pehlevan, Cengiz},
+      booktitle     = {Advances in Neural Information Processing Systems},
+      year          = {2026},
+      eprint        = {2602.14404},
+      archivePrefix = {arXiv},
+      primaryClass  = {cs.AI}
+    }
 
 - id: safety-representations
   type: peer-reviewed
@@ -25,6 +47,19 @@
   venue: "Accepted to the AAAI 2026 Summer Symposium Series: AI-Driven Resilience (Seoul, South Korea, June 2026; to appear in proceedings) and the ICLR 2026 Workshop on Representational Alignment (Re-Align) (Rio de Janeiro, Brazil, April 2026)."
   url: https://arxiv.org/abs/2607.08883
   footnote: 'Submitted to the ICLR 2026 Workshop on Representational Alignment (Re-Align) under the title "Accelerating Adversarial Suffix Optimization via Continuous Relaxation and Activation-Guided Objectives."'
+  short: "Activation-Guided Adversarial Suffixes"
+  themes: [safety]
+  bibtex: |
+    @inproceedings{cakar2026safety,
+      title         = {Optimizing Against Safety Representations: Activation-Guided Adversarial Suffixes and the Geometry of Refusal},
+      author        = {{\c{C}}akar, Ege and Guan, Hannah and Kehe, Kayden},
+      booktitle     = {AAAI 2026 Summer Symposium Series: AI-Driven Resilience},
+      year          = {2026},
+      note          = {Also accepted to the ICLR 2026 Workshop on Representational Alignment (Re-Align)},
+      eprint        = {2607.08883},
+      archivePrefix = {arXiv},
+      primaryClass  = {cs.LG}
+    }
 
 - id: laser
   type: peer-reviewed
@@ -33,6 +68,18 @@
   authors: Ege Çakar, Ketan Ali Raghu, Lia Zheng
   venue: Accepted to the ICLR 2026 Workshop on Latent & Implicit Thinking (LIT). Rio de Janeiro, Brazil, April 2026.
   url: https://arxiv.org/abs/2604.17224
+  short: "LASER"
+  themes: [memory, reasoning]
+  bibtex: |
+    @inproceedings{cakar2026laser,
+      title         = {LASER: Low-Rank Activation SVD for Efficient Recursion},
+      author        = {{\c{C}}akar, Ege and Raghu, Ketan Ali and Zheng, Lia},
+      booktitle     = {ICLR 2026 Workshop on Latent \& Implicit Thinking (LIT)},
+      year          = {2026},
+      eprint        = {2604.17224},
+      archivePrefix = {arXiv},
+      primaryClass  = {cs.LG}
+    }
 
 - id: mathlib-geometry
   type: preprint
@@ -43,6 +90,17 @@
   url: /assets/files/Mathlib_Proof_Graphs_Report.pdf
   code: https://github.com/Ege-Cakar/mathlib_analysis
   post: /blog/2026/10/06/mathlib-proof-graphs/
+  short: "Mathlib as a Geometry"
+  themes: [reasoning, formal-math]
+  bibtex: |
+    @techreport{cakar2026mathlib,
+      title       = {Mathlib as a Geometry of Mathematics: An Empirical Study of Formal Proof Graphs},
+      author      = {{\c{C}}akar, Ege},
+      institution = {Harvard University},
+      year        = {2026},
+      month       = may,
+      url         = {https://egecakar.com/assets/files/Mathlib_Proof_Graphs_Report.pdf}
+    }
 
 - id: argument-is-the-explanation
   type: preprint
@@ -52,6 +110,17 @@
   venue: arXiv preprint arXiv:2510.03442, 2025
   url: https://arxiv.org/abs/2510.03442
   code: https://github.com/Ege-Cakar/Structured-Argumentation-For-Trust
+  short: "The Argument is the Explanation"
+  themes: [safety]
+  bibtex: |
+    @misc{cakar2025argument,
+      title         = {The Argument is the Explanation: Structured Argumentation for Trust in Agents},
+      author        = {{\c{C}}akar, Ege and Kristensson, Per Ola},
+      year          = {2025},
+      eprint        = {2510.03442},
+      archivePrefix = {arXiv},
+      primaryClass  = {cs.LG}
+    }
 
 - id: mlp-mixer-icl
   type: preprint
@@ -60,3 +129,14 @@
   authors: Ege Çakar
   venue: Technical Report, 2025
   url: /assets/files/MLPMixer_ICL_Report.pdf
+  short: "MLP Mixer ICL"
+  themes: [memory]
+  bibtex: |
+    @techreport{cakar2025mixericl,
+      title       = {In-Context Learning Without Attention: The Surprising Efficiency of MLP Mixer Architectures},
+      author      = {{\c{C}}akar, Ege},
+      institution = {Department of Statistics, Harvard University},
+      year        = {2025},
+      month       = may,
+      url         = {https://egecakar.com/assets/files/MLPMixer_ICL_Report.pdf}
+    }

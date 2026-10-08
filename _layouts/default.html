@@ -11,6 +11,13 @@
     </main>
     {% include footer.html %}
   </div>
+  <dialog class="search-dialog" aria-label="Search the site">
+    <input type="search" placeholder="Search papers, posts, projects…" aria-label="Search" autocomplete="off" spellcheck="false">
+    <ul class="search-results"></ul>
+    <p class="search-hint">↑ ↓ to move · Enter to open · Esc to close</p>
+  </dialog>
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/figures.js' | relative_url }}"></script>
 </body>
 </html>

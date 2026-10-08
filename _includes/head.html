@@ -25,6 +25,7 @@
     try { sessionStorage.setItem('theme', r.dataset.theme); } catch (e) {}
   }
 </script>
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{%- comment -%} ?v=build time: Cloudflare caches CSS/JS for 4 h, so each deploy needs new URLs {%- endcomment %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 {% feed_meta %}
 {% seo %}

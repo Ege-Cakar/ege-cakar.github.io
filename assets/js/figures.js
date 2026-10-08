@@ -124,12 +124,31 @@
       stream[0].parentNode.insertBefore(layer, stream[0]);
       stream.forEach(function (r) { r.remove(); });
       var chunks = {}, wireAt = [], state, rand, busy = false;
+      var gap = layer.appendChild(svgEl('text', { y: 35, class: 't-muted', 'font-size': 12, 'text-anchor': 'middle', style: 'transition:opacity .5s ease' }));
+      gap.textContent = '⋯';
 
+      // Layout: chunk c sits at its natural position c - off. Retained chunks older than that
+      // stretch are pinned at positions 0..k-1 with a ⋯ at k, so every wire starts at a drawn chunk.
       var off = function (s) { return Math.max(0, s.cur - 9); };
+      var pinned = function (s) {
+        var old = s.residents.filter(function (c) { return c < off(s); });
+        for (var k = 0; old.length > k; ) { k = old.length; old = s.residents.filter(function (c) { return c - off(s) <= k; }); }
+        return old;
+      };
+      var first = function (s) { var k = pinned(s).length; return k && k + 1; };  // first position of the recent stretch
+      var at = function (s, c) {  // position of chunk c, or -1 if it is not drawn
+        var i = pinned(s).indexOf(c), p = c - off(s);
+        return i >= 0 ? i : p >= first(s) && p <= 11 ? p : -1;
+      };
+      var shown = function (s) {
+        var ids = pinned(s);
+        for (var c = off(s) + first(s); c <= off(s) + 11; c++) ids.push(c);
+        return ids;
+      };
       var role = function (s, c) {
         return c > s.cur ? 'next' : c === s.cur ? 'cur' : c === s.cur - 1 ? 'win' : s.residents.indexOf(c) >= 0 ? 'ret' : 'ev';
       };
-      var wireFrom = function (s, c) { var p = c - off(s); return p >= 0 ? X(p) + 11 : 18; };
+      var wireFrom = function (s, c) { return X(at(s, c)) + 11; };
       var lowest = function (s) { return s.scores.indexOf(Math.min.apply(null, s.scores)); };
       function setWire(k, x1, xs) {
         wireAt[k] = [+x1, +xs];
@@ -149,14 +168,13 @@
         }
         return chunks[c];
       }
-      function paintChunk(s, c) { rect(c).setAttribute('style', fade + styles[role(s, c)] + ';stroke-width:1.2'); }
+      function paintChunk(s, c, hidden) { rect(c).setAttribute('style', fade + styles[role(s, c)] + ';stroke-width:1.2' + (hidden ? ';opacity:0' : '')); }
       // Draw a state with no animation (start and reset).
       function draw(s) {
         Object.keys(chunks).forEach(function (c) { chunks[c].remove(); delete chunks[c]; });
-        for (var p = 0; p < 12; p++) {
-          var c = off(s) + p, r = rect(c);
-          r.px = X(p); r.setAttribute('x', r.px); paintChunk(s, c);
-        }
+        shown(s).forEach(function (c) { var r = rect(c); r.px = X(at(s, c)); r.setAttribute('x', r.px); paintChunk(s, c); });
+        var k = pinned(s).length;
+        gap.setAttribute('x', X(k) + 11); gap.style.opacity = k ? 1 : 0;
         s.residents.concat([s.cur - 1, s.cur]).forEach(function (c, k) { setWire(k, wireFrom(s, c), slotX[k]); });
         boxes.concat(wires).forEach(function (e) { e.style.opacity = 1; });
         setBars(s.scores, lowest(s));
@@ -171,39 +189,34 @@
         busy = true;
         var s = state, low = lowest(s), victim = low === 4 ? s.cur - 1 : s.residents[low];
         // 1. the evicted chunk greys out with its slot and wire
-        if (chunks[victim]) chunks[victim].setAttribute('style', fade + styles.ev + ';stroke-width:1.2');  // may have scrolled off already
+        chunks[victim].setAttribute('style', fade + styles.ev + ';stroke-width:1.2');
         boxes[low].style.opacity = 0.25; wires[low].style.opacity = 0.15;
         setTimeout(function () {
           // 2. new state: candidate takes the freed place, window advances by one chunk
           var oldOff = off(s), residents = s.residents.slice();
           if (low < 4) { residents.splice(low, 1); residents.push(s.cur - 1); residents.sort(function (a, b) { return a - b; }); }
           var n = { cur: s.cur + 1, residents: residents, scores: s.scores };
-          var newOff = off(n), lo = newOff - 1, hi = newOff + 11;
-          for (var c = oldOff - 1; c <= hi + 1; c++) {
-            if (c < lo || c > hi) continue;
-            var r = rect(c), entering = !r.getAttribute('x');
-            paintChunk(n, c);
-            if (entering) { r.px = X(c - oldOff); r.setAttribute('x', r.px); r.style.opacity = 0; }
-          }
+          var enter = shown(n).filter(function (c) { return !chunks[c]; });
+          enter.forEach(function (c) { var r = rect(c); r.px = X(c - oldOff); r.setAttribute('x', r.px); });  // from where the stream was
+          Object.keys(chunks).forEach(function (c) { paintChunk(n, +c, enter.indexOf(+c) >= 0); });
           svg.getBoundingClientRect();  // commit the starting opacity so the fades below transition
-          var from = {}, to = {};
-          Object.keys(chunks).forEach(function (c) { from[c] = chunks[c].px; to[c] = X(c - newOff); });
+          var from = {}, to = {};  // chunks leaving the drawing drift one place left as they fade
+          Object.keys(chunks).forEach(function (c) { var p = at(n, +c); from[c] = chunks[c].px; to[c] = p >= 0 ? X(p) : from[c] - 26; });
+          var k0 = pinned(s).length, k1 = pinned(n).length, g0 = X(k0 || k1) + 11, g1 = X(k1 || k0) + 11;
           var w0 = wireAt.map(function (w) { return w.slice(); });
           var w1 = n.residents.concat([n.cur - 1, n.cur]).map(function (c, k) { return [wireFrom(n, c), slotX[k]]; });
-          var s0 = +stepLbl.getAttribute('x'), s1 = X(n.cur - newOff) + 11;
+          var s0 = +stepLbl.getAttribute('x'), s1 = X(n.cur - off(n)) + 11;
           requestAnimationFrame(function () {
-            Object.keys(chunks).forEach(function (c) {
-              var p = +c - newOff;
-              chunks[c].style.opacity = p < 0 || p > 11 ? 0 : 1;
-            });
-            boxes[low].style.opacity = 1; wires[low].style.opacity = 1;
+            Object.keys(chunks).forEach(function (c) { chunks[c].style.opacity = at(n, +c) >= 0 ? 1 : 0; });
+            boxes[low].style.opacity = 1; wires[low].style.opacity = 1; gap.style.opacity = k1 ? 1 : 0;
           });
           tween(800, function (t) {
             Object.keys(chunks).forEach(function (c) { chunks[c].px = lerp(from[c], to[c], t); chunks[c].setAttribute('x', chunks[c].px.toFixed(1)); });
             w1.forEach(function (w, k) { setWire(k, lerp(w0[k][0], w[0], t).toFixed(1), lerp(w0[k][1], w[1], t).toFixed(1)); });
             stepLbl.setAttribute('x', lerp(s0, s1, t).toFixed(1));
+            gap.setAttribute('x', lerp(g0, g1, t).toFixed(1));
           }, function () {
-            Object.keys(chunks).forEach(function (c) { var p = +c - newOff; if (p < 0 || p > 11) { chunks[c].remove(); delete chunks[c]; } });
+            Object.keys(chunks).forEach(function (c) { if (at(n, +c) < 0) { chunks[c].remove(); delete chunks[c]; } });
             // 3. rescore all four retained chunks and the new candidate (no ties); bars ease to them
             var used = {}, h0 = s.scores.slice();
             n.scores = h0.map(function () { var v; do { v = 6 + Math.floor(rand() * 31); } while (used[v]); used[v] = 1; return v; });

@@ -27,6 +27,7 @@ exclude:
   - node_modules
   - vendor
   - scripts
+  - archives
 
 navigation:
   - title: Home

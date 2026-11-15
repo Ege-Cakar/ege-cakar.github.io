@@ -1,3 +1,10 @@
+- id: who-touched-my-sentence
+  title: "Who Touched My Sentence? Inference for AI-Edited Documents in the Sparse and Weak Regime"
+  note: "STAT 236 Final Project"
+  tags: ["AI Text Detection", "Sparse Inference", "Higher Criticism", "Conformal Inference"]
+  description: "Tests whether a human-written document contains AI-edited sentences, treating each edit as a sparse, weak signal. At a 1% false-positive rate, the sentence-level ensemble catches 38.6% of edited sentences (36.2% for a held-out editor), state of the art among the 10 released and zero-shot detectors compared (at most 9.4%). At a 5% document-level false-positive rate, it flags 92% of densely edited documents and 22% with one edited sentence (EditLens: 53% and 6%), and it separates AI-edited from fully generated documents. Training language models on AI-edited text, from small models to Pythia-6.9B, makes them prefer AI-edited sentences over the originals, a shift that perplexity on human text misses when only some sentences are edited; dropping edited sentences removes nearly all of it at a perplexity cost."
+  github: https://github.com/Ege-Cakar/sparse-ai-edits
+
 - id: spectral-profiling-gnns
   title: "Spectral Label Profiles for GNN Architecture Selection"
   tags: ["Graph Neural Networks", "Spectral Graph Theory", "Node Classification"]

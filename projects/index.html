@@ -28,7 +28,7 @@
     try { sessionStorage.setItem('theme', r.dataset.theme); } catch (e) {}
   }
 </script>
-<link rel="stylesheet" href="/assets/css/main.css?v=1791905768">
+<link rel="stylesheet" href="/assets/css/main.css?v=1794780045">
 <link type="application/atom+xml" rel="alternate" href="https://egecakar.com/feed.xml" title="Ege Çakar" />
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Projects | Ege Çakar</title>
@@ -144,6 +144,19 @@ Projects</h1>
 </div>
 
 <div class="card-grid">
+  
+  <article class="card project-card" id="who-touched-my-sentence">
+    <h3>Who Touched My Sentence? Inference for AI-Edited Documents in the Sparse and Weak Regime</h3>
+    <ul class="chips"><li>AI Text Detection</li><li>Sparse Inference</li><li>Higher Criticism</li><li>Conformal Inference</li></ul>
+    <p>Tests whether a human-written document contains AI-edited sentences, treating each edit as a sparse, weak signal. At a 1% false-positive rate, the sentence-level ensemble catches 38.6% of edited sentences (36.2% for a held-out editor), state of the art among the 10 released and zero-shot detectors compared (at most 9.4%). At a 5% document-level false-positive rate, it flags 92% of densely edited documents and 22% with one edited sentence (EditLens: 53% and 6%), and it separates AI-edited from fully generated documents. Training language models on AI-edited text, from small models to Pythia-6.9B, makes them prefer AI-edited sentences over the originals, a shift that perplexity on human text misses when only some sentences are edited; dropping edited sentences removes nearly all of it at a perplexity cost.</p>
+    <div class="project-footer">
+      <a class="btn" href="https://github.com/Ege-Cakar/sparse-ai-edits" target="_blank" rel="noopener"><svg class="icon icon-cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="fill" d="M5 10.5C5 8 7 7.3 9.5 7.3h5c2.5 0 4.5.7 4.5 3.2 0 5-3 8-7 8s-7-3-7-8z"/><path class="fill ear" d="M5.1 9.2 5.5 4l4 3.3"/><path class="fill ear ear-right" d="M18.9 9.2 18.5 4l-4 3.3"/><circle cx="9.3" cy="11.5" r=".6" fill="currentColor"/><circle cx="14.7" cy="11.5" r=".6" fill="currentColor"/><path d="M11.3 14h1.4l-.7.7zM2.5 13h3.5M2.8 15.3l3.4-.8M21.5 13H18M21.2 15.3l-3.4-.8"/>
+</svg>
+GitHub</a>
+      
+      <span class="project-note">STAT 236 Final Project</span>
+    </div>
+  </article>
   
   <article class="card project-card" id="spectral-profiling-gnns">
     <h3>Spectral Label Profiles for GNN Architecture Selection</h3>
@@ -317,8 +330,8 @@ LinkedIn</a>
     <ul class="search-results"></ul>
     <p class="search-hint">↑ ↓ to move · Enter to open · Esc to close</p>
   </dialog>
-  <script src="/assets/js/site.js?v=1791905768"></script>
-  <script src="/assets/js/search.js?v=1791905768"></script>
-  <script src="/assets/js/figures.js?v=1791905768"></script>
+  <script src="/assets/js/site.js?v=1794780045"></script>
+  <script src="/assets/js/search.js?v=1794780045"></script>
+  <script src="/assets/js/figures.js?v=1794780045"></script>
 </body>
 </html>

@@ -73,8 +73,12 @@ title: Home
 
 <ol class="timeline compact">
   <li>
+    <div class="tl-date">November 2026</div>
+    <div class="tl-body"><a href="{% post_url 2026-11-19-looping-inside-the-experts %}">Blog post</a> over my side project in the Pehlevan Lab over Fall 2026 is up!</div>
+  </li>
+  <li>
     <div class="tl-date">October 2026</div>
-    <div class="tl-body"><a href="{% post_url 2026-10-06-mathlib-proof-graphs %}">Blog post</a> over my side project in Pehlevan Lab over Spring 2026 is up!</div>
+    <div class="tl-body"><a href="{% post_url 2026-10-06-mathlib-proof-graphs %}">Blog post</a> over my side project in the Pehlevan Lab over Spring 2026 is up!</div>
   </li>
   <li>
     <div class="tl-date">September 2026</div>
